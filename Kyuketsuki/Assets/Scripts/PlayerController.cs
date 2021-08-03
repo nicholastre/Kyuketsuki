@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        // Vereifica se só existe uma instância do jogador na cena
         if (instance == null)
         {
             instance = this;
