@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         //Para onde o personagem está olhando
-        myAnim.SetFloat("moveX", theRB.velocity.x);
+        /*myAnim.SetFloat("moveX", theRB.velocity.x);
         myAnim.SetFloat("moveY", theRB.velocity.y);
 
         if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour {
                 myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
                 myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
             }
-        }
+        }*/
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
     }

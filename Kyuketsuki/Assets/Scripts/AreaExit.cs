@@ -40,13 +40,13 @@ public class AreaExit : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //SceneManager.LoadScene(areaToLoad);
-            shouldLoadAfterFade = true;
-           // GameManager.instance.fadingBetweenAreas = true;
+           //SceneManager.LoadScene(areaToLoad);
+           shouldLoadAfterFade = true;
+           //GameManager.instance.fadingBetweenAreas = true;
 
-           // UIFade.instance.FadeToBlack();
+           UIFade.instance.FadeToBlack();
 
-            PlayerController.instance.areaTransitionName = areaTransitionName;
+           PlayerController.instance.areaTransitionName = areaTransitionName;
         }
     }
 }

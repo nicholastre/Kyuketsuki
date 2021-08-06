@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/teste.unity
     guid: f2d3d132a9fcfbd478010f833704cdcc
+  - enabled: 1
+    path: Assets/Scenes/testemapa.unity
+    guid: dc38c22fcba6e1f4c813a51d172477c0
   m_configObjects: {}
