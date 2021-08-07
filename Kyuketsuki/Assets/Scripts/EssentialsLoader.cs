@@ -22,13 +22,13 @@ public class EssentialsLoader : MonoBehaviour {
             PlayerController clone = Instantiate(player).GetComponent<PlayerController>();
             PlayerController.instance = clone;
         }
-        /*
+        
         if (GameManager.instance == null)
         {
             GameManager.instance = Instantiate(gameMan).GetComponent<GameManager>();
         }
 
-        if(AudioManager.instance == null)
+       /* if(AudioManager.instance == null)
         {
             AudioManager.instance = Instantiate(audioMan).GetComponent<AudioManager>();
         }

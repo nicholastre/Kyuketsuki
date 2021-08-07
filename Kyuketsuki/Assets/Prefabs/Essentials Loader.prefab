@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIScreen: {fileID: 3876647930162891469, guid: 565e5a264e54b0e4291fb81e2cd6bff3, type: 3}
   player: {fileID: 8187440534997226178, guid: 17ca263b4f541dc4fa4481e850dc86f8, type: 3}
-  gameMan: {fileID: 0}
+  gameMan: {fileID: 4535763950110080232, guid: 2c1fffbc2b589194dbaf733c27bf1ef3, type: 3}
   audioMan: {fileID: 0}
   battleMan: {fileID: 0}
