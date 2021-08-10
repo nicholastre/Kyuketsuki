@@ -11,12 +11,14 @@ public class MakeButton : MonoBehaviour
 
     private GameObject hero;
     private GameObject hero2;
+    private GameObject hero3;
     void Start()
     {
         string temp = gameObject.name;
         gameObject.GetComponent<Button>().onClick.AddListener(() => AttachCallback(temp));
         hero = GameObject.FindGameObjectWithTag("Hero");
         hero2 = GameObject.FindGameObjectWithTag("Hero2");
+        hero3 = GameObject.FindGameObjectWithTag("Hero3");
     }
 
     private void AttachCallback(string btn)
@@ -32,6 +34,11 @@ public class MakeButton : MonoBehaviour
             {
                 hero2.GetComponent<FighterAction>().SelectAttack("melee");
             }
+
+            if(GameController.hero3Turn == true)
+            {
+                hero3.GetComponent<FighterAction>().SelectAttack("melee");
+            }
             
 
         } else if (btn.CompareTo("SkillButton") == 0)
@@ -45,6 +52,12 @@ public class MakeButton : MonoBehaviour
             {
                 hero2.GetComponent<FighterAction>().SelectAttack("skill");
             }
+
+            if(GameController.hero3Turn == true)
+            {
+                hero3.GetComponent<FighterAction>().SelectAttack("skill");
+            }
+            
 
             
             
