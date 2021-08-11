@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
     }
 
+    // Chamada pelo Start da CameraController para definir limites de tela do jogador
     public void SetBounds(Vector3 botLeft, Vector3 topRight)
     {
         bottomLeftLimit = botLeft + new Vector3(.5f, 1f, 0f);
