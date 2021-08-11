@@ -2890,15 +2890,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 638195584289609352, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
       propertyPath: areaToLoad
-      value: teste
+      value: overworldMap
       objectReference: {fileID: 0}
     - target: {fileID: 638195584289609352, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
       propertyPath: areaTransitionName
-      value: 1-teste
+      value: cityToOverworld
       objectReference: {fileID: 0}
     - target: {fileID: 638195584289609353, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
       propertyPath: m_Name
-      value: Area Exit
+      value: ExitToOverworld
       objectReference: {fileID: 0}
     - target: {fileID: 638195584289609366, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
       propertyPath: m_RootOrder

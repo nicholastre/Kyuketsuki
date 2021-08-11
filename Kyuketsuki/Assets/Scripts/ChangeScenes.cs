@@ -39,7 +39,7 @@ public class ChangeScenes : MonoBehaviour
         shouldLoadAfterFade = true;
     }
 
-    // Encerra o jogo nessa cena
+    // Encerra o jogo nessa cena. Chamada pelo ButtonToEnd na cena mainMenu
     public void EndGameOnScene()
     {
         Application.Quit();
