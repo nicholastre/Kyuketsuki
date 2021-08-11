@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeToScene : MonoBehaviour
+public class ChangeScenes : MonoBehaviour
 {
     // Configuram cena para carregar, tempo para esperar a mudanca e variavel de controle da mudanca
     public string areaToLoad;
@@ -32,10 +32,16 @@ public class ChangeToScene : MonoBehaviour
     }
 
     // Funcao chamada para iniciar a transicao de tela
-    public void PrepareFade()
+    public void PrepareFadeChange()
     {
         // Inicia um fade para trocar de tela posteriormente
         UIFade.instance.FadeToBlack();
         shouldLoadAfterFade = true;
+    }
+
+    // Encerra o jogo nessa cena
+    public void EndGameOnScene()
+    {
+        Application.Quit();
     }
 }

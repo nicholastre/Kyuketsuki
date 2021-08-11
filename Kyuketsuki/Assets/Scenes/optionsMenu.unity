@@ -550,8 +550,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1328288019}
-        m_TargetAssemblyTypeName: ChangeToScene, Assembly-CSharp
-        m_MethodName: PrepareFade
+        m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
+        m_MethodName: PrepareFadeChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
