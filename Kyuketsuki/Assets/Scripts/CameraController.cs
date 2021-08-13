@@ -22,7 +22,8 @@ public class CameraController : MonoBehaviour {
         target = FindObjectOfType<PlayerController>().transform;
         halfHeight = Camera.main.orthographicSize;
         halfWidth = halfHeight * Camera.main.aspect;
-    
+        
+        // Reajusta o tamanho do mapa para se basear na quantidade de tiles usados
         theMap.CompressBounds();
         bottomLeftLimit = theMap.localBounds.min + new Vector3(halfWidth, halfHeight, 0f);
         topRightLimit = theMap.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0f);

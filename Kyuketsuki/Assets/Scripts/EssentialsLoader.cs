@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class EssentialsLoader : MonoBehaviour {
 
-    public GameObject UIScreen;
+    // Variavel para controlar a partir de qual cena adicionar o jogador
+    public bool shouldLoadPlayer;
+
     public GameObject player;
+    public GameObject UIScreen;
     public GameObject gameMan;
     public GameObject audioMan;
     public GameObject battleMan;
@@ -17,7 +20,7 @@ public class EssentialsLoader : MonoBehaviour {
             UIFade.instance = Instantiate(UIScreen).GetComponent<UIFade>();
         }
 
-        if(PlayerController.instance == null)
+        if(shouldLoadPlayer && PlayerController.instance == null)
         {
             PlayerController clone = Instantiate(player).GetComponent<PlayerController>();
             PlayerController.instance = clone;
