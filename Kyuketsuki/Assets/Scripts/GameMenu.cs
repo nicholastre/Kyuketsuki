@@ -12,6 +12,7 @@ public class GameMenu : MonoBehaviour
     public Slider[] expSlider;
     public Image[] charImage;
     public GameObject[] charStatHolder;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,14 +66,14 @@ public class GameMenu : MonoBehaviour
 
     public void ToggleWindow(int windowNumber)
     {
-        //Pra escolher qual aba vai abrir é preciso ir no botão, adicionar um evento de click para o botão, jogar o UI CANVAS dentro do botão
-        // e escolhe essa função passando qual seu número do array. Depois disso no UICANVAS vá em windows no script de GameMenu e determine
-        // o numero da tela que corresponde ao botão
+        //Pra escolher qual aba vai abrir preciso ir no botao, adicionar um evento de click para o botao, jogar o UI CANVAS dentro do botao
+        // e escolhe essa funcao passando qual seu numero do array. Depois disso no UICANVAS vai em windows no script de GameMenu e determine
+        // o numero da tela que corresponde ao botao
         for(int i = 0; i< windows.Length; i++)
         {
             if(i == windowNumber)
             {
-                //verifica se esta ativo ou não no momento
+                //verifica se esta ativo ou nao no momento
                 windows[i].SetActive(windows[i].activeInHierarchy);
             }
             else

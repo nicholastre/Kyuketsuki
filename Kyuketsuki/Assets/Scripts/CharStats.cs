@@ -9,19 +9,23 @@ public class CharStats : MonoBehaviour {
     public int currentEXP;
     public int[] expToNextLevel;
     public int maxLevel = 100;
-    public int baseEXP = 1000;
+    public int baseEXP = 100;
 
     public int currentHP;
-    public int maxHP = 100;
+    public int maxHP;
     public int currentMP;
-    public int maxMP = 30;
-    public int[] mpLvlBonus;
+    public int maxMP;
+
     public int strength;
     public int defence;
+    public int agility;
+
     public int wpnPwr;
     public int armrPwr;
+
     public string equippedWpn;
     public string equippedArmr;
+
     public Sprite charIamge;
 
 	// Use this for initialization
@@ -29,6 +33,7 @@ public class CharStats : MonoBehaviour {
         expToNextLevel = new int[maxLevel];
         expToNextLevel[1] = baseEXP;
 
+        // Configura XP necessaria para avancar em cada nivel ate o nivel maximo
         for(int i = 2; i < expToNextLevel.Length; i++)
         {
             expToNextLevel[i] = Mathf.FloorToInt(expToNextLevel[i - 1] * 1.05f);
@@ -72,7 +77,7 @@ public class CharStats : MonoBehaviour {
                 maxHP = Mathf.FloorToInt(maxHP * 1.05f);
                 currentHP = maxHP;
 
-                maxMP += mpLvlBonus[playerLevel];
+                maxMP = Mathf.FloorToInt(maxMP * 1.05f);
                 currentMP = maxMP;
             }
         }
