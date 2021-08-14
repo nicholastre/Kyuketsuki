@@ -37,6 +37,18 @@ public class GameManager : MonoBehaviour {
         {
             PlayerController.instance.canMove = true;
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            TempAddExp();
+        } else if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("Dinheiro: " + groupMoney);
+            Debug.Log("Divida: " + groupDebt);
+            playerStats[0].PrintStats();
+            playerStats[1].PrintStats();
+            playerStats[2].PrintStats();
+        }
     }
 
     private SaveFileObject CreateSaveFileObject () {
@@ -86,6 +98,13 @@ public class GameManager : MonoBehaviour {
         return temp;
     }
 
+    private void TempAddExp()
+    {
+        playerStats[0].AddExp(50);
+        playerStats[1].AddExp(50);
+        playerStats[2].AddExp(50);
+    }
+
     public void SaveGame ()
     {
         SaveFileObject save = CreateSaveFileObject();
@@ -100,6 +119,24 @@ public class GameManager : MonoBehaviour {
 
     public void LoadGame ()
     {
+        if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
+            SaveFileObject save = (SaveFileObject)bf.Deserialize(file);
+            file.Close();
 
+            playerStats[0] = DeepCopyStats(save.playerStats[0]);
+            playerStats[1] = DeepCopyStats(save.playerStats[1]);
+            playerStats[2] = DeepCopyStats(save.playerStats[2]);
+
+            tempMissions = save.tempMissions;
+            tempInventory = save.tempInventory;
+            groupMoney = save.groupMoney;
+            groupDebt = save.groupDebt;
+        } else
+        {
+            Debug.Log("Sem jogo salvo");
+        }
     }
 }

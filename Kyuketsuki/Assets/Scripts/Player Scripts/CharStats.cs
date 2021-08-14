@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharStats : MonoBehaviour {
 
     public string charName;
-    public int playerLevel = 1;
+    public int playerLevel;
     public int currentEXP;
     public int[] expToNextLevel;
     public int maxLevel = 100;
@@ -43,11 +43,21 @@ public class CharStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            AddExp(1000);
-        }
 	}
+
+    public void PrintStats()
+    {
+        Debug.Log("Nome: " + charName);
+        Debug.Log("Nivel: " + playerLevel);
+        Debug.Log("Experiencia: " + currentEXP);
+        Debug.Log("HP Atual: " + currentHP);
+        Debug.Log("HP Maximo: " + maxHP);
+        Debug.Log("MP Atual: " + currentMP);
+        Debug.Log("MP Maximo: " + maxMP);
+        Debug.Log("Ataque: " + strength);
+        Debug.Log("Defesa: " + defence);
+        Debug.Log("Agilidade " + agility);
+    }
 
     public void AddExp(int expToAdd)
     {
@@ -55,8 +65,7 @@ public class CharStats : MonoBehaviour {
 
         if (playerLevel < maxLevel)
         {
-            //Se a xp atual for maior que a xp necessária pro próximo nível, suba de nível
-            
+
             if (currentEXP > expToNextLevel[playerLevel])
             {
                 //retira a xp equivalente do lvl anterior
@@ -80,6 +89,7 @@ public class CharStats : MonoBehaviour {
                 maxMP = Mathf.FloorToInt(maxMP * 1.05f);
                 currentMP = maxMP;
             }
+
         }
 
         if(playerLevel >= maxLevel)
