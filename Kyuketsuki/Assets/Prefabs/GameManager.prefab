@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4535763948990650593
 Transform:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charName: Cleanto
-  playerLevel: 1
+  playerLevel: 10
   currentEXP: 250
   expToNextLevel: 
   maxLevel: 100
@@ -166,14 +166,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charName: Pedro
-  playerLevel: 1
+  playerLevel: 5
   currentEXP: 250
   expToNextLevel: 
   maxLevel: 100
   baseEXP: 1000
-  currentHP: 0
-  maxHP: 100
-  currentMP: 0
+  currentHP: 150
+  maxHP: 200
+  currentMP: 15
   maxMP: 30
   mpLvlBonus: 
   strength: 5
@@ -182,7 +182,7 @@ MonoBehaviour:
   armrPwr: 0
   equippedWpn: 
   equippedArmr: 
-  charIamge: {fileID: 8648657281458161699, guid: be7c93c81ccb420419e8f14e63a3fe8a, type: 3}
+  charIamge: {fileID: -2061022921256640010, guid: be7c93c81ccb420419e8f14e63a3fe8a, type: 3}
 --- !u!1 &4535763950110080232
 GameObject:
   m_ObjectHideFlags: 0
