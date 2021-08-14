@@ -41,9 +41,9 @@ public class GameManager : MonoBehaviour {
 
         SaveFileObject save = new SaveFileObject();
 
-        save.playerStats[0] = playerStats[0];
-        save.playerStats[1] = playerStats[1];
-        save.playerStats[2] = playerStats[2];
+        save.playerStats[0] = DeepCopyStats(playerStats[0]);
+        save.playerStats[1] = DeepCopyStats(playerStats[1]);
+        save.playerStats[2] = DeepCopyStats(playerStats[2]);
 
         save.tempMissions = tempMissions;
         save.tempInventory = tempInventory;
@@ -51,6 +51,37 @@ public class GameManager : MonoBehaviour {
         save.groupDebt = groupDebt;
 
         return save;
+    }
+
+    private CharStats DeepCopyStats(CharStats original)
+    {
+        CharStats temp = new CharStats();
+
+        temp.charName = original.charName;
+        temp.playerLevel = original.playerLevel;
+        temp.currentEXP = original.currentEXP;
+        temp.expToNextLevel = original.expToNextLevel;
+        temp.maxLevel = original.maxLevel;
+        temp.baseEXP = original.baseEXP;
+
+        temp.currentHP = original.currentHP;
+        temp.maxHP = original.maxHP;
+        temp.currentMP = original.currentMP;
+        temp.maxMP = original.maxMP;
+
+        temp.strength = original.strength;
+        temp.defence = original.defence;
+        temp.agility = original.agility;
+
+        temp.wpnPwr = original.wpnPwr;
+        temp.armrPwr = original.armrPwr;
+
+        temp.equippedWpn = original.equippedWpn;
+        temp.equippedArmr = original.equippedArmr;
+
+        temp.charIamge = original.charIamge;
+
+        return temp;
     }
 
 
