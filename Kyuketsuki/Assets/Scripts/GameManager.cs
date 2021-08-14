@@ -22,6 +22,14 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        //Verifica os booleanos para travar o jogador
+        if(gameMenuOpen || dialogActive || fadingBetweenAreas)
+        {
+            PlayerController.instance.canMove = false;
+        }
+        else
+        {
+            PlayerController.instance.canMove = true;
+        }
     }
 }
