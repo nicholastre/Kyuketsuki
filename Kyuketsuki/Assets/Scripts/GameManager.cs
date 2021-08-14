@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
 
+        LoadGame();
 	}
 	
 	// Update is called once per frame
@@ -46,8 +47,14 @@ public class GameManager : MonoBehaviour {
             Debug.Log("Dinheiro: " + groupMoney);
             Debug.Log("Divida: " + groupDebt);
             playerStats[0].PrintStats();
-            playerStats[1].PrintStats();
-            playerStats[2].PrintStats();
+            //playerStats[1].PrintStats();
+            //playerStats[2].PrintStats();
+        } else if (Input.GetKeyDown(KeyCode.L))
+        {
+            SaveGame();
+        } else if (Input.GetKeyDown(KeyCode.T))
+        {
+            groupDebt += 100;
         }
     }
 
@@ -55,9 +62,11 @@ public class GameManager : MonoBehaviour {
 
         SaveFileObject save = new SaveFileObject();
 
-        save.playerStats[0] = DeepCopyStats(playerStats[0]);
-        save.playerStats[1] = DeepCopyStats(playerStats[1]);
-        save.playerStats[2] = DeepCopyStats(playerStats[2]);
+        //Debug.Log(save.playerStats[0] == null);
+
+        //save.playerStats[0] = DeepCopyStats(playerStats[0]);
+        //save.playerStats[1] = DeepCopyStats(playerStats[1]);
+        //save.playerStats[2] = DeepCopyStats(playerStats[2]);
 
         save.tempMissions = tempMissions;
         save.tempInventory = tempInventory;
@@ -126,9 +135,9 @@ public class GameManager : MonoBehaviour {
             SaveFileObject save = (SaveFileObject)bf.Deserialize(file);
             file.Close();
 
-            playerStats[0] = DeepCopyStats(save.playerStats[0]);
-            playerStats[1] = DeepCopyStats(save.playerStats[1]);
-            playerStats[2] = DeepCopyStats(save.playerStats[2]);
+            //playerStats[0] = DeepCopyStats(save.playerStats[0]);
+            //playerStats[1] = DeepCopyStats(save.playerStats[1]);
+            //playerStats[2] = DeepCopyStats(save.playerStats[2]);
 
             tempMissions = save.tempMissions;
             tempInventory = save.tempInventory;

@@ -9,7 +9,7 @@ public class CharStats : MonoBehaviour {
     public int currentEXP;
     public int[] expToNextLevel;
     public int maxLevel = 100;
-    public int baseEXP = 100;
+    public int baseEXP;
 
     public int currentHP;
     public int maxHP;
@@ -30,6 +30,10 @@ public class CharStats : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        playerLevel = 1;
+        currentEXP = 0;
+        baseEXP = 100;
+
         expToNextLevel = new int[maxLevel];
         expToNextLevel[1] = baseEXP;
 
