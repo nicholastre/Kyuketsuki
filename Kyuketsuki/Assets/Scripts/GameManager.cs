@@ -41,7 +41,17 @@ public class GameManager : MonoBehaviour {
 
         SaveFileObject save = new SaveFileObject();
 
-        return save;
+        save.playerStats[0] = playerStats[0];
+        save.playerStats[1] = playerStats[1];
+        save.playerStats[2] = playerStats[2];
 
+        save.tempMissions = tempMissions;
+        save.tempInventory = tempInventory;
+        save.groupMoney = groupMoney;
+        save.groupDebt = groupDebt;
+
+        return save;
     }
+
+
 }
