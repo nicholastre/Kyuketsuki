@@ -36,4 +36,12 @@ public class GameManager : MonoBehaviour {
             PlayerController.instance.canMove = true;
         }
     }
+
+    private SaveFileObject CreateSaveFileObject () {
+
+        SaveFileObject save = new SaveFileObject();
+
+        return save;
+
+    }
 }
