@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class GameManager : MonoBehaviour {
 
@@ -84,5 +86,20 @@ public class GameManager : MonoBehaviour {
         return temp;
     }
 
+    public void SaveGame ()
+    {
+        SaveFileObject save = CreateSaveFileObject();
 
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+        bf.Serialize(file, save);
+        file.Close();
+
+        Debug.Log("Jogo salvo");
+    }
+
+    public void LoadGame ()
+    {
+
+    }
 }
