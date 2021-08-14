@@ -7,10 +7,14 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
+    // Informacoes que precisam ser salvas e carregadas em cada jogo
     public CharStats[] playerStats;
+    public string tempMissions;
+    public string tempInventory;
+    public int groupMoney;
+    public int groupDebt;
 
     public bool gameMenuOpen, dialogActive, fadingBetweenAreas;
-
 
 	// Use this for initialization
 	void Start () {
