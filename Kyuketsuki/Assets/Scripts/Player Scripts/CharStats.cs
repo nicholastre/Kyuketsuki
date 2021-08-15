@@ -44,6 +44,7 @@ public class CharStats : MonoBehaviour {
             expToNextLevel[i] = Mathf.FloorToInt(expToNextLevel[i - 1] * 1.05f);
         }
 
+        // Garante que os atributos carregados nao sejam sobrescritos pela inicializacao
         GameManager.instance.LoadGame();
 	}
 	
