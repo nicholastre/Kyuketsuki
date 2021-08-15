@@ -64,9 +64,9 @@ public class GameManager : MonoBehaviour {
 
         SaveFileObject save = new SaveFileObject();
 
-        save.playerStats = new CharStats[3];
+        save.playerStats = new SavedCharacterStats[3];
 
-        save.playerStats[0] = DeepCopyStats(playerStats[0]);
+        save.playerStats[0] = PrepareCharToSaved(playerStats[0]);
         //save.playerStats[1] = DeepCopyStats(playerStats[1]);
         //save.playerStats[2] = DeepCopyStats(playerStats[2]);
 
@@ -78,8 +78,38 @@ public class GameManager : MonoBehaviour {
         return save;
     }
 
-    // Funcao que permite copiar objetos com todos os seus atributos
-    private CharStats DeepCopyStats(CharStats original)
+    // Funcao que copia CharStats para o formato de SavedCharacterStats
+    private SavedCharacterStats PrepareCharToSaved(CharStats original)
+    {
+        SavedCharacterStats temp = new SavedCharacterStats();
+
+        temp.charName = original.charName;
+        temp.playerLevel = original.playerLevel;
+        temp.currentEXP = original.currentEXP;
+        temp.expToNextLevel = original.expToNextLevel;
+        temp.maxLevel = original.maxLevel;
+        temp.baseEXP = original.baseEXP;
+
+        temp.currentHP = original.currentHP;
+        temp.maxHP = original.maxHP;
+        temp.currentMP = original.currentMP;
+        temp.maxMP = original.maxMP;
+
+        temp.strength = original.strength;
+        temp.defence = original.defence;
+        temp.agility = original.agility;
+
+        temp.wpnPwr = original.wpnPwr;
+        temp.armrPwr = original.armrPwr;
+
+        temp.equippedWpn = original.equippedWpn;
+        temp.equippedArmr = original.equippedArmr;
+
+        return temp;
+    }
+
+    // Funcao que copia SavedCharacterStats para o formato de CharStats
+    private CharStats PrepareSavedToChar(SavedCharacterStats original)
     {
         CharStats temp = new CharStats();
 
@@ -104,8 +134,6 @@ public class GameManager : MonoBehaviour {
 
         temp.equippedWpn = original.equippedWpn;
         temp.equippedArmr = original.equippedArmr;
-
-        temp.charIamge = original.charIamge;
 
         return temp;
     }
@@ -140,7 +168,7 @@ public class GameManager : MonoBehaviour {
             SaveFileObject save = (SaveFileObject)bf.Deserialize(file);
             file.Close();
 
-            //playerStats[0] = DeepCopyStats(save.playerStats[0]);
+            playerStats[0] = PrepareSavedToChar(save.playerStats[0]);
             //playerStats[1] = DeepCopyStats(save.playerStats[1]);
             //playerStats[2] = DeepCopyStats(save.playerStats[2]);
 
