@@ -10,12 +10,13 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
     // Informacoes que precisam ser salvas e carregadas em cada jogo
-    public CharStats[] playerStats;
+    public int savedStats;
     public string tempMissions;
     public string tempInventory;
     public int groupMoney;
     public int groupDebt;
 
+    public CharStats[] playerStats;     // Dados dos personagens carregados para uso em jogo
     public bool gameMenuOpen, dialogActive, fadingBetweenAreas;
 
 	// Use this for initialization
@@ -63,9 +64,9 @@ public class GameManager : MonoBehaviour {
 
         SaveFileObject save = new SaveFileObject();
 
-        Debug.Log(save == null);
+        save.playerStats = new CharStats[3];
 
-        //save.playerStats[0] = DeepCopyStats(playerStats[0]);
+        save.playerStats[0] = DeepCopyStats(playerStats[0]);
         //save.playerStats[1] = DeepCopyStats(playerStats[1]);
         //save.playerStats[2] = DeepCopyStats(playerStats[2]);
 
