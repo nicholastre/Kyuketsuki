@@ -3791,10 +3791,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6734436546876756677, guid: e5042352a09ff0b488dea7fa7bd2998a, type: 3}
       propertyPath: m_Name
-      value: UI Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876647930162891470, guid: 565e5a264e54b0e4291fb81e2cd6bff3, type: 3}
-      propertyPath: m_TargetDisplay
       value: Custom Camera
       objectReference: {fileID: 0}
     - target: {fileID: 6734436546876756679, guid: e5042352a09ff0b488dea7fa7bd2998a, type: 3}

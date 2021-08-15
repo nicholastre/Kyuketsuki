@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
         instance = this;
 
         DontDestroyOnLoad(gameObject);
+        SortItems();
 
         SortItems();
 	}
@@ -187,6 +188,7 @@ public class GameManager : MonoBehaviour {
         } else
         {
             Debug.Log("Sem jogo salvo");
+        }
     }
 
     public Item GetItemDetails(string itemToGrab)
