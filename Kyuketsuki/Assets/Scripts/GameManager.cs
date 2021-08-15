@@ -58,11 +58,12 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    // Cria o objeto que contem as informacoes salvas e passa os dados para ele
     private SaveFileObject CreateSaveFileObject () {
 
         SaveFileObject save = new SaveFileObject();
 
-        //Debug.Log(save.playerStats[0] == null);
+        Debug.Log(save == null);
 
         //save.playerStats[0] = DeepCopyStats(playerStats[0]);
         //save.playerStats[1] = DeepCopyStats(playerStats[1]);
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour {
         return save;
     }
 
+    // Funcao que permite copiar objetos com todos os seus atributos
     private CharStats DeepCopyStats(CharStats original)
     {
         CharStats temp = new CharStats();
@@ -114,6 +116,7 @@ public class GameManager : MonoBehaviour {
         playerStats[2].AddExp(50);
     }
 
+    // Utiliza o objeto de save para guardar em um local de dados persistentes da maquina
     public void SaveGame ()
     {
         SaveFileObject save = CreateSaveFileObject();
@@ -126,6 +129,7 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Jogo salvo");
     }
 
+    // Procura um arquivo de save no local padrao de dados persistentes da maquina
     public void LoadGame ()
     {
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
