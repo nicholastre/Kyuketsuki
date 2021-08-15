@@ -53,9 +53,9 @@ MonoBehaviour:
   maxHP: 100
   currentMP: 0
   maxMP: 30
-  mpLvlBonus: 
   strength: 5
   defence: 10
+  agility: 0
   wpnPwr: 0
   armrPwr: 0
   equippedWpn: 
@@ -114,9 +114,9 @@ MonoBehaviour:
   maxHP: 100
   currentMP: 0
   maxMP: 30
-  mpLvlBonus: 
   strength: 5
   defence: 10
+  agility: 0
   wpnPwr: 0
   armrPwr: 0
   equippedWpn: 
@@ -175,9 +175,9 @@ MonoBehaviour:
   maxHP: 200
   currentMP: 15
   maxMP: 30
-  mpLvlBonus: 
   strength: 5
   defence: 10
+  agility: 0
   wpnPwr: 0
   armrPwr: 0
   equippedWpn: 
@@ -233,6 +233,10 @@ MonoBehaviour:
   - {fileID: 4535763949929879631}
   - {fileID: 4535763949550412371}
   - {fileID: 4535763948990650592}
+  tempMissions: 
+  tempInventory: 
+  groupMoney: 0
+  groupDebt: 0
   gameMenuOpen: 0
   dialogActive: 0
   fadingBetweenAreas: 0

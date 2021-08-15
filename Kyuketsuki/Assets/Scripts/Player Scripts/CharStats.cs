@@ -5,44 +5,67 @@ using UnityEngine;
 public class CharStats : MonoBehaviour {
 
     public string charName;
-    public int playerLevel = 1;
+    public int playerLevel;
     public int currentEXP;
     public int[] expToNextLevel;
-    public int maxLevel = 100;
-    public int baseEXP = 1000;
+    public int maxLevel;
+    public int baseEXP;
 
     public int currentHP;
-    public int maxHP = 100;
+    public int maxHP;
     public int currentMP;
-    public int maxMP = 30;
-    public int[] mpLvlBonus;
+    public int maxMP;
+
     public int strength;
     public int defence;
+    public int agility;
+
     public int wpnPwr;
     public int armrPwr;
+
     public string equippedWpn;
     public string equippedArmr;
+
     public Sprite charIamge;
 
 	// Use this for initialization
 	void Start () {
+        playerLevel = 1;
+        maxLevel = 100;
+        currentEXP = 0;
+        baseEXP = 100;
+
         expToNextLevel = new int[maxLevel];
         expToNextLevel[1] = baseEXP;
 
+        // Configura XP necessaria para avancar em cada nivel ate o nivel maximo
         for(int i = 2; i < expToNextLevel.Length; i++)
         {
             expToNextLevel[i] = Mathf.FloorToInt(expToNextLevel[i - 1] * 1.05f);
         }
+
+        // Garante que os atributos carregados nao sejam sobrescritos pela inicializacao
+        GameManager.instance.LoadGame();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            AddExp(1000);
-        }
 	}
+
+    public void PrintStats()
+    {
+        Debug.Log("Nome: " + charName);
+        Debug.Log("Nivel: " + playerLevel);
+        Debug.Log("Experiencia: " + currentEXP);
+        Debug.Log("HP Atual: " + currentHP);
+        Debug.Log("HP Maximo: " + maxHP);
+        Debug.Log("MP Atual: " + currentMP);
+        Debug.Log("MP Maximo: " + maxMP);
+        Debug.Log("Ataque: " + strength);
+        Debug.Log("Defesa: " + defence);
+        Debug.Log("Agilidade " + agility);
+    }
 
     public void AddExp(int expToAdd)
     {
@@ -50,8 +73,7 @@ public class CharStats : MonoBehaviour {
 
         if (playerLevel < maxLevel)
         {
-            //Se a xp atual for maior que a xp necessária pro próximo nível, suba de nível
-            
+
             if (currentEXP > expToNextLevel[playerLevel])
             {
                 //retira a xp equivalente do lvl anterior
@@ -72,9 +94,10 @@ public class CharStats : MonoBehaviour {
                 maxHP = Mathf.FloorToInt(maxHP * 1.05f);
                 currentHP = maxHP;
 
-                maxMP += mpLvlBonus[playerLevel];
+                maxMP = Mathf.FloorToInt(maxMP * 1.05f);
                 currentMP = maxMP;
             }
+
         }
 
         if(playerLevel >= maxLevel)
