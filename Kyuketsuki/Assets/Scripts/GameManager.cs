@@ -17,11 +17,13 @@ public class GameManager : MonoBehaviour {
     public int groupDebt;
 
     public CharStats[] playerStats;     // Dados dos personagens carregados para uso em jogo
-    public bool gameMenuOpen, dialogActive, fadingBetweenAreas;
+    public bool gameMenuOpen, dialogActive, fadingBetweenAreas, shopActive;
 
     public string[] itemsHeld;
     public int[] numberOfItems;
     public Item[] referenceItems;
+
+    public int currentGold;
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +38,7 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Verifica os booleanos para travar o jogador
-        if(gameMenuOpen || dialogActive || fadingBetweenAreas)
+        if(gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive)
         {
             PlayerController.instance.canMove = false;
         }
