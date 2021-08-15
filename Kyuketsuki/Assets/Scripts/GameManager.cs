@@ -24,8 +24,6 @@ public class GameManager : MonoBehaviour {
         instance = this;
 
         DontDestroyOnLoad(gameObject);
-
-        LoadGame();
 	}
 	
 	// Update is called once per frame
@@ -48,8 +46,8 @@ public class GameManager : MonoBehaviour {
             Debug.Log("Dinheiro: " + groupMoney);
             Debug.Log("Divida: " + groupDebt);
             playerStats[0].PrintStats();
-            //playerStats[1].PrintStats();
-            //playerStats[2].PrintStats();
+            playerStats[1].PrintStats();
+            playerStats[2].PrintStats();
         } else if (Input.GetKeyDown(KeyCode.L))
         {
             SaveGame();
@@ -67,8 +65,8 @@ public class GameManager : MonoBehaviour {
         save.playerStats = new SavedCharacterStats[3];
 
         save.playerStats[0] = PrepareCharToSaved(playerStats[0]);
-        //save.playerStats[1] = DeepCopyStats(playerStats[1]);
-        //save.playerStats[2] = DeepCopyStats(playerStats[2]);
+        save.playerStats[1] = PrepareCharToSaved(playerStats[1]);
+        save.playerStats[2] = PrepareCharToSaved(playerStats[2]);
 
         save.tempMissions = tempMissions;
         save.tempInventory = tempInventory;
@@ -109,33 +107,31 @@ public class GameManager : MonoBehaviour {
     }
 
     // Funcao que copia SavedCharacterStats para o formato de CharStats
-    private CharStats PrepareSavedToChar(SavedCharacterStats original)
+    private void GiveSavedToChar(SavedCharacterStats saved, CharStats current)
     {
-        CharStats temp = new CharStats();
 
-        temp.charName = original.charName;
-        temp.playerLevel = original.playerLevel;
-        temp.currentEXP = original.currentEXP;
-        temp.expToNextLevel = original.expToNextLevel;
-        temp.maxLevel = original.maxLevel;
-        temp.baseEXP = original.baseEXP;
+        current.charName = saved.charName;
+        current.playerLevel = saved.playerLevel;
+        current.currentEXP = saved.currentEXP;
+        current.expToNextLevel = saved.expToNextLevel;
+        current.maxLevel = saved.maxLevel;
+        current.baseEXP = saved.baseEXP;
 
-        temp.currentHP = original.currentHP;
-        temp.maxHP = original.maxHP;
-        temp.currentMP = original.currentMP;
-        temp.maxMP = original.maxMP;
+        current.currentHP = saved.currentHP;
+        current.maxHP = saved.maxHP;
+        current.currentMP = saved.currentMP;
+        current.maxMP = saved.maxMP;
 
-        temp.strength = original.strength;
-        temp.defence = original.defence;
-        temp.agility = original.agility;
+        current.strength = saved.strength;
+        current.defence = saved.defence;
+        current.agility = saved.agility;
 
-        temp.wpnPwr = original.wpnPwr;
-        temp.armrPwr = original.armrPwr;
+        current.wpnPwr = saved.wpnPwr;
+        current.armrPwr = saved.armrPwr;
 
-        temp.equippedWpn = original.equippedWpn;
-        temp.equippedArmr = original.equippedArmr;
+        current.equippedWpn = saved.equippedWpn;
+        current.equippedArmr = saved.equippedArmr;
 
-        return temp;
     }
 
     private void TempAddExp()
@@ -168,9 +164,9 @@ public class GameManager : MonoBehaviour {
             SaveFileObject save = (SaveFileObject)bf.Deserialize(file);
             file.Close();
 
-            playerStats[0] = PrepareSavedToChar(save.playerStats[0]);
-            //playerStats[1] = DeepCopyStats(save.playerStats[1]);
-            //playerStats[2] = DeepCopyStats(save.playerStats[2]);
+            GiveSavedToChar(save.playerStats[0], playerStats[0]);
+            GiveSavedToChar(save.playerStats[1], playerStats[1]);
+            GiveSavedToChar(save.playerStats[2], playerStats[2]);
 
             tempMissions = save.tempMissions;
             tempInventory = save.tempInventory;

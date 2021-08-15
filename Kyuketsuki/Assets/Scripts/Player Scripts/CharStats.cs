@@ -43,6 +43,8 @@ public class CharStats : MonoBehaviour {
         {
             expToNextLevel[i] = Mathf.FloorToInt(expToNextLevel[i - 1] * 1.05f);
         }
+
+        GameManager.instance.LoadGame();
 	}
 	
 	// Update is called once per frame
