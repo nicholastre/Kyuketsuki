@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
     // Informacoes que precisam ser salvas e carregadas em cada jogo
-    public int savedStats;
     public string tempMissions;
     public string tempInventory;
     public int groupMoney;
@@ -28,7 +27,6 @@ public class GameManager : MonoBehaviour {
         instance = this;
 
         DontDestroyOnLoad(gameObject);
-        SortItems();
 
         SortItems();
 	}
