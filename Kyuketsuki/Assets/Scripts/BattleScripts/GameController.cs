@@ -17,12 +17,18 @@ public class GameController : MonoBehaviour
     public static bool hero2Turn;
     public static bool hero3Turn;
 
+    public static bool TwoEnemies = false;
+    public static bool ThreeEnemies = false;
+
+
+
     private void Awake()
     {
         battleMenu = GameObject.Find("ActionMenu");
     }
     void Start()
-    {
+    {   
+
         fighterStats = new List<FighterStats>();
         GameObject hero = GameObject.FindGameObjectWithTag("Hero");
         FighterStats currentFighterStats = hero.GetComponent<FighterStats>();
@@ -44,15 +50,21 @@ public class GameController : MonoBehaviour
         currentEnemyStats.CalculateNextTurn(0);
         fighterStats.Add(currentEnemyStats);
 
-        GameObject enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
-        FighterStats currentEnemyStats2 = enemy2.GetComponent<FighterStats>();
-        currentEnemyStats2.CalculateNextTurn(0);
-        fighterStats.Add(currentEnemyStats2);
+        if(TwoEnemies == true || ThreeEnemies == true )
+        {
+            GameObject enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
+            FighterStats currentEnemyStats2 = enemy2.GetComponent<FighterStats>();
+            currentEnemyStats2.CalculateNextTurn(0);
+            fighterStats.Add(currentEnemyStats2);
+        }
 
-        GameObject enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
-        FighterStats currentEnemyStats3 = enemy3.GetComponent<FighterStats>();
-        currentEnemyStats3.CalculateNextTurn(0);
-        fighterStats.Add(currentEnemyStats3);
+        if(ThreeEnemies == true)
+        {
+            GameObject enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
+            FighterStats currentEnemyStats3 = enemy3.GetComponent<FighterStats>();
+            currentEnemyStats3.CalculateNextTurn(0);
+            fighterStats.Add(currentEnemyStats3);
+        }
 
         fighterStats.Sort();
         
@@ -60,8 +72,13 @@ public class GameController : MonoBehaviour
         NextTurn();
     }
 
+    public void Update(){
+        checkBattle();
+    }
+
      public void NextTurn()
     {
+        
         battleText.gameObject.SetActive(false);
         FighterStats currentFighterStats = fighterStats[0];
         fighterStats.Remove(currentFighterStats);
@@ -80,6 +97,7 @@ public class GameController : MonoBehaviour
                 hero1Turn = true;
                 hero2Turn = false;
                 hero3Turn = false;
+                
 
             } 
             if(currentUnit.tag == "Hero2")
@@ -89,6 +107,7 @@ public class GameController : MonoBehaviour
                 hero1Turn = false;
                 hero2Turn = true;
                 hero3Turn = false;
+                
             }
             if(currentUnit.tag == "Hero3")
             {
@@ -97,6 +116,7 @@ public class GameController : MonoBehaviour
                 hero1Turn = false;
                 hero2Turn = false;
                 hero3Turn = true;
+                
             }
             if(currentUnit.tag == "Enemy")
             {
@@ -116,10 +136,29 @@ public class GameController : MonoBehaviour
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "skill";
                 currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
             }
+            
         } else
         {
             NextTurn();
         }
+    }
+    public void checkBattle()
+    {
+
+        Debug.Log("tá rodando");
+        GameObject[] deadEnemies = GameObject.FindGameObjectsWithTag("DeadEnemy");
+        int numberDE = deadEnemies.Length;
+        Debug.Log("O número de inimigos mortos é " + numberDE);
+        if(numberDE>0){
+            endBattle();
+        }
+
+
+    }
+    public void endBattle()
+    {
+        Debug.Log("CABO ESSA PORRA");
+        enabled = false;
     }
     
 }
