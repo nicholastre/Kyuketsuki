@@ -193,6 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4535763950110080234}
   - component: {fileID: 4535763950110080235}
+  - component: {fileID: 1860403657}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -268,3 +269,22 @@ MonoBehaviour:
   dialogActive: 0
   fadingBetweenAreas: 0
   shopActive: 0
+--- !u!114 &1860403657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535763950110080232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ffbcdfdbbd428448bd90165e6ccbfe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questMarkerNames:
+  - 
+  - teste2
+  - mate o demonio
+  - quest teste
+  - teste5
+  questMarkersComplete: 
