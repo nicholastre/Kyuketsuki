@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     public static bool ThreeEnemies = false;
 
 
+
     private void Awake()
     {
         battleMenu = GameObject.Find("ActionMenu");
@@ -71,9 +72,13 @@ public class GameController : MonoBehaviour
         NextTurn();
     }
 
+    public void Update(){
+        checkBattle();
+    }
+
      public void NextTurn()
     {
-        checkBattle();
+        
         battleText.gameObject.SetActive(false);
         FighterStats currentFighterStats = fighterStats[0];
         fighterStats.Remove(currentFighterStats);
@@ -92,6 +97,7 @@ public class GameController : MonoBehaviour
                 hero1Turn = true;
                 hero2Turn = false;
                 hero3Turn = false;
+                
 
             } 
             if(currentUnit.tag == "Hero2")
@@ -101,6 +107,7 @@ public class GameController : MonoBehaviour
                 hero1Turn = false;
                 hero2Turn = true;
                 hero3Turn = false;
+                
             }
             if(currentUnit.tag == "Hero3")
             {
@@ -109,6 +116,7 @@ public class GameController : MonoBehaviour
                 hero1Turn = false;
                 hero2Turn = false;
                 hero3Turn = true;
+                
             }
             if(currentUnit.tag == "Enemy")
             {
@@ -128,6 +136,7 @@ public class GameController : MonoBehaviour
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "skill";
                 currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
             }
+            
         } else
         {
             NextTurn();
@@ -135,7 +144,21 @@ public class GameController : MonoBehaviour
     }
     public void checkBattle()
     {
-       
+
+        Debug.Log("tá rodando");
+        GameObject[] deadEnemies = GameObject.FindGameObjectsWithTag("DeadEnemy");
+        int numberDE = deadEnemies.Length;
+        Debug.Log("O número de inimigos mortos é " + numberDE);
+        if(numberDE>0){
+            endBattle();
+        }
+
+
+    }
+    public void endBattle()
+    {
+        Debug.Log("CABO ESSA PORRA");
+        enabled = false;
     }
     
 }

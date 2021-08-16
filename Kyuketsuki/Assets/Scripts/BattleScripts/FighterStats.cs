@@ -6,6 +6,8 @@ using System;
 
 public class FighterStats : MonoBehaviour, IComparable
 {
+    
+    
      [SerializeField]
     private Animator animator;
 
@@ -42,6 +44,7 @@ public class FighterStats : MonoBehaviour, IComparable
     private float xNewHealthScale;
     private float xNewMagicScale;
     private GameObject GameControllerObj;
+    public GameObject SpawnDeadObj;
 
    
     void Awake()
@@ -56,6 +59,7 @@ public class FighterStats : MonoBehaviour, IComparable
         startMagic = magic;
 
         GameControllerObj = GameObject.Find("GameControllerObject");
+        
     }
     public void ReceiveDamage(float damage)
     {
@@ -67,11 +71,23 @@ public class FighterStats : MonoBehaviour, IComparable
         if(health <= 0)
         {
             dead = true;
-            //gameObject.tag = "Dead";
-            //Destroy(healthFill);
-            //Destroy(gameObject);
-            healthFill.SetActive(false);
-            gameObject.SetActive(false);
+            if (gameObject.tag == "Hero1" || gameObject.tag == "Hero2" || gameObject.tag == "Hero3")
+            {
+                gameObject.tag = "DeadHero";
+            }else
+            {
+                //gameObject.tag = "DeadEnemy";
+                SpawnDeadObj = new GameObject("DeadEnemy");
+                SpawnDeadObj.tag = "DeadEnemy";
+            }
+            
+            Destroy(healthFill);
+            Destroy(gameObject);
+            
+            //healthFill.SetActive(false);
+            //gameObject.SetActive(false);
+            
+            
         } else if (damage > 0)
         {
             xNewHealthScale = healthScale.x * (health / startHealth);

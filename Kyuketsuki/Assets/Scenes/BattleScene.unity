@@ -382,6 +382,7 @@ MonoBehaviour:
   speed: 5
   experience: 0
   nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
 --- !u!95 &100353495
 Animator:
   serializedVersion: 3
@@ -1919,6 +1920,7 @@ MonoBehaviour:
   speed: 15
   experience: 0
   nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,6 +3731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EMeleePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4874104329316541708, guid: cecf0680147698b439db6c23ef8196df, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4874104329316541709, guid: cecf0680147698b439db6c23ef8196df, type: 3}
       propertyPath: owner
       value: 
@@ -3896,6 +3902,7 @@ MonoBehaviour:
   speed: 8
   experience: 0
   nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
 --- !u!1 &1035923831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4025,6 +4032,10 @@ PrefabInstance:
     - target: {fileID: 7643982569645793594, guid: d095e52a5abdf3a4fb96ab5dffdd7759, type: 3}
       propertyPath: m_Name
       value: ESkillPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7643982569645793594, guid: d095e52a5abdf3a4fb96ab5dffdd7759, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7643982569645793595, guid: d095e52a5abdf3a4fb96ab5dffdd7759, type: 3}
       propertyPath: owner
@@ -4552,6 +4563,7 @@ MonoBehaviour:
   speed: 9
   experience: 0
   nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
 --- !u!95 &1220104754
 Animator:
   serializedVersion: 3
@@ -6604,6 +6616,7 @@ MonoBehaviour:
   speed: 17
   experience: 0
   nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
 --- !u!212 &1703203703
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7152,6 +7165,7 @@ MonoBehaviour:
   speed: 17
   experience: 0
   nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
 --- !u!212 &1762336111
 SpriteRenderer:
   m_ObjectHideFlags: 0

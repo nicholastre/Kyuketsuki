@@ -35,27 +35,29 @@ public class AttackScript : MonoBehaviour
    
     public void Attack(GameObject victim)
     {
-        attackerStats = owner.GetComponent<FighterStats>();
-        targetStats = victim.GetComponent<FighterStats>();
-        if (attackerStats.magic >= magicCost)
-        {
-            float multiplier = Random.Range(minAttackMultiplier, maxAttackMultiplier);
-
-            damage = multiplier * attackerStats.melee;
-            if (magicAttack)
+        if(victim !=null){
+            attackerStats = owner.GetComponent<FighterStats>();
+            targetStats = victim.GetComponent<FighterStats>();
+            if (attackerStats.magic >= magicCost)
             {
-                damage = multiplier * attackerStats.magic;
-            }
+                float multiplier = Random.Range(minAttackMultiplier, maxAttackMultiplier);
 
-            float defenseMultiplier = Random.Range(minDefenseMultiplier, maxDefenseMultiplier);
-            damage = Mathf.Max(0, damage - (defenseMultiplier * targetStats.defense));
-            owner.GetComponent<Animator>().Play(animationName);
-            targetStats.ReceiveDamage(Mathf.CeilToInt(damage));
-            attackerStats.updateMagicFill(magicCost);
-        } else
-        {
-            Invoke("SkipTurnContinueGame", 1);//Espera 1 segundo e passa pro próximo turno
-        }
+                damage = multiplier * attackerStats.melee;
+                if (magicAttack)
+                {
+                    damage = multiplier * attackerStats.magic;
+                }
+
+                float defenseMultiplier = Random.Range(minDefenseMultiplier, maxDefenseMultiplier);
+                damage = Mathf.Max(0, damage - (defenseMultiplier * targetStats.defense));
+                owner.GetComponent<Animator>().Play(animationName);
+                targetStats.ReceiveDamage(Mathf.CeilToInt(damage));
+                attackerStats.updateMagicFill(magicCost);
+            }
+            } else
+            {
+                Invoke("SkipTurnContinueGame", 1);//Espera 1 segundo e passa pro próximo turno
+            }
     }
 
     void SkipTurnContinueGame()
