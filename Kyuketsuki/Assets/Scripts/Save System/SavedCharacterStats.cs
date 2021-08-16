@@ -9,7 +9,7 @@ public class SavedCharacterStats
     public int playerLevel;
     public int currentEXP;
     public int[] expToNextLevel;
-    public int maxLevel = 100;
+    public int maxLevel;
     public int baseEXP;
 
     public int currentHP;

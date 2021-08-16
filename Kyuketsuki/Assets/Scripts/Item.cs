@@ -1,8 +1,9 @@
-﻿ using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour {
+public class Item : MonoBehaviour
+{
     [Header("Item Type")]
     public bool isItem;
     public bool isWeapon;
@@ -25,32 +26,34 @@ public class Item : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void Use(int charToUseOn)
     {
         CharStats selectedChar = GameManager.instance.playerStats[charToUseOn];
 
-        if(isItem)
+        if (isItem)
         {
-            if(affectHP)
+            if (affectHP)
             {
                 selectedChar.currentHP += amountToChange;
 
-                if(selectedChar.currentHP > selectedChar.maxHP)
+                if (selectedChar.currentHP > selectedChar.maxHP)
                 {
                     selectedChar.currentHP = selectedChar.maxHP;
                 }
             }
 
-            if(affectMP)
+            if (affectMP)
             {
                 selectedChar.currentMP += amountToChange;
 
@@ -60,15 +63,15 @@ public class Item : MonoBehaviour {
                 }
             }
 
-            if(affectStr)
+            if (affectStr)
             {
                 selectedChar.strength += amountToChange;
             }
         }
 
-        if(isWeapon)
+        if (isWeapon)
         {
-            if(selectedChar.equippedWpn != "")
+            if (selectedChar.equippedWpn != "")
             {
                 GameManager.instance.AddItem(selectedChar.equippedWpn);
             }
@@ -77,7 +80,7 @@ public class Item : MonoBehaviour {
             selectedChar.wpnPwr = weaponStrength;
         }
 
-        if(isArmour)
+        if (isArmour)
         {
             if (selectedChar.equippedArmr != "")
             {
@@ -88,6 +91,6 @@ public class Item : MonoBehaviour {
             selectedChar.armrPwr = armorStrength;
         }
 
-         GameManager.instance.RemoveItem(itemName);
+        GameManager.instance.RemoveItem(itemName);
     }
 }
