@@ -48,6 +48,11 @@ public class GameManager : MonoBehaviour {
         {
             Debug.Log("Dinheiro: " + groupMoney);
             Debug.Log("Divida: " + groupDebt);
+            Debug.Log("Inventario a seguir");
+            for (int i = 0; i < numberOfItems.Length; i++)
+            {
+                Debug.Log(itemsHeld[i] + ": " + numberOfItems[i]);
+            }
             playerStats[0].PrintStats();
             playerStats[1].PrintStats();
             playerStats[2].PrintStats();
