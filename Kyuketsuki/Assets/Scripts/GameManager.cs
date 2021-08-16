@@ -10,27 +10,25 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
     // Informacoes que precisam ser salvas e carregadas em cada jogo
-    public int savedStats;
     public string tempMissions;
-    public string tempInventory;
+    public string[] itemsHeld;
+    public int[] numberOfItems;
     public int groupMoney;
     public int groupDebt;
 
     public CharStats[] playerStats;     // Dados dos personagens carregados para uso em jogo
-    public bool gameMenuOpen, dialogActive, fadingBetweenAreas, shopActive;
-
     public string[] itemsHeld;
     public int[] numberOfItems;
     public Item[] referenceItems;
-
     public int currentGold;
+    public Item[] referenceItems;       // Contem os Prefabs de cada item no jogo
+    public bool gameMenuOpen, dialogActive, fadingBetweenAreas,shopActive;
 
 	// Use this for initialization
 	void Start () {
         instance = this;
 
         DontDestroyOnLoad(gameObject);
-        SortItems();
 
         SortItems();
 	}
@@ -84,7 +82,8 @@ public class GameManager : MonoBehaviour {
         save.playerStats[2] = PrepareCharToSaved(playerStats[2]);
 
         save.tempMissions = tempMissions;
-        save.tempInventory = tempInventory;
+        save.itemsHeld = itemsHeld;
+        save.numberOfItems = numberOfItems;
         save.groupMoney = groupMoney;
         save.groupDebt = groupDebt;
 
@@ -184,7 +183,8 @@ public class GameManager : MonoBehaviour {
             GiveSavedToChar(save.playerStats[2], playerStats[2]);
 
             tempMissions = save.tempMissions;
-            tempInventory = save.tempInventory;
+            itemsHeld = save.itemsHeld;
+            numberOfItems = save.numberOfItems;
             groupMoney = save.groupMoney;
             groupDebt = save.groupDebt;
         } else
