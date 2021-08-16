@@ -1478,6 +1478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Custom Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6734436546876756678, guid: e5042352a09ff0b488dea7fa7bd2998a, type: 3}
+      propertyPath: m_TargetDisplay
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6734436546876756679, guid: e5042352a09ff0b488dea7fa7bd2998a, type: 3}
       propertyPath: theMap
       value: 
