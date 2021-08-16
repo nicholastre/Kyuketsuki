@@ -17,9 +17,6 @@ public class GameManager : MonoBehaviour {
     public int groupDebt;
 
     public CharStats[] playerStats;     // Dados dos personagens carregados para uso em jogo
-    public string[] itemsHeld;
-    public int[] numberOfItems;
-    public Item[] referenceItems;
     public int currentGold;
     public Item[] referenceItems;       // Contem os Prefabs de cada item no jogo
     public bool gameMenuOpen, dialogActive, fadingBetweenAreas,shopActive;
