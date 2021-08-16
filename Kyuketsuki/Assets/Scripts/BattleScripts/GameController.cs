@@ -17,12 +17,17 @@ public class GameController : MonoBehaviour
     public static bool hero2Turn;
     public static bool hero3Turn;
 
+    public static bool TwoEnemies = false;
+    public static bool ThreeEnemies = false;
+
+
     private void Awake()
     {
         battleMenu = GameObject.Find("ActionMenu");
     }
     void Start()
-    {
+    {   
+
         fighterStats = new List<FighterStats>();
         GameObject hero = GameObject.FindGameObjectWithTag("Hero");
         FighterStats currentFighterStats = hero.GetComponent<FighterStats>();
@@ -44,15 +49,21 @@ public class GameController : MonoBehaviour
         currentEnemyStats.CalculateNextTurn(0);
         fighterStats.Add(currentEnemyStats);
 
-        GameObject enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
-        FighterStats currentEnemyStats2 = enemy2.GetComponent<FighterStats>();
-        currentEnemyStats2.CalculateNextTurn(0);
-        fighterStats.Add(currentEnemyStats2);
+        if(TwoEnemies == true || ThreeEnemies == true )
+        {
+            GameObject enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
+            FighterStats currentEnemyStats2 = enemy2.GetComponent<FighterStats>();
+            currentEnemyStats2.CalculateNextTurn(0);
+            fighterStats.Add(currentEnemyStats2);
+        }
 
-        GameObject enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
-        FighterStats currentEnemyStats3 = enemy3.GetComponent<FighterStats>();
-        currentEnemyStats3.CalculateNextTurn(0);
-        fighterStats.Add(currentEnemyStats3);
+        if(ThreeEnemies == true)
+        {
+            GameObject enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
+            FighterStats currentEnemyStats3 = enemy3.GetComponent<FighterStats>();
+            currentEnemyStats3.CalculateNextTurn(0);
+            fighterStats.Add(currentEnemyStats3);
+        }
 
         fighterStats.Sort();
         
@@ -62,6 +73,7 @@ public class GameController : MonoBehaviour
 
      public void NextTurn()
     {
+        checkBattle();
         battleText.gameObject.SetActive(false);
         FighterStats currentFighterStats = fighterStats[0];
         fighterStats.Remove(currentFighterStats);
@@ -120,6 +132,10 @@ public class GameController : MonoBehaviour
         {
             NextTurn();
         }
+    }
+    public void checkBattle()
+    {
+       
     }
     
 }

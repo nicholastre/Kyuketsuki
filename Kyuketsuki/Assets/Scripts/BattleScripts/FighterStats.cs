@@ -67,9 +67,11 @@ public class FighterStats : MonoBehaviour, IComparable
         if(health <= 0)
         {
             dead = true;
-            gameObject.tag = "Dead";
-            Destroy(healthFill);
-            Destroy(gameObject);
+            //gameObject.tag = "Dead";
+            //Destroy(healthFill);
+            //Destroy(gameObject);
+            healthFill.SetActive(false);
+            gameObject.SetActive(false);
         } else if (damage > 0)
         {
             xNewHealthScale = healthScale.x * (health / startHealth);
@@ -80,7 +82,6 @@ public class FighterStats : MonoBehaviour, IComparable
             GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
             GameControllerObj.GetComponent<GameController>().battleText.text = damage.ToString();
         }
-        //Debug.Log("Entrou 1");
         Invoke("ContinueGame", 1);
     }
 
