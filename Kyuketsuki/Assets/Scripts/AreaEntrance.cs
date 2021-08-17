@@ -6,9 +6,11 @@ public class AreaEntrance : MonoBehaviour {
 
     public string transitionName;
 
+	public bool isEntrance;
+
 	// Use this for initialization
 	void Start () {
-		if(transitionName == PlayerController.instance.areaTransitionName)
+		if(isEntrance && transitionName == PlayerController.instance.areaTransitionName)
         {
             PlayerController.instance.transform.position = transform.position;
 			PlayerController.instance.canMove = true;
