@@ -202,6 +202,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8387370815644339406, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
+      propertyPath: isEntrance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387370815644339406, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
+      propertyPath: transitionName
+      value: monasteryToOverworld
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
 --- !u!1 &153987890
@@ -3449,6 +3457,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8387370815644339406, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
+      propertyPath: isEntrance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387370815644339406, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
+      propertyPath: transitionName
+      value: mineToOverworld
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
 --- !u!1001 &516855930
@@ -3610,6 +3626,14 @@ PrefabInstance:
     - target: {fileID: 638195584289609366, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387370815644339406, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
+      propertyPath: isEntrance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387370815644339406, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
+      propertyPath: transitionName
+      value: cityToOverworld
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
@@ -3978,7 +4002,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 19
-      m_TileSpriteIndex: 19
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4078,7 +4102,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 21
-      m_TileSpriteIndex: 21
+      m_TileSpriteIndex: 26
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4303,12 +4327,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -2915091498515032914, guid: b21799249e5450b4b99ff4c56b8d343c, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 5148687995180389596, guid: b21799249e5450b4b99ff4c56b8d343c, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: -1566582558983286636, guid: b21799249e5450b4b99ff4c56b8d343c, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -5191137925599685930, guid: b21799249e5450b4b99ff4c56b8d343c, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 14
     m_Data: {fileID: 6754544275550432830, guid: b21799249e5450b4b99ff4c56b8d343c, type: 3}
   - m_RefCount: 3
@@ -4317,12 +4341,12 @@ Tilemap:
     m_Data: {fileID: -615661796807617484, guid: b21799249e5450b4b99ff4c56b8d343c, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -746304081022786126, guid: b21799249e5450b4b99ff4c56b8d343c, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -5191137925599685930, guid: b21799249e5450b4b99ff4c56b8d343c, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 2819932326072381912, guid: b21799249e5450b4b99ff4c56b8d343c, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 5148687995180389596, guid: b21799249e5450b4b99ff4c56b8d343c, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 34
     m_Data:
@@ -4455,6 +4479,14 @@ PrefabInstance:
     - target: {fileID: 638195584289609367, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
       propertyPath: m_Offset.y
       value: 0.011796981
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387370815644339406, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
+      propertyPath: isEntrance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387370815644339406, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
+      propertyPath: transitionName
+      value: forestToOverworld
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
