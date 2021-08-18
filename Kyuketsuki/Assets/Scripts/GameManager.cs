@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour {
             SaveGame();
         } else if (Input.GetKeyDown(KeyCode.T))
         {
+            groupMoney += 200;
             groupDebt += 100;
         }
         else if (Input.GetKeyDown(KeyCode.J))
@@ -306,5 +307,10 @@ public class GameManager : MonoBehaviour {
         {
             Debug.LogError("não encontrado" + itemToRemove);
         }
+    }
+
+    public void changeMoney(int modifier)
+    {
+        groupMoney += modifier;
     }
 }

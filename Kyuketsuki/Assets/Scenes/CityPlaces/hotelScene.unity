@@ -858,6 +858,7 @@ GameObject:
   - component: {fileID: 2125349506}
   - component: {fileID: 2125349505}
   - component: {fileID: 2125349504}
+  - component: {fileID: 2125349508}
   m_Layer: 5
   m_Name: StayButton
   m_TagString: Untagged
@@ -943,9 +944,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2125349504}
-        m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
-        m_MethodName: PrepareFadeChange
+      - m_Target: {fileID: 2125349508}
+        m_TargetAssemblyTypeName: hotelEntrance, Assembly-CSharp
+        m_MethodName: confirmStay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -993,3 +994,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125349502}
   m_CullTransparentMesh: 1
+--- !u!114 &2125349508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125349502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 317d42591f4326648a9d9360f2bec7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hotelPrompt: {fileID: 1914130286}
