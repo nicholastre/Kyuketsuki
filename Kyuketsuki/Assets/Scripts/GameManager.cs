@@ -73,6 +73,27 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public bool[] RestCharacters()
+    {
+        // Guarda quais personagens avancaram de nivel
+        bool[] changedLevels = { false, false, false };
+
+        // Verifica se cada personagem avancou de nivel
+        for (int i = 0; i < playerStats.Length; i++)
+        {
+            changedLevels[i] = playerStats[i].CheckLevelUp();
+        }
+
+        // Recupera os personagens
+        for (int i = 0; i < playerStats.Length; i++)
+        {
+            playerStats[i].changeHitPoints(playerStats[i].maxHP);
+            playerStats[i].changeMagicPoints(playerStats[i].maxMP);
+        }
+
+        return changedLevels;
+    }
+
     // Cria o objeto que contem as informacoes salvas e passa os dados para ele
     private SaveFileObject CreateSaveFileObject () {
 
