@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     public static bool hero3Turn;
 
     public static bool TwoEnemies = false;
-    public static bool ThreeEnemies = false;
+    public static bool ThreeEnemies = true;
 
 
 
@@ -74,6 +74,17 @@ public class GameController : MonoBehaviour
 
     public void Update(){
         checkBattle();
+
+         if( Input.GetMouseButtonDown(0) )
+        {
+         Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+         RaycastHit hit;
+         
+         if( Physics.Raycast( ray, out hit, 100 ) )
+         {
+             Debug.Log( hit.transform.gameObject.name );
+         }
+     }
     }
 
      public void NextTurn()
@@ -145,11 +156,10 @@ public class GameController : MonoBehaviour
     public void checkBattle()
     {
 
-        Debug.Log("tá rodando");
         GameObject[] deadEnemies = GameObject.FindGameObjectsWithTag("DeadEnemy");
         int numberDE = deadEnemies.Length;
         Debug.Log("O número de inimigos mortos é " + numberDE);
-        if(numberDE>0){
+        if(numberDE >= 3){
             endBattle();
         }
 
@@ -157,8 +167,8 @@ public class GameController : MonoBehaviour
     }
     public void endBattle()
     {
-        Debug.Log("CABO ESSA PORRA");
-        enabled = false;
+        Debug.Log("LUTA ENCERRADA");
+        //enabled = false;
     }
     
 }

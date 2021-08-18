@@ -12,6 +12,7 @@ public class FighterAction : MonoBehaviour
     private GameObject enemy2;
     private GameObject enemy3;
 
+
     [SerializeField]
     private GameObject meleePrefab;
 
@@ -34,45 +35,94 @@ public class FighterAction : MonoBehaviour
     }
     public void SelectAttack(string btn)
     {
-        GameObject victim = hero;
+        
+        GameObject victim = null;
 
-        int target = Random.Range(0, 3);
-
-        if (target == 0)
+        if (tag == "Enemy" || tag == "Enemy2" || tag == "Enemy3" )
         {
-             victim = hero;
+
+            int target = Random.Range(0, 3); //Define qual dos 3 hérois será atacado
+
+            if (target == 0)
+            {
+                victim = hero;
+            }
+
+            if (target == 1)
+            {
+                victim = hero2;
+            }
+
+            if (target == 2)
+            {
+                victim = hero3;
+            }
         }
 
-        if (target == 1)
-        {
-             victim = hero2;
-        }
 
-        if (target == 2)
+        if (tag == "Hero" || tag == "Hero2" || tag == "Hero3" ) // Caso quem execute esse script seja um dos 3 hérois, ele define um inimigo como alvo
         {
-             victim = hero3;
-        }
 
-
-        if (tag == "Hero" || tag == "Hero2" || tag == "Hero3" )
-        {
-            victim = enemy;
+            
+            if (MouseClick.tagName == "Enemy")
+            {
+                victim = enemy;
+            }
+            if (MouseClick.tagName == "Enemy2")
+            {
+                victim = enemy2;
+            }
+            if (MouseClick.tagName == "Enemy3")
+            {
+                victim = enemy3;
+            }
+            
             
         }
         if (btn.CompareTo("melee") == 0)
         {
-            meleePrefab.GetComponent<AttackScript>().Attack(victim);
-            //Debug.Log("A");
+         
+            if((MouseClick.tagName!="null") && (tag == "Hero" || tag == "Hero2" || tag == "Hero3"))
+            {
+                meleePrefab.GetComponent<AttackScript>().Attack(victim);
+                Debug.Log("ALVO SELECIONADO");
+                Debug.Log("O alvo é " + MouseClick.tagName );
+            }
+            else if(tag == "Enemy" || tag == "Enemy2" || tag == "Enemy3"  )
+            {
+                meleePrefab.GetComponent<AttackScript>().Attack(victim);
+            }
+            else
+            {
+                Debug.Log("SEM ALVO SELECIONADO");
+            }
+            
 
         } 
         else if (btn.CompareTo("skill") == 0)
         {
-            skillPrefab.GetComponent<AttackScript>().Attack(victim);
-            //Debug.Log("B");
+            
+            if((MouseClick.tagName!="null") && (tag == "Hero" || tag == "Hero2" || tag == "Hero3"))
+            {
+                skillPrefab.GetComponent<AttackScript>().Attack(victim);
+                Debug.Log("ALVO SELECIONADO");
+                Debug.Log("O alvo é " + MouseClick.tagName );
+
+            }
+            else if(tag == "Enemy" || tag == "Enemy2" || tag == "Enemy3"  )
+            {
+                meleePrefab.GetComponent<AttackScript>().Attack(victim);
+            }
+            else
+            {
+              Debug.Log("SEM ALVO SELECIONADO");  
+            }
         } 
         else if (btn.CompareTo("defend") == 0)
         {
             //Debug.Log("C");
         }
+        victim = null;
     }
+    
 }
