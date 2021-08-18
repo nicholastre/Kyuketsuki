@@ -375,9 +375,9 @@ MonoBehaviour:
   healthFill: {fileID: 864033142}
   magicFill: {fileID: 1035923831}
   health: 125
-  magic: 50
+  magic: 100
   melee: 10
-  range: 15
+  range: 30
   defense: 4
   speed: 5
   experience: 0
@@ -973,7 +973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &293150380
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1789,6 +1789,7 @@ GameObject:
   - component: {fileID: 495159027}
   - component: {fileID: 495159026}
   - component: {fileID: 495159025}
+  - component: {fileID: 495159028}
   m_Layer: 0
   m_Name: GiantEnemy
   m_TagString: Enemy
@@ -1921,6 +1922,19 @@ MonoBehaviour:
   experience: 0
   nextActTurn: 0
   SpawnDeadObj: {fileID: 0}
+--- !u!65 &495159028
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495159022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5676403, y: 1.5760422, z: 0.2}
+  m_Center: {x: -0.32059002, y: -0.8023596, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +1946,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1947,6 +1962,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430e1b59ade92c049adcfbc09e4c7a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2706,7 +2733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &747225023
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3895,9 +3922,9 @@ MonoBehaviour:
   healthFill: {fileID: 256024035}
   magicFill: {fileID: 1096445390}
   health: 125
-  magic: 50
+  magic: 100
   melee: 10
-  range: 15
+  range: 30
   defense: 4
   speed: 8
   experience: 0
@@ -4556,9 +4583,9 @@ MonoBehaviour:
   healthFill: {fileID: 726041281}
   magicFill: {fileID: 1209130846}
   health: 125
-  magic: 50
+  magic: 100
   melee: 10
-  range: 15
+  range: 30
   defense: 4
   speed: 9
   experience: 0
@@ -6552,13 +6579,14 @@ GameObject:
   - component: {fileID: 1703203702}
   - component: {fileID: 1703203701}
   - component: {fileID: 1703203700}
+  - component: {fileID: 1703203705}
   m_Layer: 0
   m_Name: GiantEnemy2
   m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1703203700
 Animator:
   serializedVersion: 3
@@ -6684,6 +6712,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1703203705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703203699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7895877, y: 1.4791691, z: 0.2}
+  m_Center: {x: -0.38224185, y: -0.8507961, z: 0}
 --- !u!1 &1714806679
 GameObject:
   m_ObjectHideFlags: 0
@@ -7101,13 +7142,14 @@ GameObject:
   - component: {fileID: 1762336110}
   - component: {fileID: 1762336109}
   - component: {fileID: 1762336108}
+  - component: {fileID: 1762336113}
   m_Layer: 0
   m_Name: GiantEnemy3
   m_TagString: Enemy3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1762336108
 Animator:
   serializedVersion: 3
@@ -7233,6 +7275,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1762336113
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762336107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.814248, y: 1.5038297, z: 0.2}
+  m_Center: {x: -0.32059002, y: -0.8384658, z: 0}
 --- !u!1001 &1802172428
 PrefabInstance:
   m_ObjectHideFlags: 0
