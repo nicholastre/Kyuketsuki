@@ -3977,7 +3977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 638195584289609352, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
       propertyPath: areaToLoad
-      value: shopScene
+      value: shopteste
       objectReference: {fileID: 0}
     - target: {fileID: 638195584289609352, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
       propertyPath: areaTransitionName
