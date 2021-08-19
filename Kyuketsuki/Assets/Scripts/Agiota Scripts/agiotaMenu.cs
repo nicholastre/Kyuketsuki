@@ -8,7 +8,18 @@ enum AgiotaMenuState
     StartingState,
     LendingState,
     PayingState,
-    ReturnState
+    ReturnState,
+    DebtLimitState,
+    PaidDebtState,
+    MaxLevelState,
+    ChallengeState
+}
+
+enum EndingType
+{
+    DebtPaid,
+    DebtOverLimit,
+    NoEnding
 }
 
 public class agiotaMenu : MonoBehaviour
@@ -18,14 +29,22 @@ public class agiotaMenu : MonoBehaviour
     public Component firstButton;
     public Component secondButton;
     public Component thirdButton;
+    public Component challengeButton;
 
     private AgiotaMenuState menuState;
 
     // Start is called before the first frame update
     void Start()
     {
-        menuState = AgiotaMenuState.StartingState;
-        loanPrompt.GetComponent<Text>().text = "o que vocês desejam, meus caros?";
+        if (GameManager.instance.averageLevel == GameManager.instance.playerStats[0].maxLevel)
+        {
+            menuState = AgiotaMenuState.MaxLevelState;
+            loanPrompt.GetComponent<Text>().text = "olá, meus caros...aconteceu alguma coisa?";
+        } else
+        {
+            menuState = AgiotaMenuState.StartingState;
+            loanPrompt.GetComponent<Text>().text = "o que vocês desejam, meus caros clientes?";
+        }
     }
 
     // Update is called once per frame
@@ -86,6 +105,67 @@ public class agiotaMenu : MonoBehaviour
 
                 thirdButton.GetComponentInChildren<Text>().text = "Sair";
                 break;
+            case AgiotaMenuState.DebtLimitState:
+                moneyInput.gameObject.SetActive(false);
+                moneyInput.GetComponent<InputField>().interactable = false;
+
+                firstButton.gameObject.SetActive(true);
+                firstButton.GetComponent<Button>().interactable = true;
+                firstButton.GetComponentInChildren<Text>().text = "Continuar";
+
+                secondButton.gameObject.SetActive(false);
+                secondButton.GetComponent<Button>().interactable = false;
+
+                thirdButton.gameObject.SetActive(false);
+                thirdButton.GetComponent<Button>().interactable = false;
+                break;
+            case AgiotaMenuState.PaidDebtState:
+                moneyInput.gameObject.SetActive(false);
+                moneyInput.GetComponent<InputField>().interactable = false;
+
+                firstButton.gameObject.SetActive(true);
+                firstButton.GetComponent<Button>().interactable = true;
+                firstButton.GetComponentInChildren<Text>().text = "Continuar";
+
+                secondButton.gameObject.SetActive(false);
+                secondButton.GetComponent<Button>().interactable = false;
+
+                thirdButton.gameObject.SetActive(false);
+                thirdButton.GetComponent<Button>().interactable = false;
+                break;
+            case AgiotaMenuState.MaxLevelState:
+                moneyInput.gameObject.SetActive(false);
+                moneyInput.GetComponent<InputField>().interactable = false;
+
+                firstButton.gameObject.SetActive(false);
+                firstButton.GetComponent<Button>().interactable = false;
+
+                secondButton.gameObject.SetActive(false);
+                secondButton.GetComponent<Button>().interactable = false;
+
+                challengeButton.gameObject.SetActive(true);
+                challengeButton.GetComponent<Button>().interactable = true;
+
+                thirdButton.GetComponentInChildren<Text>().text = "ainda não";
+                break;
+            case AgiotaMenuState.ChallengeState:
+                moneyInput.gameObject.SetActive(false);
+                moneyInput.GetComponent<InputField>().interactable = false;
+
+                firstButton.gameObject.SetActive(true);
+                firstButton.GetComponent<Button>().interactable = true;
+                firstButton.GetComponentInChildren<Text>().text = "lutar";
+
+                secondButton.gameObject.SetActive(false);
+                secondButton.GetComponent<Button>().interactable = false;
+
+                challengeButton.gameObject.SetActive(false);
+                challengeButton.GetComponent<Button>().interactable = false;
+
+                thirdButton.gameObject.SetActive(false);
+                thirdButton.GetComponent<Button>().interactable = false;
+
+                break;
         }
     }
 
@@ -96,6 +176,26 @@ public class agiotaMenu : MonoBehaviour
             resetButton(firstButton);
             menuState = AgiotaMenuState.LendingState;
             loanPrompt.GetComponent<Text>().text = "perfeito...quanto vocês precisam?";
+        } else if (menuState == AgiotaMenuState.MaxLevelState)
+        {
+            resetButton(challengeButton);
+            menuState = AgiotaMenuState.ChallengeState;
+            loanPrompt.GetComponent<Text>().text = "hahaha...essa ousadia vai custar muito, muito caro...";
+        } else if (menuState == AgiotaMenuState.ChallengeState)
+        {
+            resetButton(firstButton);
+            GetComponent<ChangeScenes>().areaToLoad = "finalBattle";
+            GetComponent<ChangeScenes>().PrepareFadeChange();
+        } else if (menuState == AgiotaMenuState.DebtLimitState)
+        {
+            resetButton(firstButton);
+            GetComponent<ChangeScenes>().areaToLoad = "badEndScene";
+            GetComponent<ChangeScenes>().PrepareFadeChange();
+        } else if (menuState == AgiotaMenuState.PaidDebtState)
+        {
+            resetButton(firstButton);
+            GetComponent<ChangeScenes>().areaToLoad = "goodEndScene";
+            GetComponent<ChangeScenes>().PrepareFadeChange();
         }
     }
 
@@ -120,8 +220,15 @@ public class agiotaMenu : MonoBehaviour
                     GameManager.instance.changeMoney(lendMoney);
                     GameManager.instance.changeDebt(lendMoney);
 
-                    menuState = AgiotaMenuState.ReturnState;
-                    loanPrompt.GetComponent<Text>().text = "muito bem. mais alguma coisa?";
+                    if (checkDebt() == EndingType.DebtOverLimit)
+                    {
+                        loanPrompt.GetComponent<Text>().text = "com uma dívida tão grande... vocês realmente falharam";
+                        menuState = AgiotaMenuState.DebtLimitState;
+                    } else
+                    {
+                        menuState = AgiotaMenuState.ReturnState;
+                        loanPrompt.GetComponent<Text>().text = "muito bem. mais alguma coisa?";
+                    }
                 }
                 break;
             case AgiotaMenuState.PayingState:
@@ -137,8 +244,16 @@ public class agiotaMenu : MonoBehaviour
                     GameManager.instance.changeMoney(payMoney * -1);
                     GameManager.instance.changeDebt(payMoney * -1);
 
-                    menuState = AgiotaMenuState.ReturnState;
-                    loanPrompt.GetComponent<Text>().text = "muito bem. mais alguma coisa?";
+                    if (checkDebt() == EndingType.DebtPaid)
+                    {
+                        loanPrompt.GetComponent<Text>().text = "impressionante... acredito que suas dívidas foram quitadas";
+                        menuState = AgiotaMenuState.PaidDebtState;
+                    }
+                    else
+                    {
+                        menuState = AgiotaMenuState.ReturnState;
+                        loanPrompt.GetComponent<Text>().text = "muito bem. mais alguma coisa?";
+                    }
                 }
                 break;
             case AgiotaMenuState.ReturnState:
@@ -167,6 +282,9 @@ public class agiotaMenu : MonoBehaviour
             case AgiotaMenuState.ReturnState:
                 GetComponent<ChangeScenes>().PrepareFadeChange();
                 break;
+            case AgiotaMenuState.MaxLevelState:
+                GetComponent<ChangeScenes>().PrepareFadeChange();
+                break;
         }
     }
 
@@ -175,5 +293,19 @@ public class agiotaMenu : MonoBehaviour
         Button button = compButton.GetComponent<Button>();
         button.enabled = !button.enabled;
         button.enabled = !button.enabled;
+    }
+
+    private EndingType checkDebt()
+    {
+        if (GameManager.instance.groupDebt > GameManager.instance.maxDebt)
+        {
+            return EndingType.DebtOverLimit;
+        }
+        else if (GameManager.instance.groupDebt <= 0)
+        {
+            return EndingType.DebtPaid;
+        }
+
+        return EndingType.NoEnding;
     }
 }

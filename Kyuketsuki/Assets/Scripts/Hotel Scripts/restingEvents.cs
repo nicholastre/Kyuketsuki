@@ -66,21 +66,13 @@ public class restingEvents : MonoBehaviour
         }
         else if (eventsState == 2)
         {
-            int levelSum = 0;
             CharStats[] storedCharacters = GameManager.instance.playerStats;
 
-            for (int i = 0; i < storedCharacters.Length; i++)
-            {
-                levelSum += storedCharacters[i].playerLevel;
-            }
-
-            int averageLevel = levelSum / 3;
-
-            if (averageLevel == storedCharacters[0].maxLevel)
+            if (GameManager.instance.averageLevel == storedCharacters[0].maxLevel)
             {
                 restingDescription.text = "Com o poder que temos agora...tem outra solução pro Agiota.";
             }
-            else if (averageLevel > storedCharacters[0].maxLevel / 2)
+            else if (GameManager.instance.averageLevel > storedCharacters[0].maxLevel / 2)
             {
                 restingDescription.text = "Estamos bem fortes agora...um pouco mais e...quem sabe?";
             }

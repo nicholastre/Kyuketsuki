@@ -91,6 +91,12 @@ public class CharStats : MonoBehaviour {
         currentMP = Mathf.Clamp(currentMP, 0, maxMP);
     }
 
+    public void restoreCharacter()
+    {
+        currentHP = maxHP;
+        currentMP = maxMP;
+    }
+
     public bool CheckLevelUp()
     {
         if (playerLevel < maxLevel)
