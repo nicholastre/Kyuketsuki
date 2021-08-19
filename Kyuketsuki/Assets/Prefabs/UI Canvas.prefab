@@ -30712,7 +30712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 3876647929242603763}
-  fadeSpeed: 1
+  fadeSpeed: 2
   shouldFadeToBlack: 0
   shouldFadeFromBlack: 0
 --- !u!114 &1861642914

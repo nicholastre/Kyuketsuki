@@ -61,7 +61,14 @@ public class GameManager : MonoBehaviour {
             SaveGame();
         } else if (Input.GetKeyDown(KeyCode.T))
         {
+            groupMoney += 200;
             groupDebt += 100;
+
+            for (int i = 0; i < playerStats.Length; i++)
+            {
+                playerStats[i].changeHitPoints(-10);
+                playerStats[i].changeMagicPoints(-10);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.J))
         {
@@ -70,6 +77,27 @@ public class GameManager : MonoBehaviour {
             RemoveItem("HP Potion");
             RemoveItem("teste");
         }
+    }
+
+    public bool[] RestCharacters()
+    {
+        // Guarda quais personagens avancaram de nivel
+        bool[] changedLevels = { false, false, false };
+
+        // Verifica se cada personagem avancou de nivel
+        for (int i = 0; i < playerStats.Length; i++)
+        {
+            changedLevels[i] = playerStats[i].CheckLevelUp();
+        }
+
+        // Recupera os personagens
+        for (int i = 0; i < playerStats.Length; i++)
+        {
+            playerStats[i].changeHitPoints(playerStats[i].maxHP);
+            playerStats[i].changeMagicPoints(playerStats[i].maxMP);
+        }
+
+        return changedLevels;
     }
 
     // Cria o objeto que contem as informacoes salvas e passa os dados para ele
@@ -306,5 +334,10 @@ public class GameManager : MonoBehaviour {
         {
             Debug.LogError("não encontrado" + itemToRemove);
         }
+    }
+
+    public void changeMoney(int modifier)
+    {
+        groupMoney += modifier;
     }
 }
