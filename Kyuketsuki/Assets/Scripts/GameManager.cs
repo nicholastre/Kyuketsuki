@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour {
     public int groupMoney;
     public int groupDebt;
 
-    private int maxDebt = 100000;
+    public int averageLevel;
+    public int maxDebt = 100000;
     public CharStats[] playerStats;     // Dados dos personagens carregados para uso em jogo
     public int currentGold;
     public Item[] referenceItems;       // Contem os Prefabs de cada item no jogo
@@ -42,9 +43,42 @@ public class GameManager : MonoBehaviour {
         {
             PlayerController.instance.canMove = true;
         }
+
         if (Input.GetKeyDown(KeyCode.K))
         {
             TempAddExp();
+        } else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            for (int i = 0; i < playerStats.Length; i++)
+            {
+                playerStats[i].playerLevel = (playerStats[i].maxLevel / 2) + 1;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            for (int i = 0; i < playerStats.Length; i++)
+            {
+                playerStats[i].playerLevel = playerStats[i].maxLevel;
+            }
+        } else if (Input.GetKeyDown(KeyCode.T))
+        {
+            groupMoney += 10000;
+        } else if (Input.GetKeyDown(KeyCode.U))
+        {
+            groupDebt += 20000;
+        } else if (Input.GetKeyDown(KeyCode.O))
+        {
+            for (int i = 0; i < playerStats.Length; i++)
+            {
+                playerStats[i].changeHitPoints(-10);
+                playerStats[i].changeMagicPoints(-10);
+            }
+        } else if (Input.GetKeyDown(KeyCode.J))
+        {
+            AddItem("Dagger");
+            AddItem("teste");
+            RemoveItem("HP Potion");
+            RemoveItem("teste");
         } else if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("Dinheiro: " + groupMoney);
@@ -57,26 +91,6 @@ public class GameManager : MonoBehaviour {
             playerStats[0].PrintStats();
             playerStats[1].PrintStats();
             playerStats[2].PrintStats();
-        } else if (Input.GetKeyDown(KeyCode.L))
-        {
-            SaveGame();
-        } else if (Input.GetKeyDown(KeyCode.T))
-        {
-            groupMoney += 200;
-            groupDebt += 100;
-
-            for (int i = 0; i < playerStats.Length; i++)
-            {
-                playerStats[i].changeHitPoints(-10);
-                playerStats[i].changeMagicPoints(-10);
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.J))
-        {
-            AddItem("Dagger");
-            AddItem("teste");
-            RemoveItem("HP Potion");
-            RemoveItem("teste");
         }
     }
 
@@ -91,11 +105,12 @@ public class GameManager : MonoBehaviour {
             changedLevels[i] = playerStats[i].CheckLevelUp();
         }
 
+        averageLevel = (playerStats[0].playerLevel + playerStats[1].playerLevel + playerStats[2].playerLevel) / 3;
+
         // Recupera os personagens
         for (int i = 0; i < playerStats.Length; i++)
         {
-            playerStats[i].changeHitPoints(playerStats[i].maxHP);
-            playerStats[i].changeMagicPoints(playerStats[i].maxMP);
+            playerStats[i].restoreCharacter();
         }
 
         return changedLevels;
@@ -218,8 +233,10 @@ public class GameManager : MonoBehaviour {
             numberOfItems = save.numberOfItems;
             groupMoney = save.groupMoney;
             groupDebt = save.groupDebt;
+            averageLevel = (playerStats[0].playerLevel + playerStats[1].playerLevel + playerStats[2].playerLevel) / 3;
         } else
         {
+            groupDebt = 50000;
             Debug.Log("Sem jogo salvo");
         }
     }
@@ -352,17 +369,5 @@ public class GameManager : MonoBehaviour {
     public void changeDebt(int modifier)
     {
         groupDebt += modifier;
-        checkDebt();
-    }
-
-    public void checkDebt()
-    {
-        if (groupDebt > maxDebt)
-        {
-            // implementar game over ruim
-        } else if (groupDebt <= 0)
-        {
-            // implementar game over bom
-        }
     }
 }
