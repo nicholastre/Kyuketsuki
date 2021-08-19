@@ -25,6 +25,7 @@ public class agiotaMenu : MonoBehaviour
     void Start()
     {
         menuState = AgiotaMenuState.StartingState;
+        loanPrompt.GetComponent<Text>().text = "o que vocês desejam, meus caros?";
     }
 
     // Update is called once per frame
@@ -33,8 +34,6 @@ public class agiotaMenu : MonoBehaviour
         switch (menuState)
         {
             case AgiotaMenuState.StartingState:
-                loanPrompt.GetComponent<Text>().text = "o que vocês desejam, meus caros?";
-
                 moneyInput.gameObject.SetActive(false);
                 moneyInput.GetComponent<InputField>().interactable = false;
 
@@ -49,8 +48,6 @@ public class agiotaMenu : MonoBehaviour
 
                 break;
             case AgiotaMenuState.LendingState:
-                loanPrompt.GetComponent<Text>().text = "perfeito...quanto vocês precisam?";
-
                 moneyInput.gameObject.SetActive(true);
                 moneyInput.GetComponent<InputField>().interactable = true;
 
@@ -64,8 +61,6 @@ public class agiotaMenu : MonoBehaviour
                 thirdButton.GetComponentInChildren<Text>().text = "Voltar";
                 break;
             case AgiotaMenuState.PayingState:
-                loanPrompt.GetComponent<Text>().text = "excelente...quanto vocês querem pagar?";
-
                 moneyInput.gameObject.SetActive(true);
                 moneyInput.GetComponent<InputField>().interactable = true;
 
@@ -79,8 +74,6 @@ public class agiotaMenu : MonoBehaviour
                 thirdButton.GetComponentInChildren<Text>().text = "Voltar";
                 break;
             case AgiotaMenuState.ReturnState:
-                loanPrompt.GetComponent<Text>().text = "muito bem. mais alguma coisa?";
-
                 moneyInput.gameObject.SetActive(false);
                 moneyInput.GetComponent<InputField>().interactable = false;
 
@@ -102,6 +95,7 @@ public class agiotaMenu : MonoBehaviour
         {
             resetButton(firstButton);
             menuState = AgiotaMenuState.LendingState;
+            loanPrompt.GetComponent<Text>().text = "perfeito...quanto vocês precisam?";
         }
     }
 
@@ -113,16 +107,41 @@ public class agiotaMenu : MonoBehaviour
         {
             case AgiotaMenuState.StartingState:
                 menuState = AgiotaMenuState.PayingState;
+                loanPrompt.GetComponent<Text>().text = "excelente...quanto vocês querem pagar?";
                 break;
             case AgiotaMenuState.LendingState:
-                menuState = AgiotaMenuState.ReturnState;
+                int lendMoney = int.Parse(moneyInput.GetComponent<InputField>().text);
+
+                if (lendMoney <= 0)
+                {
+                    loanPrompt.GetComponent<Text>().text = "vocês precisam definir um valor, meus caros";
+                } else
+                {
+                    GameManager.instance.changeMoney(lendMoney);
+                    GameManager.instance.changeDebt(lendMoney);
+
+                    menuState = AgiotaMenuState.ReturnState;
+                    loanPrompt.GetComponent<Text>().text = "muito bem. mais alguma coisa?";
+                }
                 break;
             case AgiotaMenuState.PayingState:
+                int payMoney = int.Parse(moneyInput.GetComponent<InputField>().text);
 
-                menuState = AgiotaMenuState.ReturnState;
+                if (payMoney <= 0)
+                {
+                    loanPrompt.GetComponent<Text>().text = "vocês precisam definir um valor, meus caros";
+                } else
+                {
+                    GameManager.instance.changeMoney(payMoney * -1);
+                    GameManager.instance.changeDebt(payMoney * -1);
+
+                    menuState = AgiotaMenuState.ReturnState;
+                    loanPrompt.GetComponent<Text>().text = "muito bem. mais alguma coisa?";
+                }
                 break;
             case AgiotaMenuState.ReturnState:
                 menuState = AgiotaMenuState.PayingState;
+                loanPrompt.GetComponent<Text>().text = "excelente...quanto vocês querem pagar?";
                 break;
         }
     }
@@ -137,9 +156,11 @@ public class agiotaMenu : MonoBehaviour
                 break;
             case AgiotaMenuState.LendingState:
                 menuState = AgiotaMenuState.StartingState;
+                loanPrompt.GetComponent<Text>().text = "o que vocês desejam, meus caros?";
                 break;
             case AgiotaMenuState.PayingState:
                 menuState = AgiotaMenuState.StartingState;
+                loanPrompt.GetComponent<Text>().text = "o que vocês desejam, meus caros?";
                 break;
             case AgiotaMenuState.ReturnState:
                 GetComponent<ChangeScenes>().PrepareFadeChange();
