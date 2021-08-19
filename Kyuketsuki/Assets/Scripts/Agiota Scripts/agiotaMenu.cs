@@ -130,6 +130,8 @@ public class agiotaMenu : MonoBehaviour
                 if (payMoney <= 0)
                 {
                     loanPrompt.GetComponent<Text>().text = "vocês precisam definir um valor, meus caros";
+                } else if (payMoney > GameManager.instance.groupMoney) {
+                    loanPrompt.GetComponent<Text>().text = "meus caros, vocês não possuem esse dinheiro...";
                 } else
                 {
                     GameManager.instance.changeMoney(payMoney * -1);
