@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &67528262
 RectTransform:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 455785170}
   - component: {fileID: 455785169}
   m_Layer: 5
-  m_Name: ExitButton
+  m_Name: Third Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,8 +422,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.13995196, g: 0.13995196, b: 0.16037738, a: 1}
     m_HighlightedColor: {r: 0.25, g: 0.23, b: 0.23, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.14117648, g: 0.14117648, b: 0.16078432, a: 1}
+    m_SelectedColor: {r: 0.14117648, g: 0.14117648, b: 0.16078432, a: 1}
     m_DisabledColor: {r: 0.09433961, g: 0.08677464, b: 0.08677464, a: 0.5019608}
     m_ColorMultiplier: 2.01
     m_FadeDuration: 0.1
@@ -443,9 +443,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 455785169}
-        m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
-        m_MethodName: PrepareFadeChange
+      - m_Target: {fileID: 1892853852}
+        m_TargetAssemblyTypeName: agiotaMenu, Assembly-CSharp
+        m_MethodName: clickThirdButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 631559879}
   - component: {fileID: 631559878}
   m_Layer: 5
-  m_Name: Pay Button
+  m_Name: Second Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -630,8 +630,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.13995196, g: 0.13995196, b: 0.16037738, a: 1}
     m_HighlightedColor: {r: 0.25, g: 0.23, b: 0.23, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.14117648, g: 0.14117648, b: 0.16078432, a: 1}
+    m_SelectedColor: {r: 0.14117648, g: 0.14117648, b: 0.16078432, a: 1}
     m_DisabledColor: {r: 0.09433961, g: 0.08677464, b: 0.08677464, a: 0.5019608}
     m_ColorMultiplier: 2.01
     m_FadeDuration: 0.1
@@ -650,7 +650,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 631559879}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1892853852}
+        m_TargetAssemblyTypeName: agiotaMenu, Assembly-CSharp
+        m_MethodName: clickSecondButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &631559879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,7 +977,7 @@ GameObject:
   - component: {fileID: 1133352101}
   - component: {fileID: 1133352100}
   m_Layer: 5
-  m_Name: Loan Button
+  m_Name: First Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1014,8 +1026,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.13995196, g: 0.13995196, b: 0.16037738, a: 1}
     m_HighlightedColor: {r: 0.25, g: 0.23, b: 0.23, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.14117648, g: 0.14117648, b: 0.16078432, a: 1}
+    m_SelectedColor: {r: 0.14117648, g: 0.14117648, b: 0.16078432, a: 1}
     m_DisabledColor: {r: 0.09433961, g: 0.08677464, b: 0.08677464, a: 0.5019608}
     m_ColorMultiplier: 2.01
     m_FadeDuration: 0.1
@@ -1034,7 +1046,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1133352101}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1892853852}
+        m_TargetAssemblyTypeName: agiotaMenu, Assembly-CSharp
+        m_MethodName: clickFirstButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1133352101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1242,6 +1266,8 @@ GameObject:
   - component: {fileID: 1892853849}
   - component: {fileID: 1892853851}
   - component: {fileID: 1892853850}
+  - component: {fileID: 1892853852}
+  - component: {fileID: 1892853853}
   m_Layer: 5
   m_Name: MenuBackground
   m_TagString: Untagged
@@ -1311,6 +1337,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892853848}
   m_CullTransparentMesh: 1
+--- !u!114 &1892853852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892853848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b802290e8d24bd14b8dd825bbc9872ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loanPrompt: {fileID: 2112760232}
+  moneyInput: {fileID: 67528262}
+  firstButton: {fileID: 1133352097}
+  secondButton: {fileID: 631559876}
+  thirdButton: {fileID: 455785168}
+--- !u!114 &1892853853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892853848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2d784dbdbced84c836d6d816524f9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaToLoad: testemapa
+  waitToLoad: 1
 --- !u!1 &1923409976
 GameObject:
   m_ObjectHideFlags: 0
