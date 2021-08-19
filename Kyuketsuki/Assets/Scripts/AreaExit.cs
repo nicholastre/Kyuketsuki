@@ -48,6 +48,7 @@ public class AreaExit : MonoBehaviour
             PlayerController.instance.areaTransitionName = areaTransitionName;
 
             PlayerController.instance.canMove = false;
+            PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 }

@@ -32,7 +32,7 @@ public class GameMenu : MonoBehaviour
     void Update()
     {
         //Abre e fecha o menu dentro do jogo
-        if (Input.GetButtonDown("Fire2")){
+        if (PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().enabled && Input.GetButtonDown("Fire2")){
             if (theMenu.activeInHierarchy)
             {
                 //theMenu.SetActive(false);

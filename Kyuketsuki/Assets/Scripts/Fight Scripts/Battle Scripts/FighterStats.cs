@@ -135,4 +135,5 @@ public class FighterStats : MonoBehaviour, IComparable
     {
         nextActTurn = currentTurn + Mathf.CeilToInt(100f / speed);
     }
+
 }
