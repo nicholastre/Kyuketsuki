@@ -76,12 +76,14 @@ public class FighterStats : MonoBehaviour, IComparable
                 gameObject.tag = "DeadHero";
             }else
             {
-                //gameObject.tag = "DeadEnemy";
+                
                 SpawnDeadObj = new GameObject("DeadEnemy");
                 SpawnDeadObj.tag = "DeadEnemy";
+                MouseClick.tagName="null";
             }
             
             Destroy(healthFill);
+            Destroy(magicFill);
             Destroy(gameObject);
             
             //healthFill.SetActive(false);
@@ -124,6 +126,7 @@ public class FighterStats : MonoBehaviour, IComparable
 
     void ContinueGame()
     {
+        MouseClick.tagName="null";
         //Debug.Log("Entrou 2");
         GameObject.Find("GameControllerObject").GetComponent<GameController>().NextTurn();
     }

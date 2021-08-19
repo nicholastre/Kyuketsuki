@@ -45,7 +45,7 @@ public class DialogManager : MonoBehaviour {
                         PlayerController.instance.canMove = true;
 
                         GameManager.instance.dialogActive = false;
-                        /*
+                        
                         if(shouldMarkQuest)
                         {
                             shouldMarkQuest = false;
@@ -56,7 +56,7 @@ public class DialogManager : MonoBehaviour {
                             {
                                 QuestManager.instance.MarkQuestIncomplete(questToMark);
                             }
-                        }*/
+                        }
                     }
                     else
                     {
@@ -78,7 +78,7 @@ public class DialogManager : MonoBehaviour {
 
         currentLine = 0;
 
-        //CheckIfName();
+        CheckIfName();
 
         dialogText.text = dialogLines[currentLine];
         dialogBox.SetActive(true);
