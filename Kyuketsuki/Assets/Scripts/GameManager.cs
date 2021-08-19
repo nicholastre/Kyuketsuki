@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
     public int groupMoney;
     public int groupDebt;
 
+    private int maxDebt = 100000;
     public CharStats[] playerStats;     // Dados dos personagens carregados para uso em jogo
     public int currentGold;
     public Item[] referenceItems;       // Contem os Prefabs de cada item no jogo
@@ -336,8 +337,32 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void changeMoney(int modifier)
+    public bool changeMoney(int modifier)
     {
-        groupMoney += modifier;
+        if (groupMoney + modifier <= 0)
+        {
+            return false;
+        } else
+        {
+            groupMoney += modifier;
+            return true;
+        }
+    }
+
+    public void changeDebt(int modifier)
+    {
+        groupDebt += modifier;
+        checkDebt();
+    }
+
+    public void checkDebt()
+    {
+        if (groupDebt > maxDebt)
+        {
+            // implementar game over ruim
+        } else if (groupDebt <= 0)
+        {
+            // implementar game over bom
+        }
     }
 }
