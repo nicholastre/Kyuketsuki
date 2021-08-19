@@ -63,6 +63,12 @@ public class GameManager : MonoBehaviour {
         {
             groupMoney += 200;
             groupDebt += 100;
+
+            for (int i = 0; i < playerStats.Length; i++)
+            {
+                playerStats[i].changeHitPoints(-10);
+                playerStats[i].changeMagicPoints(-10);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.J))
         {

@@ -46,11 +46,13 @@ public class restingEvents : MonoBehaviour
             {
                 restingDescription.text = storedCharacters[0].charName + " avançou para o nível " + storedCharacters[0].playerLevel + "!";
                 changedLevels[0] = false;
-            } else if (changedLevels[1] == true)
+            }
+            else if (changedLevels[1] == true)
             {
                 restingDescription.text = storedCharacters[1].charName + " avançou para o nível " + storedCharacters[1].playerLevel + "!";
                 changedLevels[1] = false;
-            } else if (changedLevels[2] == true)
+            }
+            else if (changedLevels[2] == true)
             {
                 restingDescription.text = storedCharacters[2].charName + " avançou para o nível " + storedCharacters[2].playerLevel + "!";
                 changedLevels[2] = false;
@@ -61,7 +63,8 @@ public class restingEvents : MonoBehaviour
                 // Da uma ultima mensagem sobre o nivel atual do grupo
                 eventsState = 2;
             }
-        } else if (eventsState == 2)
+        }
+        else if (eventsState == 2)
         {
             int levelSum = 0;
             CharStats[] storedCharacters = GameManager.instance.playerStats;
@@ -76,17 +79,28 @@ public class restingEvents : MonoBehaviour
             if (averageLevel == storedCharacters[0].maxLevel)
             {
                 restingDescription.text = "Com o poder que temos agora...tem outra solução pro Agiota.";
-            } else if (averageLevel > storedCharacters[0].maxLevel / 2)
+            }
+            else if (averageLevel > storedCharacters[0].maxLevel / 2)
             {
                 restingDescription.text = "Estamos bem fortes agora...um pouco mais e...quem sabe?";
-            } else
+            }
+            else
             {
                 restingDescription.text = "Mais um dia trabalhando para pagar o Agiota...";
             }
 
-            buttonLabel.text = "Sair";
             eventsState = 3;
-        } else if (eventsState == 3)
+        }
+        else if (eventsState == 3)
+        {
+            restingDescription.text = "O progresso do jogo foi salvo.";
+
+            GameManager.instance.SaveGame();
+
+            buttonLabel.text = "Sair";
+            eventsState = 4;
+        }
+        else if (eventsState == 4)
         {
             ChangeScenes changeSceneComponent = GetComponent<ChangeScenes>();
 

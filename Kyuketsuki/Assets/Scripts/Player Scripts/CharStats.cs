@@ -80,11 +80,15 @@ public class CharStats : MonoBehaviour {
     public void changeHitPoints(int modifier)
     {
         currentHP += modifier;
+
+        currentHP = Mathf.Clamp(currentHP, 0, maxHP);
     }
 
     public void changeMagicPoints(int modifier)
     {
         currentMP += modifier;
+
+        currentMP = Mathf.Clamp(currentMP, 0, maxMP);
     }
 
     public bool CheckLevelUp()
@@ -92,7 +96,7 @@ public class CharStats : MonoBehaviour {
         if (playerLevel < maxLevel)
         {
 
-            if (currentEXP > expToNextLevel[playerLevel])
+            while (currentEXP >= expToNextLevel[playerLevel])
             {
                 //retira a xp equivalente do lvl anterior
                 currentEXP -= expToNextLevel[playerLevel];
@@ -115,7 +119,10 @@ public class CharStats : MonoBehaviour {
                 maxMP = Mathf.FloorToInt(maxMP * 1.05f);
                 currentMP = maxMP;
 
-                return true;
+                if (currentEXP < expToNextLevel[playerLevel])
+                {
+                    return true;
+                }
             }
 
             return false;
