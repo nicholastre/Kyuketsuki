@@ -14,6 +14,7 @@ public class AreaEntrance : MonoBehaviour {
         {
             PlayerController.instance.transform.position = transform.position;
 			PlayerController.instance.canMove = true;
+			PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
 
 		UIFade.instance.FadeFromBlack();
