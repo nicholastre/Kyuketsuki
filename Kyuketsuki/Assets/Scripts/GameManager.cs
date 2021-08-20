@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+public enum AreaMaps
+{
+    ForestArea,
+    MineArea,
+    MonasteryArea
+}
+
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
@@ -23,9 +30,15 @@ public class GameManager : MonoBehaviour {
     public Item[] referenceItems;       // Contem os Prefabs de cada item no jogo
     public bool gameMenuOpen, dialogActive, fadingBetweenAreas,shopActive;
 
+    public AreaMaps currentArea;
+    public string enemyEncountered = "";
+    public Vector3 playerPosition;
+
 	// Use this for initialization
 	void Start () {
         instance = this;
+
+        playerPosition = Vector3.zero;
 
         DontDestroyOnLoad(gameObject);
 
@@ -34,6 +47,8 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Debug.Log(playerPosition);
+
         //Verifica os booleanos para travar o jogador
         if(gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive)
         {
@@ -369,5 +384,12 @@ public class GameManager : MonoBehaviour {
     public void changeDebt(int modifier)
     {
         groupDebt += modifier;
+    }
+
+    public void EnteredBattle(Vector3 player, AreaMaps areaId, string mobName)
+    {
+        playerPosition = player;
+        currentArea = areaId;
+        enemyEncountered = mobName;
     }
 }

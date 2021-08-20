@@ -4888,7 +4888,7 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &260142718
+--- !u!1001 &36253054
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4897,15 +4897,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.16
+      value: 19.5
       objectReference: {fileID: 0}
     - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4939,66 +4939,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_Name
-      value: Wandering Mob (7)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
---- !u!1001 &314223336
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+    - target: {fileID: 7902634730479583855, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: areaTransitionName
+      value: monasteryToBattle
       objectReference: {fileID: 0}
     - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_Name
-      value: Wandering Mob (6)
+      value: Wandering Mob (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
@@ -5087,6 +5034,189 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
+--- !u!1001 &434817791
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902634730479583855, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: areaTransitionName
+      value: monasteryToBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_Name
+      value: Wandering Mob (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+--- !u!1001 &549289874
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902634730479583855, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: areaTransitionName
+      value: monasteryToBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_Name
+      value: Wandering Mob (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+--- !u!1001 &611220501
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902634730479583855, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: areaTransitionName
+      value: monasteryToBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_Name
+      value: Wandering Mob (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
 --- !u!1001 &807965457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5137,6 +5267,10 @@ PrefabInstance:
     - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902634730479583855, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: areaTransitionName
+      value: monasteryToBattle
       objectReference: {fileID: 0}
     - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_Name
@@ -6408,120 +6542,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1061788455
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_Name
-      value: Wandering Mob (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
---- !u!1001 &1065817357
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 18.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_Name
-      value: Wandering Mob (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
 --- !u!1001 &1297726999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6607,7 +6627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
---- !u!1001 &1557723182
+--- !u!1001 &1635560791
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6616,15 +6636,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.43
+      value: 3.17
       objectReference: {fileID: 0}
     - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.5
+      value: -10.32
       objectReference: {fileID: 0}
     - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6658,66 +6678,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_Name
-      value: Wandering Mob (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
---- !u!1001 &1641661069
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 10.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+    - target: {fileID: 7902634730479583855, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: areaTransitionName
+      value: monasteryToBattle
       objectReference: {fileID: 0}
     - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
       propertyPath: m_Name
-      value: Wandering Mob (8)
+      value: Wandering Mob (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
@@ -6790,6 +6757,128 @@ PrefabInstance:
       objectReference: {fileID: 2064482377}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5042352a09ff0b488dea7fa7bd2998a, type: 3}
+--- !u!1001 &1715179270
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902634730479583855, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: areaTransitionName
+      value: monasteryToBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_Name
+      value: Wandering Mob (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+--- !u!1001 &1720894740
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902634730479583855, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: areaTransitionName
+      value: monasteryToBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_Name
+      value: Wandering Mob (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
 --- !u!1 &1726967567
 GameObject:
   m_ObjectHideFlags: 0
@@ -6837,63 +6926,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1833109301
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -13.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_Name
-      value: Wandering Mob (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
 --- !u!1 &2042697162
 GameObject:
   m_ObjectHideFlags: 0
@@ -8198,63 +8230,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &2061368254
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -12.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
-      propertyPath: m_Name
-      value: Wandering Mob (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
 --- !u!1 &2064482374
 GameObject:
   m_ObjectHideFlags: 0
@@ -18173,3 +18148,64 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &2146703815
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -18.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648632903824014642, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902634730479583855, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: areaTransitionName
+      value: monasteryToBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645336927477314798, guid: d727a0df0a1824a43a465337ba90139f, type: 3}
+      propertyPath: m_Name
+      value: Wandering Mob (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d727a0df0a1824a43a465337ba90139f, type: 3}

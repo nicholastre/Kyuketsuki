@@ -18,12 +18,15 @@ public class AreaExit : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        theEntrance.transitionName = areaTransitionName;
+        if (theEntrance != null)
+        {
+            theEntrance.transitionName = areaTransitionName;
+        }
 
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if (shouldLoadAfterFade)
         {
@@ -36,7 +39,7 @@ public class AreaExit : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
