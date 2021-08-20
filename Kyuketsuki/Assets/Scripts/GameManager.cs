@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour {
         {
             PlayerController.instance.canMove = false;
         }
-        else
+        else if (PlayerController.instance != null)
         {
             PlayerController.instance.canMove = true;
         }

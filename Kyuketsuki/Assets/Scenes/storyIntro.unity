@@ -396,7 +396,6 @@ Transform:
   - {fileID: 776546453}
   - {fileID: 1660034428}
   - {fileID: 1372209418}
-  - {fileID: 718470817}
   m_Father: {fileID: 1363660081}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -412,7 +411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08acd759444fcdc419795d4234cfd503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialFade: {fileID: 718470818}
   cutsceneText: {fileID: 776546453}
   confirmButton: {fileID: 1660034428}
   cutsceneImages:
@@ -498,81 +496,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687275939}
-  m_CullTransparentMesh: 1
---- !u!1 &718470816
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 718470817}
-  - component: {fileID: 718470819}
-  - component: {fileID: 718470818}
-  m_Layer: 5
-  m_Name: Initial Fade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &718470817
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718470816}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 134.66147}
-  m_LocalScale: {x: 0.34201932, y: 0.34201932, z: 0.34201932}
-  m_Children: []
-  m_Father: {fileID: 662667422}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39.044006, y: -34.720154}
-  m_SizeDelta: {x: 1412.241, y: 820.506}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &718470818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718470816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &718470819
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718470816}
   m_CullTransparentMesh: 1
 --- !u!1 &776546452
 GameObject:
@@ -916,12 +839,12 @@ MonoBehaviour:
       - m_Target: {fileID: 1372209422}
         m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
         m_MethodName: PrepareFadeChange
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
@@ -977,6 +900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaToLoad: mainMenu
   waitToLoad: 1
+  shouldFadeFromBlack: 0
 --- !u!1 &1377247121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8744537705825627809, guid: e722a3abf90832f4cbac4b39bb70d867, type: 3}
       propertyPath: shouldLoadPlayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e722a3abf90832f4cbac4b39bb70d867, type: 3}

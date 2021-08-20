@@ -26,6 +26,7 @@ public class UIFade : MonoBehaviour {
 
         if (shouldFadeToBlack)
         {
+            gameObject.transform.Find("FadeImage").GetComponent<Image>().raycastTarget = true;
             fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, Mathf.MoveTowards(fadeScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
 
             if(fadeScreen.color.a == 1f)
@@ -41,19 +42,22 @@ public class UIFade : MonoBehaviour {
             if (fadeScreen.color.a == 0f)
             {
                 shouldFadeFromBlack = false;
+                gameObject.transform.Find("FadeImage").GetComponent<Image>().raycastTarget = false;
             }
         }
     }
 
-    public void FadeToBlack()
+    public void FadeToBlack(float speed = 2)
     {
+        fadeSpeed = speed;
         shouldFadeToBlack = true;
         shouldFadeFromBlack = false;
 
     }
 
-    public void FadeFromBlack()
+    public void FadeFromBlack(float speed = 2)
     {
+        fadeSpeed = speed;
         shouldFadeToBlack = false;
         shouldFadeFromBlack = true;
     }

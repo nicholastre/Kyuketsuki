@@ -38,6 +38,8 @@ public class restingEvents : MonoBehaviour
 
     public void checkingRestEvents()
     {
+        resetButton(gameObject.GetComponent<Button>());
+
         if (eventsState == 1)
         {
             CharStats[] storedCharacters = GameManager.instance.playerStats;
@@ -98,5 +100,11 @@ public class restingEvents : MonoBehaviour
 
             changeSceneComponent.PrepareFadeChange();
         }
+    }
+
+    private void resetButton(Button button)
+    {
+        button.enabled = !button.enabled;
+        button.enabled = !button.enabled;
     }
 }

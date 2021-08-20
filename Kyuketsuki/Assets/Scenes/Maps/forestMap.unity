@@ -14261,6 +14261,10 @@ PrefabInstance:
       propertyPath: areaTransitionName
       value: forestToOverworld
       objectReference: {fileID: 0}
+    - target: {fileID: 638195584289609352, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
+      propertyPath: shouldFadeFromBlack
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638195584289609353, guid: 3a8e746e3f7b65c40aeab98df21a1964, type: 3}
       propertyPath: m_Name
       value: NorthExit

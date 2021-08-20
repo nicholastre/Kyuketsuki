@@ -46,7 +46,7 @@ public class hotelEntrance : MonoBehaviour
 
             hotelPrompt.text = randomText;
 
-            changeSceneComponent.PrepareFadeChange();
+            changeSceneComponent.PrepareFadeChange(1f);
         } else
         {
             hotelPrompt.text = "Vocês não têm bits suficientes!";

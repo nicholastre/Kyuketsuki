@@ -7573,6 +7573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaToLoad: 
   waitToLoad: 1
+  shouldFadeFromBlack: 1
 --- !u!1 &1991765095
 GameObject:
   m_ObjectHideFlags: 0

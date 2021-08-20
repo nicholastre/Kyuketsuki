@@ -1567,6 +1567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaToLoad: testemapa
   waitToLoad: 1
+  shouldFadeFromBlack: 1
 --- !u!1 &1923409976
 GameObject:
   m_ObjectHideFlags: 0
