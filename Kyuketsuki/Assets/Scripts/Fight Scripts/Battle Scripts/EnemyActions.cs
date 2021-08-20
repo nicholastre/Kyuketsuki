@@ -8,9 +8,6 @@ public class EnemyActions : FighterStats
     private GameObject hero;
     private GameObject hero2;
     private GameObject hero3;
-    private GameObject enemy;
-    private GameObject enemy2;
-    private GameObject enemy3;
 
 
     [SerializeField]
@@ -70,6 +67,11 @@ public class EnemyActions : FighterStats
             //Debug.Log("C");
         }
         victim = null;
+    }
+
+    public override void MakeDeath()
+    {
+        Debug.Log("ETA PORRA O INIMIGO MORREU");
     }
     
 }

@@ -55,7 +55,7 @@ public class PlayerActions : FighterStats
             {
                 meleePrefab.GetComponent<AttackScript>().Attack(victim);
                 Debug.Log("ALVO SELECIONADO");
-                Debug.Log("O alvo é " + MouseClick.tagName );
+                //Debug.Log("O alvo é " + MouseClick.tagName );
             }
             else
             {
@@ -71,7 +71,7 @@ public class PlayerActions : FighterStats
             {
                 skillPrefab.GetComponent<AttackScript>().Attack(victim);
                 Debug.Log("ALVO SELECIONADO");
-                Debug.Log("O alvo é " + MouseClick.tagName );
+                //Debug.Log("O alvo é " + MouseClick.tagName );
 
             }
             else
@@ -84,6 +84,11 @@ public class PlayerActions : FighterStats
             //Debug.Log("C");
         }
         victim = null;
+    }
+
+    public override void MakeDeath()
+    {
+        Debug.Log("ETA PORRA O aliado MORREU");
     }
     
 }

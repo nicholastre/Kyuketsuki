@@ -76,7 +76,7 @@ public class FighterStats : MonoBehaviour, IComparable
                 gameObject.tag = "DeadHero";
             }else
             {
-                
+                MakeDeath();
                 SpawnDeadObj = new GameObject("DeadEnemy");
                 SpawnDeadObj.tag = "DeadEnemy";
                 MouseClick.tagName="null";
@@ -85,10 +85,6 @@ public class FighterStats : MonoBehaviour, IComparable
             Destroy(healthFill);
             Destroy(magicFill);
             Destroy(gameObject);
-            
-            //healthFill.SetActive(false);
-            //gameObject.SetActive(false);
-            
             
         } else if (damage > 0)
         {
@@ -126,13 +122,17 @@ public class FighterStats : MonoBehaviour, IComparable
 
     void ContinueGame()
     {
-        //MouseClick.tagName="null";
-        //Debug.Log("Entrou 2");
+        //MouseClick.tagName="null"; (Descomentar isso se quiser desabilitar o lock-on do alvo)
         GameObject.Find("GameControllerObject").GetComponent<GameController>().NextTurn();
     }
 
      public void CalculateNextTurn(int currentTurn)
     {
         nextActTurn = currentTurn + Mathf.CeilToInt(100f / speed);
+    }
+
+    public virtual void MakeDeath()
+    {
+        Debug.Log("Eita, tá chamando a função da classe pai");
     }
 }
