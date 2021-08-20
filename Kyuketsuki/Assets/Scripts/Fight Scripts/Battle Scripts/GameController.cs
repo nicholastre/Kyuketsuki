@@ -168,7 +168,14 @@ public class GameController : MonoBehaviour
     public void endBattle()
     {
         Debug.Log("LUTA ENCERRADA");
-        //enabled = false;
+
+        switch (GameManager.instance.currentArea)
+        {
+            case AreaMaps.ForestArea:
+                GetComponent<ChangeScenes>().areaToLoad = "forestMap";
+                GetComponent<ChangeScenes>().PrepareFadeChange();
+                break;
+        } 
     }
     
 }

@@ -23,7 +23,7 @@ public class AreaExit : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if (shouldLoadAfterFade)
         {
@@ -36,7 +36,7 @@ public class AreaExit : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {

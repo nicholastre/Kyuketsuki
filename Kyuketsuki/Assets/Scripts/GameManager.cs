@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+public enum AreaMaps
+{
+    ForestArea,
+    MineArea,
+    MonasteryArea
+}
+
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
@@ -22,6 +29,9 @@ public class GameManager : MonoBehaviour {
     public int currentGold;
     public Item[] referenceItems;       // Contem os Prefabs de cada item no jogo
     public bool gameMenuOpen, dialogActive, fadingBetweenAreas,shopActive;
+
+    public AreaMaps currentArea;
+    public string enemyEncountered = "";
 
 	// Use this for initialization
 	void Start () {
@@ -369,5 +379,11 @@ public class GameManager : MonoBehaviour {
     public void changeDebt(int modifier)
     {
         groupDebt += modifier;
+    }
+
+    public void EnteredBattle(AreaMaps areaId, string mobName)
+    {
+        currentArea = areaId;
+        enemyEncountered = mobName;
     }
 }
