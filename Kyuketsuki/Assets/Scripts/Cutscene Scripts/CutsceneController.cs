@@ -40,7 +40,7 @@ public class CutsceneController : MonoBehaviour
                 cutsceneText.GetComponent<Text>().text = "o que importa é que o povo paga muito bem para matarem monstros e nossos poderes servem bem para isso";
                 break;
             case CutsceneScenes.ThirdScene:
-                cutsceneText.GetComponent<Text>().text = "então é pegar umas missões ali, matar bichos, pegar a grana e pagar o agiota. facinho e todo mundo sai quite";
+                cutsceneText.GetComponent<Text>().text = "então é pegar umas missões ali, matar os bichos, pegar a grana e pagar o agiota. facinho e todo mundo sai quite";
                 break;
             case CutsceneScenes.FourthScene:
                 cutsceneText.GetComponent<Text>().text = "só lembrem de não aumentar a dívida... com poderes maiores que os nossos, vai que ele resolve cobrar de outro jeito";

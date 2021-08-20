@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
                 playerStats[i].playerLevel = (playerStats[i].maxLevel / 2) + 1;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.Z))
         {
             for (int i = 0; i < playerStats.Length; i++)
             {
