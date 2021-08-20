@@ -30,7 +30,6 @@ public class MouseClick : MonoBehaviour
 
     public void printTag(GameObject go)
     {
-
        tagName = go.tag;
        Debug.Log("a tag é " + tagName);
     }

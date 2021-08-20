@@ -126,7 +126,7 @@ public class FighterStats : MonoBehaviour, IComparable
 
     void ContinueGame()
     {
-        MouseClick.tagName="null";
+        //MouseClick.tagName="null";
         //Debug.Log("Entrou 2");
         GameObject.Find("GameControllerObject").GetComponent<GameController>().NextTurn();
     }

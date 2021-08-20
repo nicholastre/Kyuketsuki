@@ -133,19 +133,19 @@ public class GameController : MonoBehaviour
             {
                 this.battleMenu.SetActive(false);
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "skill";
-                currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
+                currentUnit.GetComponent<EnemyActions>().SelectAttack(attackType);
             }
             if(currentUnit.tag == "Enemy2")
             {
                 this.battleMenu.SetActive(false);
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "skill";
-                currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
+                currentUnit.GetComponent<EnemyActions>().SelectAttack(attackType);
             }
             if(currentUnit.tag == "Enemy3")
             {
                 this.battleMenu.SetActive(false);
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "skill";
-                currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
+                currentUnit.GetComponent<EnemyActions>().SelectAttack(attackType);
             }
             
         } else
