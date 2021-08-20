@@ -19,6 +19,8 @@ public class WanderingMob : MonoBehaviour
         {
             PlayerController.instance.canMove = true;
             PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            PlayerController.instance.gameObject.transform.position = GameManager.instance.playerPosition;
+            GameManager.instance.playerPosition = Vector3.zero;
             Destroy(this.gameObject);
         }
 

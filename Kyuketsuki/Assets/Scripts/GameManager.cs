@@ -32,10 +32,13 @@ public class GameManager : MonoBehaviour {
 
     public AreaMaps currentArea;
     public string enemyEncountered = "";
+    public Vector3 playerPosition;
 
 	// Use this for initialization
 	void Start () {
         instance = this;
+
+        playerPosition = Vector3.zero;
 
         DontDestroyOnLoad(gameObject);
 
@@ -44,6 +47,8 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Debug.Log(playerPosition);
+
         //Verifica os booleanos para travar o jogador
         if(gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive)
         {
@@ -381,8 +386,9 @@ public class GameManager : MonoBehaviour {
         groupDebt += modifier;
     }
 
-    public void EnteredBattle(AreaMaps areaId, string mobName)
+    public void EnteredBattle(Vector3 player, AreaMaps areaId, string mobName)
     {
+        playerPosition = player;
         currentArea = areaId;
         enemyEncountered = mobName;
     }

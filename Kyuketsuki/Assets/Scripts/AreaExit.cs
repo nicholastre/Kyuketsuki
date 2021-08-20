@@ -18,7 +18,10 @@ public class AreaExit : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        theEntrance.transitionName = areaTransitionName;
+        if (theEntrance != null)
+        {
+            theEntrance.transitionName = areaTransitionName;
+        }
 
     }
 

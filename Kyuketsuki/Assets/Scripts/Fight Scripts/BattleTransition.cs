@@ -24,12 +24,21 @@ public class BattleTransition : AreaExit
         {
             AreaMaps currentMap = AreaMaps.ForestArea;
 
-            if (areaTransitionName == "forestToBattle")
+            switch (areaTransitionName)
             {
-                currentMap = AreaMaps.ForestArea;
+                case "forestToBattle":
+                    currentMap = AreaMaps.ForestArea;
+                    break;
+                case "mineToBattle":
+                    currentMap = AreaMaps.MineArea;
+                    break;
+                case "monasteryToBattle":
+                    currentMap = AreaMaps.MonasteryArea;
+                    break;
             }
 
-            GameManager.instance.EnteredBattle(currentMap, gameObject.transform.parent.name);
+            PlayerController.instance.areaTransitionName = "";
+            GameManager.instance.EnteredBattle(other.gameObject.transform.position, currentMap, gameObject.transform.parent.name);
         }
     }
 }

@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     public static bool hero3Turn;
 
     public static bool TwoEnemies = false;
-    public static bool ThreeEnemies = true;
+    public static bool ThreeEnemies = false;
 
 
 
@@ -159,7 +159,7 @@ public class GameController : MonoBehaviour
         GameObject[] deadEnemies = GameObject.FindGameObjectsWithTag("DeadEnemy");
         int numberDE = deadEnemies.Length;
         Debug.Log("O número de inimigos mortos é " + numberDE);
-        if(numberDE >= 3){
+        if(numberDE >= 1){
             endBattle();
         }
 
@@ -173,9 +173,16 @@ public class GameController : MonoBehaviour
         {
             case AreaMaps.ForestArea:
                 GetComponent<ChangeScenes>().areaToLoad = "forestMap";
-                GetComponent<ChangeScenes>().PrepareFadeChange();
                 break;
-        } 
+            case AreaMaps.MineArea:
+                GetComponent<ChangeScenes>().areaToLoad = "mineMap";
+                break;
+            case AreaMaps.MonasteryArea:
+                GetComponent<ChangeScenes>().areaToLoad = "monasteryMap";
+                break;
+        }
+
+        GetComponent<ChangeScenes>().PrepareFadeChange();
     }
-    
+
 }

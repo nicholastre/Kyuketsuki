@@ -10,12 +10,13 @@ public class AreaEntrance : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		if(isEntrance && transitionName == PlayerController.instance.areaTransitionName)
         {
-            PlayerController.instance.transform.position = transform.position;
+			PlayerController.instance.transform.position = transform.position;
 			PlayerController.instance.canMove = true;
 			PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        }
+		}
 
 		UIFade.instance.FadeFromBlack();
 		GameManager.instance.fadingBetweenAreas = false;
