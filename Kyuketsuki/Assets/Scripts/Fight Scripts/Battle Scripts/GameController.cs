@@ -72,19 +72,9 @@ public class GameController : MonoBehaviour
         NextTurn();
     }
 
-    public void Update(){
+    public void Update()
+    {
         checkBattle();
-
-         if( Input.GetMouseButtonDown(0) )
-        {
-         Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
-         RaycastHit hit;
-         
-         if( Physics.Raycast( ray, out hit, 100 ) )
-         {
-             Debug.Log( hit.transform.gameObject.name );
-         }
-     }
     }
 
      public void NextTurn()
@@ -104,7 +94,7 @@ public class GameController : MonoBehaviour
             if(currentUnit.tag == "Hero")
             {
                 this.battleMenu.SetActive(true);
-                Debug.Log("Wizrard 1 turno");
+                //Debug.Log("Wizrard 1 turno");
                 hero1Turn = true;
                 hero2Turn = false;
                 hero3Turn = false;
@@ -114,7 +104,7 @@ public class GameController : MonoBehaviour
             if(currentUnit.tag == "Hero2")
             {
                 this.battleMenu.SetActive(true);
-                Debug.Log("Wizrard 2 turno");
+                //Debug.Log("Wizrard 2 turno");
                 hero1Turn = false;
                 hero2Turn = true;
                 hero3Turn = false;
@@ -123,7 +113,7 @@ public class GameController : MonoBehaviour
             if(currentUnit.tag == "Hero3")
             {
                 this.battleMenu.SetActive(true);
-                Debug.Log("Wizrard 3 turno");
+                //Debug.Log("Wizrard 3 turno");
                 hero1Turn = false;
                 hero2Turn = false;
                 hero3Turn = true;
@@ -133,19 +123,19 @@ public class GameController : MonoBehaviour
             {
                 this.battleMenu.SetActive(false);
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "skill";
-                currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
+                currentUnit.GetComponent<EnemyActions>().SelectAttack(attackType);
             }
             if(currentUnit.tag == "Enemy2")
             {
                 this.battleMenu.SetActive(false);
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "skill";
-                currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
+                currentUnit.GetComponent<EnemyActions>().SelectAttack(attackType);
             }
             if(currentUnit.tag == "Enemy3")
             {
                 this.battleMenu.SetActive(false);
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "skill";
-                currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
+                currentUnit.GetComponent<EnemyActions>().SelectAttack(attackType);
             }
             
         } else

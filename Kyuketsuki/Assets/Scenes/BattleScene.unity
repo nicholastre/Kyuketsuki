@@ -349,9 +349,9 @@ GameObject:
   m_Component:
   - component: {fileID: 100353498}
   - component: {fileID: 100353497}
-  - component: {fileID: 100353496}
   - component: {fileID: 100353495}
   - component: {fileID: 100353494}
+  - component: {fileID: 100353496}
   m_Layer: 0
   m_Name: WizardHero2
   m_TagString: Hero2
@@ -374,7 +374,7 @@ MonoBehaviour:
   animator: {fileID: 100353495}
   healthFill: {fileID: 864033142}
   magicFill: {fileID: 1035923831}
-  health: 125
+  health: 100
   magic: 100
   melee: 10
   range: 30
@@ -383,6 +383,7 @@ MonoBehaviour:
   experience: 0
   nextActTurn: 0
   SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
 --- !u!95 &100353495
 Animator:
   serializedVersion: 3
@@ -411,9 +412,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 100353493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebf8515cc30f144583c4ac3129cf228, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ff77cae53ee92340834b417438c27dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  healthFill: {fileID: 0}
+  magicFill: {fileID: 0}
+  health: 0
+  magic: 0
+  melee: 0
+  range: 0
+  defense: 0
+  speed: 0
+  experience: 0
+  nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
   meleePrefab: {fileID: 232456679}
   skillPrefab: {fileID: 156884402}
   faceIcon: {fileID: 21300000, guid: 5d28276b4aa6b804c8714bd8e5261910, type: 3}
@@ -1787,9 +1801,9 @@ GameObject:
   - component: {fileID: 495159024}
   - component: {fileID: 495159023}
   - component: {fileID: 495159027}
-  - component: {fileID: 495159026}
   - component: {fileID: 495159025}
   - component: {fileID: 495159028}
+  - component: {fileID: 495159026}
   m_Layer: 0
   m_Name: GiantEnemy
   m_TagString: Enemy
@@ -1892,9 +1906,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 495159022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebf8515cc30f144583c4ac3129cf228, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d52cb6864719b146b7ef05d626b1be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  healthFill: {fileID: 0}
+  magicFill: {fileID: 0}
+  health: 0
+  magic: 0
+  melee: 0
+  range: 0
+  defense: 0
+  speed: 0
+  experience: 0
+  nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
   meleePrefab: {fileID: 1502857579}
   skillPrefab: {fileID: 1578163121}
   faceIcon: {fileID: 21300000, guid: 4d650b51d2a14b242a227215709e2780, type: 3}
@@ -1922,6 +1949,7 @@ MonoBehaviour:
   experience: 0
   nextActTurn: 0
   SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
 --- !u!65 &495159028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3795,9 +3823,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1029229642}
   - component: {fileID: 1029229641}
-  - component: {fileID: 1029229643}
   - component: {fileID: 1029229644}
   - component: {fileID: 1029229645}
+  - component: {fileID: 1029229643}
   m_Layer: 0
   m_Name: WizardHero
   m_TagString: Hero
@@ -3881,9 +3909,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1029229640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebf8515cc30f144583c4ac3129cf228, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ff77cae53ee92340834b417438c27dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  healthFill: {fileID: 0}
+  magicFill: {fileID: 0}
+  health: 0
+  magic: 0
+  melee: 0
+  range: 0
+  defense: 0
+  speed: 0
+  experience: 0
+  nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
   meleePrefab: {fileID: 571884980}
   skillPrefab: {fileID: 1435391458}
   faceIcon: {fileID: 21300000, guid: 5d28276b4aa6b804c8714bd8e5261910, type: 3}
@@ -3921,7 +3962,7 @@ MonoBehaviour:
   animator: {fileID: 1029229644}
   healthFill: {fileID: 256024035}
   magicFill: {fileID: 1096445390}
-  health: 125
+  health: 100
   magic: 100
   melee: 10
   range: 30
@@ -3930,6 +3971,7 @@ MonoBehaviour:
   experience: 0
   nextActTurn: 0
   SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
 --- !u!1 &1035923831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4557,9 +4599,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1220104757}
   - component: {fileID: 1220104756}
-  - component: {fileID: 1220104755}
   - component: {fileID: 1220104754}
   - component: {fileID: 1220104753}
+  - component: {fileID: 1220104755}
   m_Layer: 0
   m_Name: WizardHero3
   m_TagString: Hero3
@@ -4582,7 +4624,7 @@ MonoBehaviour:
   animator: {fileID: 1220104754}
   healthFill: {fileID: 726041281}
   magicFill: {fileID: 1209130846}
-  health: 125
+  health: 100
   magic: 100
   melee: 10
   range: 30
@@ -4591,6 +4633,7 @@ MonoBehaviour:
   experience: 0
   nextActTurn: 0
   SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
 --- !u!95 &1220104754
 Animator:
   serializedVersion: 3
@@ -4619,9 +4662,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1220104752}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebf8515cc30f144583c4ac3129cf228, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ff77cae53ee92340834b417438c27dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  healthFill: {fileID: 0}
+  magicFill: {fileID: 0}
+  health: 0
+  magic: 0
+  melee: 0
+  range: 0
+  defense: 0
+  speed: 0
+  experience: 0
+  nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
   meleePrefab: {fileID: 1577307516}
   skillPrefab: {fileID: 1802172429}
   faceIcon: {fileID: 21300000, guid: 5d28276b4aa6b804c8714bd8e5261910, type: 3}
@@ -6577,9 +6633,9 @@ GameObject:
   - component: {fileID: 1703203704}
   - component: {fileID: 1703203703}
   - component: {fileID: 1703203702}
-  - component: {fileID: 1703203701}
   - component: {fileID: 1703203700}
   - component: {fileID: 1703203705}
+  - component: {fileID: 1703203701}
   m_Layer: 0
   m_Name: GiantEnemy2
   m_TagString: Enemy2
@@ -6615,9 +6671,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1703203699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebf8515cc30f144583c4ac3129cf228, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d52cb6864719b146b7ef05d626b1be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  healthFill: {fileID: 0}
+  magicFill: {fileID: 0}
+  health: 0
+  magic: 0
+  melee: 0
+  range: 0
+  defense: 0
+  speed: 0
+  experience: 0
+  nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
   meleePrefab: {fileID: 789783607}
   skillPrefab: {fileID: 759904901}
   faceIcon: {fileID: 21300000, guid: 4d650b51d2a14b242a227215709e2780, type: 3}
@@ -6645,6 +6714,7 @@ MonoBehaviour:
   experience: 0
   nextActTurn: 0
   SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
 --- !u!212 &1703203703
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7140,9 +7210,9 @@ GameObject:
   - component: {fileID: 1762336112}
   - component: {fileID: 1762336111}
   - component: {fileID: 1762336110}
-  - component: {fileID: 1762336109}
   - component: {fileID: 1762336108}
   - component: {fileID: 1762336113}
+  - component: {fileID: 1762336109}
   m_Layer: 0
   m_Name: GiantEnemy3
   m_TagString: Enemy3
@@ -7178,9 +7248,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1762336107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebf8515cc30f144583c4ac3129cf228, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d52cb6864719b146b7ef05d626b1be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  healthFill: {fileID: 0}
+  magicFill: {fileID: 0}
+  health: 0
+  magic: 0
+  melee: 0
+  range: 0
+  defense: 0
+  speed: 0
+  experience: 0
+  nextActTurn: 0
+  SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
   meleePrefab: {fileID: 319293085}
   skillPrefab: {fileID: 1741574881}
   faceIcon: {fileID: 21300000, guid: 4d650b51d2a14b242a227215709e2780, type: 3}
@@ -7208,6 +7291,7 @@ MonoBehaviour:
   experience: 0
   nextActTurn: 0
   SpawnDeadObj: {fileID: 0}
+  SpawnDeadObjHero: {fileID: 0}
 --- !u!212 &1762336111
 SpriteRenderer:
   m_ObjectHideFlags: 0
