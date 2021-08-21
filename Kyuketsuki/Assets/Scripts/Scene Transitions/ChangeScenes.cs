@@ -11,14 +11,14 @@ public class ChangeScenes : MonoBehaviour
     private bool shouldLoadAfterFade;
     public bool shouldFadeFromBlack;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (shouldFadeFromBlack)
-        {
-            UIFade.instance.FadeFromBlack(0.5f);
-        }
-    }
+    // Comentei aqui porque tava crashando
+    //void Start()
+    //{
+        //if (shouldFadeFromBlack)
+       // {
+           // UIFade.instance.FadeFromBlack(0.5f);
+      //  }
+   // }
 
     // Update is called once per frame
     void Update()

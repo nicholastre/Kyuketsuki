@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 100353495}
   - component: {fileID: 100353494}
   - component: {fileID: 100353496}
+  - component: {fileID: 100353499}
   m_Layer: 0
   m_Name: WizardHero2
   m_TagString: Hero2
@@ -498,6 +499,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &100353499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100353493}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.77504313, y: 1.0599998, z: 0.2}
+  m_Center: {x: 0.09075702, y: 0, z: 0}
 --- !u!1 &105455215
 GameObject:
   m_ObjectHideFlags: 0
@@ -3826,6 +3840,7 @@ GameObject:
   - component: {fileID: 1029229644}
   - component: {fileID: 1029229645}
   - component: {fileID: 1029229643}
+  - component: {fileID: 1029229646}
   m_Layer: 0
   m_Name: WizardHero
   m_TagString: Hero
@@ -3972,6 +3987,19 @@ MonoBehaviour:
   nextActTurn: 0
   SpawnDeadObj: {fileID: 0}
   SpawnDeadObjHero: {fileID: 0}
+--- !u!65 &1029229646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029229640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.94445395, y: 0.9994956, z: 0.2}
+  m_Center: {x: 0.09075656, y: 0.030252185, z: 0}
 --- !u!1 &1035923831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4602,6 +4630,7 @@ GameObject:
   - component: {fileID: 1220104754}
   - component: {fileID: 1220104753}
   - component: {fileID: 1220104755}
+  - component: {fileID: 1220104758}
   m_Layer: 0
   m_Name: WizardHero3
   m_TagString: Hero3
@@ -4748,6 +4777,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1220104758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220104752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8839499, y: 1.0599998, z: 0.2}
+  m_Center: {x: 0.09680723, y: 0, z: 0}
 --- !u!1 &1222282385
 GameObject:
   m_ObjectHideFlags: 0
@@ -6642,7 +6684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1703203700
 Animator:
   serializedVersion: 3
@@ -7219,7 +7261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1762336108
 Animator:
   serializedVersion: 3
@@ -7287,7 +7329,7 @@ MonoBehaviour:
   melee: 12
   range: 5
   defense: 5
-  speed: 17
+  speed: 16
   experience: 0
   nextActTurn: 0
   SpawnDeadObj: {fileID: 0}

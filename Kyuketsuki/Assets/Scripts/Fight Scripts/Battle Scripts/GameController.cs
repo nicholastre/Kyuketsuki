@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     public static bool hero3Turn;
 
     public static bool TwoEnemies = false;
-    public static bool ThreeEnemies = false;
+    public static bool ThreeEnemies = true;
 
 
 
@@ -77,7 +77,7 @@ public class GameController : MonoBehaviour
         checkBattle();
     }
 
-     public void NextTurn()
+    public void NextTurn()
     {
         
         battleText.gameObject.SetActive(false);
@@ -94,26 +94,21 @@ public class GameController : MonoBehaviour
             if(currentUnit.tag == "Hero")
             {
                 this.battleMenu.SetActive(true);
-                //Debug.Log("Wizrard 1 turno");
                 hero1Turn = true;
                 hero2Turn = false;
                 hero3Turn = false;
                 
-
             } 
             if(currentUnit.tag == "Hero2")
             {
                 this.battleMenu.SetActive(true);
-                //Debug.Log("Wizrard 2 turno");
                 hero1Turn = false;
                 hero2Turn = true;
                 hero3Turn = false;
-                
             }
             if(currentUnit.tag == "Hero3")
             {
                 this.battleMenu.SetActive(true);
-                //Debug.Log("Wizrard 3 turno");
                 hero1Turn = false;
                 hero2Turn = false;
                 hero3Turn = true;
@@ -148,14 +143,29 @@ public class GameController : MonoBehaviour
 
         GameObject[] deadEnemies = GameObject.FindGameObjectsWithTag("DeadEnemy");
         int numberDE = deadEnemies.Length;
-        Debug.Log("O número de inimigos mortos é " + numberDE);
-        if(numberDE >= 1){
-            endBattle();
+        //Debug.Log("O número de inimigos mortos é " + numberDE);
+        if((numberDE >= 3) && (ThreeEnemies == true)){
+            endBattleWin();
+        }
+        if((numberDE >= 2) && (TwoEnemies == true)){
+            endBattleWin();
+        }
+        if((numberDE >= 1) && (TwoEnemies == false) && (ThreeEnemies == false)){
+            endBattleWin();
         }
 
+        GameObject[] deadHeros = GameObject.FindGameObjectsWithTag("DeadHero");
+        int numberDH = deadHeros.Length;
+        Debug.Log("O número de herois mortos é " + numberDH);
+         if(numberDH >= 3)
+         {
+            endBattleLose();
+         }
 
     }
-    public void endBattle()
+
+
+    public void endBattleWin()
     {
         Debug.Log("LUTA ENCERRADA");
 
@@ -173,6 +183,11 @@ public class GameController : MonoBehaviour
         }
 
         GetComponent<ChangeScenes>().PrepareFadeChange();
+    }
+
+    public void endBattleLose()
+    {
+        Debug.Log("LUTA ENCERRADA. OS HEROIS PERDERAM");
     }
 
 }

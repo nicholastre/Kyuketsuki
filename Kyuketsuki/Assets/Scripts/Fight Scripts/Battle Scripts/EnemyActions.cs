@@ -10,6 +10,13 @@ public class EnemyActions : FighterStats
     private GameObject hero3;
 
 
+    public static bool EnemyGotKill = false;
+
+    public static bool heroDead = false;
+    public static bool hero2Dead = false;
+    public static bool hero3Dead = false;
+
+
     [SerializeField]
     private GameObject meleePrefab;
 
@@ -33,23 +40,59 @@ public class EnemyActions : FighterStats
         GameObject victim = null;
 
         int target = Random.Range(0, 3); //Define qual dos 3 hérois será atacado
-
         if (target == 0)
-        {
-            victim = hero;
+        {   
+                if(heroDead == false)
+                {
+                    victim = hero;  
+                }
+                else if(hero2Dead == false)
+                {
+                    victim = hero2;
+                }
+                else if(hero3Dead == false)
+                {
+                    victim = hero3;
+                }
+                  
         }
 
         if (target == 1)
         {
-            victim = hero2;
-        }
+                if(hero2Dead == false)
+                {
+                    victim = hero2;  
+                }
+                else if(heroDead == false)
+                {
+                    victim = hero;
+                }
+                else if(hero3Dead == false)
+                {
+                    victim = hero3;
+                }
 
+        }
+            
         if (target == 2)
         {
-            victim = hero3;
+                if(hero3Dead == false)
+                {
+                    victim = hero3;  
+                }
+                else if(heroDead == false)
+                {
+                    victim = hero;
+                }
+                else if(hero2Dead == false)
+                {
+                    victim = hero2;
+                }   
         }
-        
 
+        Debug.Log("O alvo escolhido foi " + target);
+        
+        
         if (btn.CompareTo("melee") == 0)
         {
          
