@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        Menu.instance.EmergencyDisableMenu();
         battleMenu = GameObject.Find("ActionMenu");
     }
     void Start()
