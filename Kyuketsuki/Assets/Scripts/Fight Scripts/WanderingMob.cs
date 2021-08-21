@@ -11,11 +11,19 @@ public class WanderingMob : MonoBehaviour
     private float timeToWalk;
     private float walkingCountdown;
     private bool isChasing;
-    private int direction;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (GameManager.instance.enemyEncountered == gameObject.name)
+        {
+            PlayerController.instance.canMove = true;
+            PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            PlayerController.instance.gameObject.transform.position = GameManager.instance.playerPosition;
+            GameManager.instance.playerPosition = Vector3.zero;
+            Destroy(this.gameObject);
+        }
+
         timeToWalk = Random.Range(3.0f, 5.0f);
         walkingCountdown = 0;
         isChasing = false;

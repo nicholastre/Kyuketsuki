@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+public enum AreaMaps
+{
+    ForestArea,
+    MineArea,
+    MonasteryArea
+}
+
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
@@ -16,15 +23,22 @@ public class GameManager : MonoBehaviour {
     public int groupMoney;
     public int groupDebt;
 
-    private int maxDebt = 100000;
+    public int averageLevel;
+    public int maxDebt = 100000;
     public CharStats[] playerStats;     // Dados dos personagens carregados para uso em jogo
     public int currentGold;
     public Item[] referenceItems;       // Contem os Prefabs de cada item no jogo
     public bool gameMenuOpen, dialogActive, fadingBetweenAreas,shopActive;
 
+    public AreaMaps currentArea;
+    public string enemyEncountered = "";
+    public Vector3 playerPosition;
+
 	// Use this for initialization
 	void Start () {
         instance = this;
+
+        playerPosition = Vector3.zero;
 
         DontDestroyOnLoad(gameObject);
 
@@ -33,18 +47,53 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Debug.Log(playerPosition);
+
         //Verifica os booleanos para travar o jogador
         if(gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive)
         {
             PlayerController.instance.canMove = false;
         }
-        else
+        else if (PlayerController.instance != null)
         {
             PlayerController.instance.canMove = true;
         }
+
         if (Input.GetKeyDown(KeyCode.K))
         {
             TempAddExp();
+        } else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            for (int i = 0; i < playerStats.Length; i++)
+            {
+                playerStats[i].playerLevel = (playerStats[i].maxLevel / 2) + 1;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            for (int i = 0; i < playerStats.Length; i++)
+            {
+                playerStats[i].playerLevel = playerStats[i].maxLevel;
+            }
+        } else if (Input.GetKeyDown(KeyCode.T))
+        {
+            groupMoney += 10000;
+        } else if (Input.GetKeyDown(KeyCode.U))
+        {
+            groupDebt += 20000;
+        } else if (Input.GetKeyDown(KeyCode.O))
+        {
+            for (int i = 0; i < playerStats.Length; i++)
+            {
+                playerStats[i].changeHitPoints(-10);
+                playerStats[i].changeMagicPoints(-10);
+            }
+        } else if (Input.GetKeyDown(KeyCode.J))
+        {
+            AddItem("Dagger");
+            AddItem("teste");
+            RemoveItem("HP Potion");
+            RemoveItem("teste");
         } else if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("Dinheiro: " + groupMoney);
@@ -57,26 +106,6 @@ public class GameManager : MonoBehaviour {
             playerStats[0].PrintStats();
             playerStats[1].PrintStats();
             playerStats[2].PrintStats();
-        } else if (Input.GetKeyDown(KeyCode.L))
-        {
-            SaveGame();
-        } else if (Input.GetKeyDown(KeyCode.T))
-        {
-            groupMoney += 200;
-            groupDebt += 100;
-
-            for (int i = 0; i < playerStats.Length; i++)
-            {
-                playerStats[i].changeHitPoints(-10);
-                playerStats[i].changeMagicPoints(-10);
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.J))
-        {
-            AddItem("Dagger");
-            AddItem("teste");
-            RemoveItem("HP Potion");
-            RemoveItem("teste");
         }
     }
 
@@ -91,11 +120,12 @@ public class GameManager : MonoBehaviour {
             changedLevels[i] = playerStats[i].CheckLevelUp();
         }
 
+        averageLevel = (playerStats[0].playerLevel + playerStats[1].playerLevel + playerStats[2].playerLevel) / 3;
+
         // Recupera os personagens
         for (int i = 0; i < playerStats.Length; i++)
         {
-            playerStats[i].changeHitPoints(playerStats[i].maxHP);
-            playerStats[i].changeMagicPoints(playerStats[i].maxMP);
+            playerStats[i].restoreCharacter();
         }
 
         return changedLevels;
@@ -218,8 +248,10 @@ public class GameManager : MonoBehaviour {
             numberOfItems = save.numberOfItems;
             groupMoney = save.groupMoney;
             groupDebt = save.groupDebt;
+            averageLevel = (playerStats[0].playerLevel + playerStats[1].playerLevel + playerStats[2].playerLevel) / 3;
         } else
         {
+            groupDebt = 50000;
             Debug.Log("Sem jogo salvo");
         }
     }
@@ -352,17 +384,12 @@ public class GameManager : MonoBehaviour {
     public void changeDebt(int modifier)
     {
         groupDebt += modifier;
-        checkDebt();
     }
 
-    public void checkDebt()
+    public void EnteredBattle(Vector3 player, AreaMaps areaId, string mobName)
     {
-        if (groupDebt > maxDebt)
-        {
-            // implementar game over ruim
-        } else if (groupDebt <= 0)
-        {
-            // implementar game over bom
-        }
+        playerPosition = player;
+        currentArea = areaId;
+        enemyEncountered = mobName;
     }
 }

@@ -9,11 +9,15 @@ public class ChangeScenes : MonoBehaviour
     public string areaToLoad;
     public float waitToLoad = 1f;
     private bool shouldLoadAfterFade;
+    public bool shouldFadeFromBlack;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (shouldFadeFromBlack)
+        {
+            UIFade.instance.FadeFromBlack(0.5f);
+        }
     }
 
     // Update is called once per frame
@@ -32,10 +36,10 @@ public class ChangeScenes : MonoBehaviour
     }
 
     // Funcao chamada para iniciar a transicao de tela
-    public void PrepareFadeChange()
+    public void PrepareFadeChange(float speed = 2)
     {
         // Inicia um fade para trocar de tela posteriormente
-        UIFade.instance.FadeToBlack();
+        UIFade.instance.FadeToBlack(speed);
         shouldLoadAfterFade = true;
     }
 

@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour {
 
     public Rigidbody2D theRB;
     public float moveSpeed;
+    public float horizontalSpeed;
+    public float verticalSpeed;
 
-    public Animator myAnim;
+    public Animator animator;
 
     public static PlayerController instance;
 
@@ -17,8 +19,9 @@ public class PlayerController : MonoBehaviour {
 
     public bool canMove = true;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+
         // Vereifica se só existe uma instância do jogador na cena
         if (instance == null)
         {
@@ -39,7 +42,12 @@ public class PlayerController : MonoBehaviour {
         //Movimentação
         if (canMove)
         {
-            theRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+            horizontalSpeed = Input.GetAxisRaw("Horizontal");
+            verticalSpeed = Input.GetAxisRaw("Vertical");
+
+            animator.SetInteger("HorizontalSpeed", (int)horizontalSpeed);
+            animator.SetInteger("VerticalSpeed", (int)verticalSpeed);
+            theRB.velocity = new Vector2(horizontalSpeed, verticalSpeed).normalized * moveSpeed;
 
         } else
         {

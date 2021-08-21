@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaToLoad: testemapa
   waitToLoad: 1
+  shouldFadeFromBlack: 1
 --- !u!114 &437463498
 MonoBehaviour:
   m_ObjectHideFlags: 0

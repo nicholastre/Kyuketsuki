@@ -12,18 +12,28 @@ public class AreaExit : MonoBehaviour
 
     public AreaEntrance theEntrance;
 
+    public bool shouldFadeFromBlack;
+
     public float waitToLoad = 1f;
     private bool shouldLoadAfterFade;
 
     // Use this for initialization
     void Start()
     {
-        theEntrance.transitionName = areaTransitionName;
+        if (theEntrance != null)
+        {
+            theEntrance.transitionName = areaTransitionName;
+        }
+
+        if (shouldFadeFromBlack)
+        {
+            UIFade.instance.FadeFromBlack(0.5f);
+        }
 
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if (shouldLoadAfterFade)
         {
@@ -36,7 +46,7 @@ public class AreaExit : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
@@ -44,10 +54,11 @@ public class AreaExit : MonoBehaviour
             shouldLoadAfterFade = true;
             GameManager.instance.fadingBetweenAreas = true;
 
-            UIFade.instance.FadeToBlack();
+            UIFade.instance.FadeToBlack(1f);
             PlayerController.instance.areaTransitionName = areaTransitionName;
 
             PlayerController.instance.canMove = false;
+            PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 }

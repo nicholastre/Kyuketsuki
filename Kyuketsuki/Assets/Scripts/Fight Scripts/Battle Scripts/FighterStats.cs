@@ -143,4 +143,5 @@ public class FighterStats : MonoBehaviour, IComparable
 
         Debug.Log("Eita, tá chamando a função da classe pai");
     }
+
 }
