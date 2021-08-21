@@ -40890,6 +40890,10 @@ MonoBehaviour:
   moneyTrackers:
   - {fileID: 18455645598438853}
   - {fileID: 3987896324941141361}
+  summarizedChars:
+  - {fileID: 3788556688062764266}
+  - {fileID: 1918000955868467275}
+  - {fileID: 8181286960996487563}
 --- !u!1 &6351093229312889950
 GameObject:
   m_ObjectHideFlags: 0
