@@ -71,7 +71,10 @@ public class EnemyActions : FighterStats
 
     public override void MakeDeath()
     {
+        
+        base.MakeDeath();
         Debug.Log("ETA PORRA O INIMIGO MORREU");
+        
     }
     
 }

@@ -45,6 +45,7 @@ public class FighterStats : MonoBehaviour, IComparable
     private float xNewMagicScale;
     private GameObject GameControllerObj;
     public GameObject SpawnDeadObj;
+    public GameObject SpawnDeadObjHero;
 
    
     void Awake()
@@ -70,21 +71,27 @@ public class FighterStats : MonoBehaviour, IComparable
 
         if(health <= 0)
         {
+            
             dead = true;
             if (gameObject.tag == "Hero1" || gameObject.tag == "Hero2" || gameObject.tag == "Hero3")
             {
-                gameObject.tag = "DeadHero";
+                SpawnDeadObjHero = new GameObject("DeadHero");
+                SpawnDeadObjHero.tag = "DeadHero";
+                
             }else
             {
-                MakeDeath();
                 SpawnDeadObj = new GameObject("DeadEnemy");
                 SpawnDeadObj.tag = "DeadEnemy";
                 MouseClick.tagName="null";
+                
+                Debug.Log("CHAMEI O MAKE Death");
+                MakeDeath();
             }
-            
+
+            Destroy(gameObject);
             Destroy(healthFill);
             Destroy(magicFill);
-            Destroy(gameObject);
+            
             
         } else if (damage > 0)
         {
@@ -133,6 +140,7 @@ public class FighterStats : MonoBehaviour, IComparable
 
     public virtual void MakeDeath()
     {
+
         Debug.Log("Eita, tá chamando a função da classe pai");
     }
 }
