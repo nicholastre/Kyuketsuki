@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 enum CutsceneScenes
 {
-    StarterScene,
     FirstScene,
     SecondScene,
     ThirdScene,
@@ -14,7 +13,6 @@ enum CutsceneScenes
 
 public class CutsceneController : MonoBehaviour
 {
-    public Image initialFade;
     public Component cutsceneText;
     public Component confirmButton;
     public Component[] cutsceneImages;
@@ -24,8 +22,8 @@ public class CutsceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(FadeSetImage(initialFade));
-        currentScene = CutsceneScenes.StarterScene;
+        UIFade.instance.FadeFromBlack(1f);
+        currentScene = CutsceneScenes.FirstScene;
     }
 
     // Update is called once per frame
@@ -58,10 +56,6 @@ public class CutsceneController : MonoBehaviour
 
         switch (currentScene)
         {
-            case CutsceneScenes.StarterScene:
-                img.gameObject.SetActive(false);
-                currentScene = CutsceneScenes.FirstScene;
-                break;
             case CutsceneScenes.FirstScene:
                 currentScene = CutsceneScenes.SecondScene; 
                 break;
@@ -90,7 +84,7 @@ public class CutsceneController : MonoBehaviour
                 StartCoroutine(FadeSetImage(cutsceneImages[2].GetComponent<Image>()));
                 break;
             case CutsceneScenes.FourthScene:
-                GetComponentInChildren<ChangeScenes>().PrepareFadeChange();
+                GetComponentInChildren<ChangeScenes>().PrepareFadeChange(1f);
                 break;
         }
     }

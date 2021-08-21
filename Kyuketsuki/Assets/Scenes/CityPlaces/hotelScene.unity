@@ -260,6 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaToLoad: testemapa
   waitToLoad: 1
+  shouldFadeFromBlack: 1
 --- !u!114 &62590356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,12 +308,12 @@ MonoBehaviour:
       - m_Target: {fileID: 62590355}
         m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
         m_MethodName: PrepareFadeChange
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
@@ -900,6 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaToLoad: restScene
   waitToLoad: 1
+  shouldFadeFromBlack: 0
 --- !u!114 &2125349505
 MonoBehaviour:
   m_ObjectHideFlags: 0

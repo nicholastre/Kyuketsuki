@@ -12,6 +12,8 @@ public class AreaExit : MonoBehaviour
 
     public AreaEntrance theEntrance;
 
+    public bool shouldFadeFromBlack;
+
     public float waitToLoad = 1f;
     private bool shouldLoadAfterFade;
 
@@ -21,6 +23,11 @@ public class AreaExit : MonoBehaviour
         if (theEntrance != null)
         {
             theEntrance.transitionName = areaTransitionName;
+        }
+
+        if (shouldFadeFromBlack)
+        {
+            UIFade.instance.FadeFromBlack(0.5f);
         }
 
     }
@@ -47,7 +54,7 @@ public class AreaExit : MonoBehaviour
             shouldLoadAfterFade = true;
             GameManager.instance.fadingBetweenAreas = true;
 
-            UIFade.instance.FadeToBlack();
+            UIFade.instance.FadeToBlack(1f);
             PlayerController.instance.areaTransitionName = areaTransitionName;
 
             PlayerController.instance.canMove = false;
