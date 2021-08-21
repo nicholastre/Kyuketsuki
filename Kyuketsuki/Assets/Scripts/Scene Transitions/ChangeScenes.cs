@@ -10,6 +10,12 @@ public class ChangeScenes : MonoBehaviour
     public float waitToLoad = 1f;
     private bool shouldLoadAfterFade;
     public bool shouldFadeFromBlack;
+    public bool shouldDestroyPlayer;
+
+    private void OnEnable()
+    {
+        waitToLoad = 1f;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +23,12 @@ public class ChangeScenes : MonoBehaviour
         if (shouldFadeFromBlack)
         {
             UIFade.instance.FadeFromBlack(0.5f);
+        }
+
+        if (PlayerController.instance != null && shouldDestroyPlayer)
+        {
+            Menu.instance.EmergencyDisableMenu();
+            Destroy(PlayerController.instance.gameObject);
         }
     }
 

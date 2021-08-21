@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum MenuState
+public enum MenuState
 {
-    Disabled,
-    Enabled,
-    ConfirmExit
+    Disabled = 0,
+    MainScreen = 1,
+    ExitScreen = 2
 }
 
 public class Menu : MonoBehaviour
 {
     public static Menu instance;
+    public GameObject menuBackground;
 
     private MenuState currentState;
 
@@ -21,47 +22,72 @@ public class Menu : MonoBehaviour
         instance = this;
 
         currentState = MenuState.Disabled;
-        gameObject.transform.Find("Menu Background").gameObject.SetActive(false);
+        menuBackground.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateShownScreen();
+
         switch (currentState)
         {
             case MenuState.Disabled:
-                if (ValidMouseClick())
+                if (ValidRightClick())
                 {
-                    currentState = MenuState.Enabled;
-                    gameObject.transform.Find("Menu Background").gameObject.SetActive(true);
+                    currentState = MenuState.MainScreen;
+                    menuBackground.SetActive(true);
                     PlayerController.instance.canMove = false;
                 }
                 break;
-            case MenuState.Enabled:
-                if (ValidMouseClick())
+            case MenuState.MainScreen:
+                if (ValidRightClick())
                 {
                     currentState = MenuState.Disabled;
-                    gameObject.transform.Find("Menu Background").gameObject.SetActive(false);
+                    menuBackground.SetActive(false);
                 }
 
                 PlayerController.instance.canMove = false;
                 break;
-            case MenuState.ConfirmExit:
-                if (ValidMouseClick())
+            case MenuState.ExitScreen:
+                if (ValidRightClick())
                 {
                     currentState = MenuState.Disabled;
-                    gameObject.transform.Find("Menu Background").gameObject.SetActive(false);
+                    menuBackground.SetActive(false);
                     PlayerController.instance.canMove = true;
                 }
                 break;
         }
     }
 
-    private bool ValidMouseClick()
+    private void UpdateShownScreen()
     {
-        if (PlayerController.instance != null &&
-            PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().enabled &&
-            Input.GetButtonDown("Fire2"))
+        switch (currentState)
+        {
+            case MenuState.MainScreen:
+                menuBackground.transform.Find("Main").gameObject.SetActive(true);
+                menuBackground.transform.Find("Exit").gameObject.SetActive(false);
+                break;
+            case MenuState.ExitScreen:
+                menuBackground.transform.Find("Main").gameObject.SetActive(false);
+                menuBackground.transform.Find("Exit").gameObject.SetActive(true);
+                break;
+            case MenuState.Disabled:
+                menuBackground.SetActive(false);
+                break;
+        }
+    }
+
+    public void ClickChangeMenuState(int stateValue)
+    {
+        currentState = (MenuState)stateValue;
+    }
+
+    private bool ValidRightClick()
+    {
+        if (Input.GetButtonDown("Fire2") && 
+            PlayerController.instance != null &&
+            PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().enabled)
         {
             return true;
         } else
@@ -73,6 +99,5 @@ public class Menu : MonoBehaviour
     public void EmergencyDisableMenu()
     {
         currentState = MenuState.Disabled;
-        gameObject.transform.Find("Menu Background").gameObject.SetActive(false);
     }
 }
