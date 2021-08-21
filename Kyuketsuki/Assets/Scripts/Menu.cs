@@ -7,8 +7,9 @@ public enum MenuState
 {
     Disabled = 0,
     MainScreen = 1,
-    OptionsScreen = 2,
-    ExitScreen = 3
+    ItemScreen = 2,
+    OptionsScreen = 3,
+    ExitScreen = 4
 }
 
 public class Menu : MonoBehaviour
@@ -57,6 +58,7 @@ public class Menu : MonoBehaviour
                     PlayerController.instance.canMove = true;
                 }
                 break;
+            case MenuState.ItemScreen:
             case MenuState.OptionsScreen:
                 if (ValidRightClick())
                 {
@@ -72,17 +74,26 @@ public class Menu : MonoBehaviour
         {
             case MenuState.MainScreen:
                 menuBackground.transform.Find("Main").gameObject.SetActive(true);
+                menuBackground.transform.Find("Inventory").gameObject.SetActive(false);
                 menuBackground.transform.Find("Options").gameObject.SetActive(false);
                 menuBackground.transform.Find("Exit").gameObject.SetActive(false);
                 UpdateCharStats();
                 break;
+            case MenuState.ItemScreen:
+                menuBackground.transform.Find("Main").gameObject.SetActive(false);
+                menuBackground.transform.Find("Inventory").gameObject.SetActive(true);
+                menuBackground.transform.Find("Options").gameObject.SetActive(false);
+                menuBackground.transform.Find("Exit").gameObject.SetActive(false);
+                break;
             case MenuState.OptionsScreen:
                 menuBackground.transform.Find("Main").gameObject.SetActive(false);
+                menuBackground.transform.Find("Inventory").gameObject.SetActive(false);
                 menuBackground.transform.Find("Options").gameObject.SetActive(true);
                 menuBackground.transform.Find("Exit").gameObject.SetActive(false);
                 break;
             case MenuState.ExitScreen:
                 menuBackground.transform.Find("Main").gameObject.SetActive(false);
+                menuBackground.transform.Find("Inventory").gameObject.SetActive(false);
                 menuBackground.transform.Find("Options").gameObject.SetActive(false);
                 menuBackground.transform.Find("Exit").gameObject.SetActive(true);
                 break;
