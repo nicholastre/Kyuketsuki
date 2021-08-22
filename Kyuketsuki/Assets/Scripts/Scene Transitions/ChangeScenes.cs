@@ -10,15 +10,27 @@ public class ChangeScenes : MonoBehaviour
     public float waitToLoad = 1f;
     private bool shouldLoadAfterFade;
     public bool shouldFadeFromBlack;
+    public bool shouldDestroyPlayer;
 
-    // Comentei aqui porque tava crashando
-    //void Start()
-    //{
-        //if (shouldFadeFromBlack)
-       // {
-           // UIFade.instance.FadeFromBlack(0.5f);
-      //  }
-   // }
+    private void OnEnable()
+    {
+        waitToLoad = 1f;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        if (shouldFadeFromBlack)
+        {
+            UIFade.instance.FadeFromBlack(0.5f);
+        }
+
+        if (PlayerController.instance != null && shouldDestroyPlayer)
+        {
+            GameMenu.instance.EmergencyDisableMenu();
+            Destroy(PlayerController.instance.gameObject);
+        }
+    }
 
     // Update is called once per frame
     void Update()

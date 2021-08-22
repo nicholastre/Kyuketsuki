@@ -23,7 +23,7 @@ public class ItemButton : MonoBehaviour
 
     public void Press()
     {
-        if (GameMenu.instance.theMenu.activeInHierarchy)
+        if (GameMenu.instance.GetGameMenuState() == MenuState.ItemScreen)
         {
             if(GameManager.instance.itemsHeld[buttonValue] != "")
             {
@@ -31,7 +31,7 @@ public class ItemButton : MonoBehaviour
             }
         }
 
-        if (Shop.instance.shopMenu.active)
+        if (Shop.instance.shopMenu.activeInHierarchy)
         {
             if (Shop.instance.buyMenu.activeInHierarchy)
             {
