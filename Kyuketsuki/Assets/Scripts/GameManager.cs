@@ -335,7 +335,6 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-        GameMenu.instance.ShowItems();
     }
 
     public void RemoveItem(string itemToRemove)

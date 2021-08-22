@@ -27,7 +27,7 @@ public class ChangeScenes : MonoBehaviour
 
         if (PlayerController.instance != null && shouldDestroyPlayer)
         {
-            Menu.instance.EmergencyDisableMenu();
+            GameMenu.instance.EmergencyDisableMenu();
             Destroy(PlayerController.instance.gameObject);
         }
     }
