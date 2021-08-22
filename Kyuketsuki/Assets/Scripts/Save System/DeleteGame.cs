@@ -48,6 +48,7 @@ public class DeleteGame : MonoBehaviour
             case DeleteState.ConfirmDelete:
                 File.Delete(Application.persistentDataPath + "/gamesave.save");
                 GetComponentInChildren<Text>().text = "jogo apagado";
+                GameManager.instance.LoadGame();
                 buttonState = DeleteState.GameDeleted;
                 break;
             case DeleteState.GameDeleted:

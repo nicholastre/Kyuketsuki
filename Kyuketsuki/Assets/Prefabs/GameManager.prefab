@@ -43,24 +43,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ed1529524c9cf458422d36890c722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: Barreto
+  charName: hanzo
   playerLevel: 1
-  currentEXP: 250
+  currentEXP: 0
   expToNextLevel: 
-  maxLevel: 100
-  baseEXP: 1000
-  currentHP: 100
-  maxHP: 100
-  currentMP: 10
-  maxMP: 30
-  strength: 5
-  defence: 10
-  agility: 0
+  maxLevel: 20
+  baseEXP: 100
+  currentHP: 125
+  maxHP: 125
+  currentMP: 15
+  maxMP: 15
+  strength: 3
+  defence: 8
+  agility: 5
   wpnPwr: 0
   armrPwr: 0
   equippedWpn: 
   equippedArmr: 
-  charIamge: {fileID: 8648657281458161699, guid: be7c93c81ccb420419e8f14e63a3fe8a, type: 3}
+  charIamge: {fileID: 1546122702872047951, guid: ebab3f63e9d7a2d48afefd6f2de9cc79, type: 3}
 --- !u!1 &4535763949550412369
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,24 +104,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ed1529524c9cf458422d36890c722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: Cleanto
-  playerLevel: 10
-  currentEXP: 250
+  charName: maki
+  playerLevel: 1
+  currentEXP: 0
   expToNextLevel: 
-  maxLevel: 100
-  baseEXP: 1000
-  currentHP: 50
+  maxLevel: 20
+  baseEXP: 100
+  currentHP: 100
   maxHP: 100
-  currentMP: 0
-  maxMP: 30
-  strength: 20
-  defence: 10
-  agility: 0
+  currentMP: 25
+  maxMP: 25
+  strength: 8
+  defence: 5
+  agility: 3
   wpnPwr: 0
   armrPwr: 0
   equippedWpn: 
   equippedArmr: 
-  charIamge: {fileID: 8648657281458161699, guid: be7c93c81ccb420419e8f14e63a3fe8a, type: 3}
+  charIamge: {fileID: 7709784719092707630, guid: ebab3f63e9d7a2d48afefd6f2de9cc79, type: 3}
 --- !u!1 &4535763949929879628
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,24 +165,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ed1529524c9cf458422d36890c722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: Pedro
-  playerLevel: 5
-  currentEXP: 250
+  charName: sumino
+  playerLevel: 1
+  currentEXP: 0
   expToNextLevel: 
-  maxLevel: 100
-  baseEXP: 1000
-  currentHP: 150
-  maxHP: 200
-  currentMP: 15
-  maxMP: 30
-  strength: 200
-  defence: 10
-  agility: 0
+  maxLevel: 20
+  baseEXP: 100
+  currentHP: 75
+  maxHP: 75
+  currentMP: 20
+  maxMP: 20
+  strength: 5
+  defence: 3
+  agility: 8
   wpnPwr: 0
   armrPwr: 0
   equippedWpn: 
   equippedArmr: 
-  charIamge: {fileID: -2061022921256640010, guid: be7c93c81ccb420419e8f14e63a3fe8a, type: 3}
+  charIamge: {fileID: -7506843205370739377, guid: ebab3f63e9d7a2d48afefd6f2de9cc79, type: 3}
 --- !u!1 &4535763950110080232
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +232,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempMissions: 
   itemsHeld:
-  - "Po\xE7\xE3o de Vida 1"
   - 
   - 
   - 
@@ -248,7 +247,8 @@ MonoBehaviour:
   - 
   - 
   - 
-  numberOfItems: 03000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  - 
+  numberOfItems: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   groupMoney: 0
   groupDebt: 0
   averageLevel: 0
@@ -257,16 +257,13 @@ MonoBehaviour:
   - {fileID: 4535763949929879631}
   - {fileID: 4535763949550412371}
   - {fileID: 4535763948990650592}
-  currentGold: 100
   referenceItems:
   - {fileID: 8377287289943960920, guid: 4c8e33a40192e824c9041c9501e16ef1, type: 3}
   - {fileID: 2178588128518083996, guid: 45d9d9cf442f8a648aef262c3ee533a0, type: 3}
   - {fileID: 2176165568138265065, guid: 92e80bf92610f5f41adebaa912e45a97, type: 3}
   - {fileID: 8513907778056683447, guid: 790082181a45e414899d5056a1d59a7e, type: 3}
-  gameMenuOpen: 0
   dialogActive: 0
   fadingBetweenAreas: 0
-  shopActive: 0
   battleActive: 0
   currentArea: 0
   enemyEncountered: 

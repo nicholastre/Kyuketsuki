@@ -26,9 +26,8 @@ public class GameManager : MonoBehaviour {
     public int averageLevel;
     public int maxDebt = 100000;
     public CharStats[] playerStats;     // Dados dos personagens carregados para uso em jogo
-    public int currentGold;
     public Item[] referenceItems;       // Contem os Prefabs de cada item no jogo
-    public bool gameMenuOpen, dialogActive, fadingBetweenAreas,shopActive, battleActive;
+    public bool dialogActive, fadingBetweenAreas, battleActive;
 
     public AreaMaps currentArea;
     public string enemyEncountered = "";
@@ -50,7 +49,7 @@ public class GameManager : MonoBehaviour {
         //Debug.Log(playerPosition);
 
         //Verifica os booleanos para travar o jogador
-        if(gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive || battleActive)
+        if(dialogActive || fadingBetweenAreas || battleActive)
         {
             PlayerController.instance.canMove = false;
         }
@@ -64,16 +63,30 @@ public class GameManager : MonoBehaviour {
             TempAddExp();
         } else if (Input.GetKeyDown(KeyCode.Q))
         {
+            int sumHalfwayExp = 0;
+
+            for (int i = 0; i < (playerStats[0].maxLevel / 2) + 1; i++)
+            {
+                sumHalfwayExp += playerStats[0].expToNextLevel[i];
+            }
+
             for (int i = 0; i < playerStats.Length; i++)
             {
-                playerStats[i].playerLevel = (playerStats[i].maxLevel / 2) + 1;
+                playerStats[i].AddExp(sumHalfwayExp);
             }
         }
         else if (Input.GetKeyDown(KeyCode.Z))
         {
+            int sumTotalExp = 0;
+
+            for (int i = 0; i < playerStats[0].maxLevel; i++)
+            {
+                sumTotalExp += playerStats[0].expToNextLevel[i];
+            }
+
             for (int i = 0; i < playerStats.Length; i++)
             {
-                playerStats[i].playerLevel = playerStats[i].maxLevel;
+                playerStats[i].AddExp(sumTotalExp);
             }
         } else if (Input.GetKeyDown(KeyCode.T))
         {
@@ -88,12 +101,6 @@ public class GameManager : MonoBehaviour {
                 playerStats[i].changeHitPoints(-10);
                 playerStats[i].changeMagicPoints(-10);
             }
-        } else if (Input.GetKeyDown(KeyCode.J))
-        {
-            AddItem("Dagger");
-            AddItem("teste");
-            RemoveItem("HP Potion");
-            RemoveItem("teste");
         } else if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("Dinheiro: " + groupMoney);
@@ -251,8 +258,19 @@ public class GameManager : MonoBehaviour {
             averageLevel = (playerStats[0].playerLevel + playerStats[1].playerLevel + playerStats[2].playerLevel) / 3;
         } else
         {
+            tempMissions = "";
+            for (int i = 0; i < itemsHeld.Length; i++)
+            {
+                itemsHeld[i] = "";
+                numberOfItems[i] = 0;
+            }
+            groupMoney = 0;
             groupDebt = 50000;
-            Debug.Log("Sem jogo salvo");
+            averageLevel = 1;
+            for (int i = 0; i < playerStats.Length; i++)
+            {
+                playerStats[i].ResetCharacter();
+            }
         }
     }
 

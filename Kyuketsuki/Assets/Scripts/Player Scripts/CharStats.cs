@@ -31,7 +31,7 @@ public class CharStats : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         playerLevel = 1;
-        maxLevel = 100;
+        maxLevel = 20;
         currentEXP = 0;
         baseEXP = 100;
 
@@ -39,9 +39,9 @@ public class CharStats : MonoBehaviour {
         expToNextLevel[1] = baseEXP;
 
         // Configura XP necessaria para avancar em cada nivel ate o nivel maximo
-        for(int i = 2; i < expToNextLevel.Length; i++)
+        for(int i = 2; i < maxLevel; i++)
         {
-            expToNextLevel[i] = Mathf.FloorToInt(expToNextLevel[i - 1] * 1.05f);
+            expToNextLevel[i] = Mathf.FloorToInt(expToNextLevel[i - 1] * 1.30f);
         }
 
         // Garante que os atributos carregados nao sejam sobrescritos pela inicializacao
@@ -101,31 +101,53 @@ public class CharStats : MonoBehaviour {
     {
         if (playerLevel < maxLevel)
         {
-
             while (currentEXP >= expToNextLevel[playerLevel])
             {
-                //retira a xp equivalente do lvl anterior
+                // Retira a xp equivalente do lvl anterior
                 currentEXP -= expToNextLevel[playerLevel];
-                //level up
-                playerLevel++;
 
-                //a cada lvl up alterna adicionando força e defesa
-                if (playerLevel % 2 == 0)
+                // Level up
+                playerLevel += 1;
+
+                // Progressao de atributo de acordo com o personagem
+                switch (charName)
                 {
-                    strength++;
+                    case "sumino":
+                        strength += 2;
+                        defence += 1;
+                        agility += 3;
+
+                        maxHP = Mathf.FloorToInt(maxHP * 1.05f);
+                        currentHP = maxHP;
+
+                        maxMP = Mathf.FloorToInt(maxMP * 1.1f);
+                        currentMP = maxMP;
+                        break;
+                    case "maki":
+                        strength += 3;
+                        defence += 2;
+                        agility += 1;
+
+                        maxHP = Mathf.FloorToInt(maxHP * 1.1f);
+                        currentHP = maxHP;
+
+                        maxMP = Mathf.FloorToInt(maxMP * 1.15f);
+                        currentMP = maxMP;
+                        break;
+                    case "hanzo":
+                        strength += 1;
+                        defence += 3;
+                        agility += 2;
+
+                        maxHP = Mathf.FloorToInt(maxHP * 1.15f);
+                        currentHP = maxHP;
+
+                        maxMP = Mathf.FloorToInt(maxMP * 1.05f);
+                        currentMP = maxMP;
+                        break;
                 }
-                else
-                {
-                    defence++;
-                }
 
-                maxHP = Mathf.FloorToInt(maxHP * 1.05f);
-                currentHP = maxHP;
-
-                maxMP = Mathf.FloorToInt(maxMP * 1.05f);
-                currentMP = maxMP;
-
-                if (currentEXP < expToNextLevel[playerLevel])
+                if (playerLevel == maxLevel || currentEXP < expToNextLevel[playerLevel])
                 {
                     return true;
                 }
@@ -136,6 +158,46 @@ public class CharStats : MonoBehaviour {
         } else
         {
             return false;
+        }
+    }
+
+    public void ResetCharacter()
+    {
+        switch (charName)
+        {
+            case "sumino":
+                playerLevel = 1;
+                currentEXP = 0;
+                maxHP = 75;
+                currentHP = maxHP;
+                maxMP = 20;
+                currentMP = maxMP;
+                strength = 5;
+                defence = 3;
+                agility = 8;
+                break;
+            case "maki":
+                playerLevel = 1;
+                currentEXP = 0;
+                maxHP = 100;
+                currentHP = maxHP;
+                maxMP = 25;
+                currentMP = maxMP;
+                strength = 8;
+                defence = 5;
+                agility = 3;
+                break;
+            case "hanzo":
+                playerLevel = 1;
+                currentEXP = 0;
+                maxHP = 125;
+                currentHP = maxHP;
+                maxMP = 15;
+                currentMP = maxMP;
+                strength = 3;
+                defence = 8;
+                agility = 5;
+                break;
         }
     }
 }

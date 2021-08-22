@@ -135,9 +135,18 @@ public class GameMenu : MonoBehaviour
 
             if (!isSummary)
             {
-                charInfo[i].transform.Find("Char Exp").Find("Slider").GetComponent<Slider>().maxValue = storedStats[i].expToNextLevel[storedStats[i].playerLevel];
-                charInfo[i].transform.Find("Char Exp").Find("Slider").GetComponent<Slider>().value = storedStats[i].currentEXP;
-                charInfo[i].transform.Find("Char Exp").Find("Exp To Level").GetComponent<Text>().text = storedStats[i].currentEXP + "/" + storedStats[i].expToNextLevel[storedStats[i].playerLevel];
+                if (storedStats[i].playerLevel == storedStats[i].maxLevel)
+                {
+                    charInfo[i].transform.Find("Char Exp").Find("Slider").GetComponent<Slider>().maxValue = storedStats[i].expToNextLevel[19];
+                    charInfo[i].transform.Find("Char Exp").Find("Slider").GetComponent<Slider>().value = storedStats[i].currentEXP;
+                    charInfo[i].transform.Find("Char Exp").Find("Exp To Level").GetComponent<Text>().text = storedStats[i].currentEXP + "/" + storedStats[i].currentEXP;
+                } else
+                {
+                    charInfo[i].transform.Find("Char Exp").Find("Slider").GetComponent<Slider>().maxValue = storedStats[i].expToNextLevel[storedStats[i].playerLevel];
+                    charInfo[i].transform.Find("Char Exp").Find("Slider").GetComponent<Slider>().value = storedStats[i].currentEXP;
+                    charInfo[i].transform.Find("Char Exp").Find("Exp To Level").GetComponent<Text>().text = storedStats[i].currentEXP + "/" + storedStats[i].expToNextLevel[storedStats[i].playerLevel];
+                }
+                
                 charInfo[i].transform.Find("Char Str").GetComponent<Text>().text = "Força: " + storedStats[i].strength;
                 charInfo[i].transform.Find("Char Def").GetComponent<Text>().text = "Defesa: " + storedStats[i].defence;
                 charInfo[i].transform.Find("Char Agi").GetComponent<Text>().text = "Agilidade: " + storedStats[i].agility;
