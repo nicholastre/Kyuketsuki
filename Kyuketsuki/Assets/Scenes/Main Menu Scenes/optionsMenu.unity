@@ -822,6 +822,7 @@ MonoBehaviour:
   areaToLoad: mainMenu
   waitToLoad: 1
   shouldFadeFromBlack: 1
+  shouldDestroyPlayer: 0
 --- !u!114 &635294063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,9 +1144,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 649174873}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 80
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1269,9 +1270,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 549363887}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1525,6 +1526,7 @@ MonoBehaviour:
   areaToLoad: creditsMenu
   waitToLoad: 1
   shouldFadeFromBlack: 0
+  shouldDestroyPlayer: 0
 --- !u!1 &920106164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,9 +1611,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1113745103}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 40
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
