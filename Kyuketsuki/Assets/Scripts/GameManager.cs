@@ -360,8 +360,6 @@ public class GameManager : MonoBehaviour {
             {
                 itemsHeld[itemPositon] = "";
             }
-
-            GameMenu.instance.ShowItems();
         }
         else
         {

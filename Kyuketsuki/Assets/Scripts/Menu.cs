@@ -23,7 +23,14 @@ public class Menu : MonoBehaviour
     public GameObject[] moneyTrackers;
 
     // Informações para inventário
+    public GameObject itemInfoPanel;
+    public Text itemName, itemDescription;
+    public GameObject itemUseButton;
+    public ItemButton[] itemButtons;
+    public GameObject charPanel;
     public GameObject[] summarizedChars;
+    public Text itemUseFeedback;
+    private Item activeItem;
 
     private MenuState currentState;
 
@@ -91,12 +98,13 @@ public class Menu : MonoBehaviour
                 menuBackground.transform.Find("Options").gameObject.SetActive(false);
                 menuBackground.transform.Find("Exit").gameObject.SetActive(false);
                 UpdateCharStats(summarizedChars, true);
+                ShowItems();
                 break;
             case MenuState.OptionsScreen:
                 menuBackground.transform.Find("Main").gameObject.SetActive(false);
                 menuBackground.transform.Find("Inventory").gameObject.SetActive(false);
                 menuBackground.transform.Find("Options").gameObject.SetActive(true);
-                menuBackground.transform.Find("Exit").gameObject.SetActive(false);
+                menuBackground.transform.Find("Exit").gameObject.SetActive(false);                
                 break;
             case MenuState.ExitScreen:
                 menuBackground.transform.Find("Main").gameObject.SetActive(false);
@@ -137,9 +145,70 @@ public class Menu : MonoBehaviour
         }
     }
 
+    private void ShowItems()
+    {
+        GameManager.instance.SortItems();
+
+        for (int i = 0; i < itemButtons.Length; i++)
+        {
+            itemButtons[i].buttonValue = i;
+
+            if (GameManager.instance.itemsHeld[i] != "")
+            {
+                itemButtons[i].GetComponent<Image>().enabled = true;
+                itemButtons[i].buttonImage.gameObject.SetActive(true);
+                itemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[i]).itemSprite;
+                itemButtons[i].amountText.gameObject.SetActive(true);
+                itemButtons[i].amountText.text = GameManager.instance.numberOfItems[i].ToString();
+            }
+            else
+            {
+                itemButtons[i].GetComponent<Image>().enabled = false;
+                itemButtons[i].buttonImage.gameObject.SetActive(false);
+                itemButtons[i].amountText.gameObject.SetActive(false);
+                itemButtons[i].amountText.text = "";
+            }
+        }
+    }
+
+    public void SelectItem(Item newItem)
+    {
+        activeItem = newItem;
+        itemName.text = activeItem.itemName;
+        itemDescription.text = activeItem.description;
+        itemInfoPanel.SetActive(true);
+    }
+
+    public void OpenItemCharChoice()
+    {
+        itemUseFeedback.gameObject.SetActive(false);
+        itemUseButton.SetActive(false);
+        itemUseButton.SetActive(true);
+        charPanel.SetActive(true);
+    }
+
+    public void UseItem(int selectChar)
+    {
+        activeItem.Use(selectChar);
+        charPanel.SetActive(false);
+        itemInfoPanel.SetActive(false);
+        itemUseFeedback.gameObject.SetActive(true);
+        itemUseFeedback.GetComponent<Text>().text = GameManager.instance.playerStats[selectChar].charName + " usou " + activeItem.itemName + "!";
+        activeItem = null;
+    }
+
+    public MenuState GetGameMenuState()
+    {
+        return currentState;
+    }
+
     public void ClickChangeMenuState(int stateValue)
     {
         currentState = (MenuState)stateValue;
+
+        itemInfoPanel.SetActive(false);
+        charPanel.SetActive(false);
+        itemUseFeedback.gameObject.SetActive(false);
     }
 
     private bool ValidRightClick()

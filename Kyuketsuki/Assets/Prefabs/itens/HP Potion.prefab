@@ -99,7 +99,7 @@ MonoBehaviour:
   isWeapon: 0
   isArmour: 0
   itemName: HP Potion
-  description: Cura 100 de vida
+  description: Cura 100 pontos de vida
   value: 10
   itemSprite: {fileID: -5442739813314981128, guid: 958e2549940cc3945b7b6662026c0a7b, type: 3}
   amountToChange: 100

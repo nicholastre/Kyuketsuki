@@ -23,15 +23,15 @@ public class ItemButton : MonoBehaviour
 
     public void Press()
     {
-        if (GameMenu.instance.theMenu.activeInHierarchy)
+        if (Menu.instance.GetGameMenuState() == MenuState.ItemScreen)
         {
             if(GameManager.instance.itemsHeld[buttonValue] != "")
             {
-                GameMenu.instance.SelectItem(GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[buttonValue]));
+                Menu.instance.SelectItem(GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[buttonValue]));
             }
         }
 
-        if (Shop.instance.shopMenu.active)
+        if (Shop.instance.shopMenu.activeInHierarchy)
         {
             if (Shop.instance.buyMenu.activeInHierarchy)
             {
