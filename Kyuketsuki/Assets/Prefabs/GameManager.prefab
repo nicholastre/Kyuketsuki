@@ -49,9 +49,9 @@ MonoBehaviour:
   expToNextLevel: 
   maxLevel: 100
   baseEXP: 1000
-  currentHP: 0
+  currentHP: 100
   maxHP: 100
-  currentMP: 0
+  currentMP: 10
   maxMP: 30
   strength: 5
   defence: 10
@@ -110,7 +110,7 @@ MonoBehaviour:
   expToNextLevel: 
   maxLevel: 100
   baseEXP: 1000
-  currentHP: 0
+  currentHP: 50
   maxHP: 100
   currentMP: 0
   maxMP: 30
@@ -256,6 +256,8 @@ MonoBehaviour:
   numberOfItems: 140000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   groupMoney: 0
   groupDebt: 0
+  averageLevel: 0
+  maxDebt: 100000
   playerStats:
   - {fileID: 4535763949929879631}
   - {fileID: 4535763949550412371}
@@ -269,6 +271,10 @@ MonoBehaviour:
   dialogActive: 0
   fadingBetweenAreas: 0
   shopActive: 0
+  battleActive: 0
+  currentArea: 0
+  enemyEncountered: 
+  playerPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1860403657
 MonoBehaviour:
   m_ObjectHideFlags: 0
