@@ -316,7 +316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -244, y: -17.88}
+  m_AnchoredPosition: {x: -244, y: -17.879997}
   m_SizeDelta: {x: 421.28, y: -55.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235771649
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: joecreates @ twitter
+  m_Text: JoeCreates @ twitter
 --- !u!222 &235771650
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1403,8 +1403,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -244, y: -69.59}
-  m_SizeDelta: {x: 421.28, y: 48.01}
+  m_AnchoredPosition: {x: -244, y: -82.38}
+  m_SizeDelta: {x: 421.28, y: 73.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1681027882
 MonoBehaviour:
@@ -1446,7 +1446,9 @@ MonoBehaviour:
     pixel-league @ Tumblr
 
     arveyyudi
-    @ Fiverr'
+    @ Fiverr
+
+    SirGoblinton @ Reddit'
 --- !u!222 &1681027883
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1526,7 +1528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 558, y: -93}
+  m_AnchoredPosition: {x: 558, y: -137}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1729206554
