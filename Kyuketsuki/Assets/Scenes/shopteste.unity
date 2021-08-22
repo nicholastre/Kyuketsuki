@@ -1573,10 +1573,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemsForSale:
-  - HP Potion
-  - MP Potion
-  - Dagger
-  - 
+  - "Po\xE7\xE3o de Vida 1"
+  - "Po\xE7\xE3o de Poder"
+  - "Po\xE7\xE3o de Vida 2"
+  - "Po\xE7\xE3o de Vida 3"
   - 
   - 
   - 
