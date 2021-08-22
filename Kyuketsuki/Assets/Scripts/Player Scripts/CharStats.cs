@@ -113,36 +113,36 @@ public class CharStats : MonoBehaviour {
                 switch (charName)
                 {
                     case "sumino":
-                        strength += 2;
-                        defence += 1;
-                        agility += 3;
+                        strength += Random.Range(1, 4);
+                        defence += Random.Range(0, 3);
+                        agility += Random.Range(2, 5);
 
-                        maxHP = Mathf.FloorToInt(maxHP * 1.05f);
+                        maxHP = Mathf.RoundToInt(maxHP * Random.Range(1.05f, 1.1f));
                         currentHP = maxHP;
 
-                        maxMP = Mathf.FloorToInt(maxMP * 1.1f);
+                        maxMP = Mathf.RoundToInt(maxMP * Random.Range(1.1f, 1.11f));
                         currentMP = maxMP;
                         break;
                     case "maki":
-                        strength += 3;
-                        defence += 2;
-                        agility += 1;
+                        strength += Random.Range(2, 5);
+                        defence += Random.Range(1, 4);
+                        agility += Random.Range(0, 3);
 
-                        maxHP = Mathf.FloorToInt(maxHP * 1.1f);
+                        maxHP = Mathf.RoundToInt(maxHP * Random.Range(1.1f, 1.11f));
                         currentHP = maxHP;
 
-                        maxMP = Mathf.FloorToInt(maxMP * 1.15f);
+                        maxMP = Mathf.RoundToInt(maxMP * Random.Range(1.11f, 1.125f));
                         currentMP = maxMP;
                         break;
                     case "hanzo":
-                        strength += 1;
-                        defence += 3;
-                        agility += 2;
+                        strength += Random.Range(0, 3);
+                        defence += Random.Range(2, 5);
+                        agility += Random.Range(1, 4);
 
-                        maxHP = Mathf.FloorToInt(maxHP * 1.15f);
+                        maxHP = Mathf.RoundToInt(maxHP * Random.Range(1.11f, 1.125f));
                         currentHP = maxHP;
 
-                        maxMP = Mathf.FloorToInt(maxMP * 1.05f);
+                        maxMP = Mathf.RoundToInt(maxMP * Random.Range(1.1f, 1.11f));
                         currentMP = maxMP;
                         break;
                 }
@@ -168,7 +168,7 @@ public class CharStats : MonoBehaviour {
             case "sumino":
                 playerLevel = 1;
                 currentEXP = 0;
-                maxHP = 75;
+                maxHP = 80;
                 currentHP = maxHP;
                 maxMP = 20;
                 currentMP = maxMP;
@@ -179,7 +179,7 @@ public class CharStats : MonoBehaviour {
             case "maki":
                 playerLevel = 1;
                 currentEXP = 0;
-                maxHP = 100;
+                maxHP = 90;
                 currentHP = maxHP;
                 maxMP = 25;
                 currentMP = maxMP;
@@ -190,7 +190,7 @@ public class CharStats : MonoBehaviour {
             case "hanzo":
                 playerLevel = 1;
                 currentEXP = 0;
-                maxHP = 125;
+                maxHP = 100;
                 currentHP = maxHP;
                 maxMP = 15;
                 currentMP = maxMP;
