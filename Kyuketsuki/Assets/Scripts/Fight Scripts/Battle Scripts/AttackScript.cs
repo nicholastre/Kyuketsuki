@@ -52,17 +52,27 @@ public class AttackScript : MonoBehaviour
                 damage = Mathf.Max(0, damage - (defenseMultiplier * targetStats.defense));
                 owner.GetComponent<Animator>().Play(animationName);
                 targetStats.ReceiveDamage(Mathf.CeilToInt(damage));
-                attackerStats.updateMagicFill(magicCost);
+                attackerStats.updateMagicFill(magicCost);    
             }
-            } else
+             else
             {
-                Invoke("SkipTurnContinueGame", 1);//Espera 1 segundo e passa pro próximo turno
+                Debug.Log("SKIPEI");
+                GameObject.Find("GameControllerObject").GetComponent<GameController>().NextTurn();
+                //Invoke("SkipTurnContinueGame", 1);//Espera 1 segundo e passa pro próximo turno
             }
     }
 
+    /*
     void SkipTurnContinueGame()
     {
         GameObject.Find("GameControllerObject").GetComponent<GameController>().NextTurn(); // Recupera o método presente no script gameController para definir o próximo turno
     }
+
+    void SkipTurnContinueGame1()
+    {
+        GameObject.Find("GameControllerObject").GetComponent<FighterStats>().ContinueGame(); // Recupera o método presente no script gameController para definir o próximo turno
+    }
+    */
     
+}
 }

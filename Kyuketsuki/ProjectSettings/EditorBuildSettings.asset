@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Maps/monasteryMap.unity
     guid: 21fc8d6ef3f6d2646b7ae44da34cf424
   - enabled: 1
-    path: Assets/Scenes/BattleScene.unity
+    path: Assets/Scenes/Cleanto-Battle/BattleScene.unity
     guid: 223dc279fd6d8b44590cf8887d4fe164
   - enabled: 1
     path: Assets/Scenes/City Places/missionScene.unity

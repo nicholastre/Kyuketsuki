@@ -33,6 +33,8 @@ public class FighterStats : MonoBehaviour, IComparable
     public int nextActTurn;
 
     private bool dead = false;
+    private bool dead1st = false; // Variável que evita a geração de mais de um objeto DeadHero para o mesmo inimigo morto
+    
 
     // Resize health and magic bar
     private Transform healthTransform;
@@ -67,16 +69,33 @@ public class FighterStats : MonoBehaviour, IComparable
         health = health - damage;
         animator.Play("DamageTaken");
 
-        // Set damage text
-
         if(health <= 0)
         {
-            
             dead = true;
-            if (gameObject.tag == "Hero1" || gameObject.tag == "Hero2" || gameObject.tag == "Hero3")
+            if ((gameObject.tag == "Hero") || (gameObject.tag == "Hero2") || (gameObject.tag == "Hero3"))
             {
-                SpawnDeadObjHero = new GameObject("DeadHero");
-                SpawnDeadObjHero.tag = "DeadHero";
+                if(dead1st != true) // Variável que evita a geração de mais de um objeto DeadHero para o mesmo heroi morto. Verifica se ele for morto pela primeira vez, basicamente, porque não dá pra destruir um héroi, tem que setar inativo.
+                {
+                    SpawnDeadObjHero = new GameObject("DeadHero");
+                    SpawnDeadObjHero.tag = "DeadHero";
+                    gameObject.SetActive(false);
+                    Destroy(healthFill);
+                    Destroy(magicFill);
+                    dead1st = true;
+                    
+                    if(gameObject.tag == "Hero"){
+                        EnemyActions.heroDead = true;
+                    }
+
+                    if(gameObject.tag == "Hero2"){
+                        EnemyActions.hero2Dead = true;
+                    }
+
+                    if(gameObject.tag == "Hero3"){
+                        EnemyActions.hero3Dead = true;
+                    }
+                    MouseClick.tagName="null";
+                }
                 
             }else
             {
@@ -86,13 +105,11 @@ public class FighterStats : MonoBehaviour, IComparable
                 
                 Debug.Log("CHAMEI O MAKE Death");
                 MakeDeath();
+                Destroy(gameObject);
+                Destroy(healthFill);
+                Destroy(magicFill);
             }
 
-            Destroy(gameObject);
-            Destroy(healthFill);
-            Destroy(magicFill);
-            
-            
         } else if (damage > 0)
         {
             xNewHealthScale = healthScale.x * (health / startHealth);
@@ -127,7 +144,7 @@ public class FighterStats : MonoBehaviour, IComparable
         return nex;
     }
 
-    void ContinueGame()
+    public void ContinueGame()
     {
         //MouseClick.tagName="null"; (Descomentar isso se quiser desabilitar o lock-on do alvo)
         GameObject.Find("GameControllerObject").GetComponent<GameController>().NextTurn();
