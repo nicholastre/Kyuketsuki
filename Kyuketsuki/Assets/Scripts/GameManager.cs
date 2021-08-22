@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
     public CharStats[] playerStats;     // Dados dos personagens carregados para uso em jogo
     public int currentGold;
     public Item[] referenceItems;       // Contem os Prefabs de cada item no jogo
-    public bool gameMenuOpen, dialogActive, fadingBetweenAreas,shopActive;
+    public bool gameMenuOpen, dialogActive, fadingBetweenAreas,shopActive, battleActive;
 
     public AreaMaps currentArea;
     public string enemyEncountered = "";
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour {
         //Debug.Log(playerPosition);
 
         //Verifica os booleanos para travar o jogador
-        if(gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive)
+        if(gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive || battleActive)
         {
             PlayerController.instance.canMove = false;
         }
