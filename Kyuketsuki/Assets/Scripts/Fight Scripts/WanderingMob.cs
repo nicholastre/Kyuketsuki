@@ -34,7 +34,7 @@ public class WanderingMob : MonoBehaviour
     {
         UpdateChase();
 
-        if (isChasing == true)
+        if (isChasing == true && PlayerController.instance.canMove == true)
         {
             float step = moveSpeed * Time.deltaTime;
             Vector2 direction = (PlayerController.instance.transform.position - transform.position).normalized * moveSpeed;

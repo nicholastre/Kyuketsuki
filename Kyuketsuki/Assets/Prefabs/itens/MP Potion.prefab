@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -1712700433
   m_SortingLayer: 2
   m_SortingOrder: -5
-  m_Sprite: {fileID: -5665153429896216743, guid: 958e2549940cc3945b7b6662026c0a7b, type: 3}
+  m_Sprite: {fileID: -3361753142038339757, guid: 0c67425a832470d45a0c80027e52e1dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,10 +98,10 @@ MonoBehaviour:
   isItem: 1
   isWeapon: 0
   isArmour: 0
-  itemName: MP Potion
-  description: Restaura 20 de MP
-  value: 5
-  itemSprite: {fileID: -5665153429896216743, guid: 958e2549940cc3945b7b6662026c0a7b, type: 3}
+  itemName: "Po\xE7\xE3o de Poder"
+  description: Restaura 20 de Poder
+  value: 1000
+  itemSprite: {fileID: -3361753142038339757, guid: 0c67425a832470d45a0c80027e52e1dc, type: 3}
   amountToChange: 20
   affectHP: 0
   affectMP: 1
