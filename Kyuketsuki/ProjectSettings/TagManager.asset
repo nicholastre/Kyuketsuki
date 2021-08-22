@@ -56,3 +56,9 @@ TagManager:
   - name: Player
     uniqueID: 2582266863
     locked: 0
+  - name: Battle BG
+    uniqueID: 2094551111
+    locked: 0
+  - name: Batle Chars
+    uniqueID: 962553475
+    locked: 0

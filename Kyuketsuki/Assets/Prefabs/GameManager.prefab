@@ -49,9 +49,9 @@ MonoBehaviour:
   expToNextLevel: 
   maxLevel: 100
   baseEXP: 1000
-  currentHP: 0
+  currentHP: 100
   maxHP: 100
-  currentMP: 0
+  currentMP: 10
   maxMP: 30
   strength: 5
   defence: 10
@@ -110,11 +110,11 @@ MonoBehaviour:
   expToNextLevel: 
   maxLevel: 100
   baseEXP: 1000
-  currentHP: 0
+  currentHP: 50
   maxHP: 100
   currentMP: 0
   maxMP: 30
-  strength: 5
+  strength: 20
   defence: 10
   agility: 0
   wpnPwr: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   maxHP: 200
   currentMP: 15
   maxMP: 30
-  strength: 5
+  strength: 200
   defence: 10
   agility: 0
   wpnPwr: 0
@@ -267,6 +267,7 @@ MonoBehaviour:
   dialogActive: 0
   fadingBetweenAreas: 0
   shopActive: 0
+  battleActive: 0
   currentArea: 0
   enemyEncountered: 
   playerPosition: {x: 0, y: 0, z: 0}
