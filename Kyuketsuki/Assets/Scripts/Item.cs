@@ -45,22 +45,12 @@ public class Item : MonoBehaviour
         {
             if (affectHP)
             {
-                selectedChar.currentHP += amountToChange;
-
-                if (selectedChar.currentHP > selectedChar.maxHP)
-                {
-                    selectedChar.currentHP = selectedChar.maxHP;
-                }
+                selectedChar.changeHitPoints(amountToChange);
             }
 
             if (affectMP)
             {
-                selectedChar.currentMP += amountToChange;
-
-                if (selectedChar.currentMP > selectedChar.maxMP)
-                {
-                    selectedChar.currentMP = selectedChar.maxMP;
-                }
+                selectedChar.changeMagicPoints(amountToChange);
             }
 
             if (affectStr)

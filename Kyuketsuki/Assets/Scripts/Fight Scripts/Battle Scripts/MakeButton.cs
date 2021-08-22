@@ -27,17 +27,17 @@ public class MakeButton : MonoBehaviour
         {
             if(GameController.hero1Turn == true)
             {
-                hero.GetComponent<FighterAction>().SelectAttack("melee");
+                hero.GetComponent<PlayerActions>().SelectAttack("melee");
             }
 
             if(GameController.hero2Turn == true)
             {
-                hero2.GetComponent<FighterAction>().SelectAttack("melee");
+                hero2.GetComponent<PlayerActions>().SelectAttack("melee");
             }
 
             if(GameController.hero3Turn == true)
             {
-                hero3.GetComponent<FighterAction>().SelectAttack("melee");
+                hero3.GetComponent<PlayerActions>().SelectAttack("melee");
             }
             
 
@@ -45,17 +45,17 @@ public class MakeButton : MonoBehaviour
         {
             if(GameController.hero1Turn == true)
             {
-                hero.GetComponent<FighterAction>().SelectAttack("skill");
+                hero.GetComponent<PlayerActions>().SelectAttack("skill");
             }
 
             if(GameController.hero2Turn == true)
             {
-                hero2.GetComponent<FighterAction>().SelectAttack("skill");
+                hero2.GetComponent<PlayerActions>().SelectAttack("skill");
             }
 
             if(GameController.hero3Turn == true)
             {
-                hero3.GetComponent<FighterAction>().SelectAttack("skill");
+                hero3.GetComponent<PlayerActions>().SelectAttack("skill");
             }
             
 
@@ -63,7 +63,7 @@ public class MakeButton : MonoBehaviour
             
         } else if (btn.CompareTo("DefendButton") == 0)
         {
-            hero.GetComponent<FighterAction>().SelectAttack("defend");
+            hero.GetComponent<PlayerActions>().SelectAttack("defend");
         }
     }
 }

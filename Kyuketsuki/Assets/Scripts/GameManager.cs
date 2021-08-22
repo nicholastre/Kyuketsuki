@@ -335,7 +335,6 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-        GameMenu.instance.ShowItems();
     }
 
     public void RemoveItem(string itemToRemove)
@@ -360,8 +359,6 @@ public class GameManager : MonoBehaviour {
             {
                 itemsHeld[itemPositon] = "";
             }
-
-            GameMenu.instance.ShowItems();
         }
         else
         {

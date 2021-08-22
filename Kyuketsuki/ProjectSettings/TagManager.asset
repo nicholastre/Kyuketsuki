@@ -12,6 +12,7 @@ TagManager:
   - Dead
   - Hero3
   - DeadEnemy
+  - DeadHero
   layers:
   - Default
   - TransparentFX

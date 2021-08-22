@@ -178,6 +178,7 @@ MonoBehaviour:
   areaToLoad: optionsMenu
   waitToLoad: 1
   shouldFadeFromBlack: 0
+  shouldDestroyPlayer: 0
 --- !u!114 &58253248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +566,7 @@ MonoBehaviour:
   areaToLoad: testemapa
   waitToLoad: 1
   shouldFadeFromBlack: 1
+  shouldDestroyPlayer: 1
 --- !u!114 &866464829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,13 +951,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1439563416}
         m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
-        m_MethodName: PrepareFadeChange
-        m_Mode: 4
+        m_MethodName: EndGameOnScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0.1
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
@@ -1012,6 +1014,7 @@ MonoBehaviour:
   areaToLoad: 
   waitToLoad: 1
   shouldFadeFromBlack: 0
+  shouldDestroyPlayer: 0
 --- !u!1 &1651101128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1070,7 @@ MonoBehaviour:
   areaToLoad: testemapa
   waitToLoad: 1
   shouldFadeFromBlack: 0
+  shouldDestroyPlayer: 0
 --- !u!114 &1651101131
 MonoBehaviour:
   m_ObjectHideFlags: 0
