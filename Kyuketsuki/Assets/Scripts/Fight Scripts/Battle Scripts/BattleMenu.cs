@@ -36,7 +36,6 @@ public class BattleMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -170,11 +169,16 @@ public class BattleMenu : MonoBehaviour
     private void ShowEscapeMenu()
     {
         SetTurnDescription("O grupo encontra uma oportunidade e foge do combate!");
+        gameObject.transform.Find("StartPlayerScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(true);
+        gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmAttackScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmEscapeScreen").gameObject.SetActive(false);
     }
 
     private void ShowVictoryMenu()
     {
-        SetTurnDescription("Monstros eliminados! O grupo ganha " + gainedBits.ToString() +
+        SetTurnDescription("Monstros eliminados! O grupo ganha " + gainedExp.ToString() +
             " pontos de experiência e " + gainedBits.ToString() + " Bits.");
     }
 
@@ -212,6 +216,17 @@ public class BattleMenu : MonoBehaviour
         SetSkillButtons();
     }
 
+    public void ClickEscapeButton()
+    {
+        SetBattleMenuState(BattleMenuState.ConfirmEscape);
+    }
+
+    public void ConfirmEscapeButton()
+    {
+        SetBattleMenuState(BattleMenuState.EscapeMenu);
+        BattleManager.instance.SetEscapeBattle();
+    }
+
     public void ClickSkillButton(int skillIdentifier)
     {
         activeSkill = skillIdentifier;
@@ -222,7 +237,7 @@ public class BattleMenu : MonoBehaviour
         SetBattleMenuState(BattleMenuState.PlayerAttackMenu);
     }
 
-    public void ClickCancelAttackButton()
+    public void ClickCancelButton()
     {
         if (currentMenuState == BattleMenuState.PlayerSkillsMenu)
         {
@@ -232,6 +247,9 @@ public class BattleMenu : MonoBehaviour
         {
             activeSkill = -1;
             SetBattleMenuState(BattleMenuState.PlayerSkillsMenu);
+        } else if (currentMenuState == BattleMenuState.EscapeMenu)
+        {
+            SetBattleMenuState(BattleMenuState.PlayerStartMenu);
         }
     }
 

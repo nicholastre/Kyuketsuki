@@ -8,6 +8,7 @@ enum BattleState
     BattleStart,
     UnitTurn,
     TurnTransition,
+    BattleEscape,
     BattleVictory,
     BattleDefeat
 }
@@ -26,7 +27,7 @@ public class BattleManager : MonoBehaviour
     private BattleState battleState;
     private float timeToWait;
     private int currentActor;
-    private bool enemyCanAct;
+    private bool flowControl;
     private float enemyWaitTime = 1f;
     private float startBattleWait = 3f;
 
@@ -34,7 +35,7 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        enemyCanAct = true;
+        flowControl = true;
 
         combatOrder = new GameObject[playerUnits.Length + enemyUnits.Length];
 
@@ -58,12 +59,16 @@ public class BattleManager : MonoBehaviour
             case BattleState.TurnTransition:
                 MakingTurnTransition();
                 break;
+            case BattleState.BattleEscape:
+                MakingBattleEnd();
+                break;
             case BattleState.BattleVictory:
                 battleMenu.GetComponent<BattleMenu>().SetBattleMenuState(BattleMenuState.VictoryMenu);
-                MakingVictoryEnd();
+                MakingBattleEnd();
                 break;
             case BattleState.BattleDefeat:
                 battleMenu.GetComponent<BattleMenu>().SetBattleMenuState(BattleMenuState.DefeatMenu);
+                MakingBattleDefeat();
                 break;
         }
         
@@ -165,9 +170,9 @@ public class BattleManager : MonoBehaviour
             timeToWait -= Time.deltaTime;
         }
 
-        if (enemyCanAct && timeToWait < 0.0f)
+        if (flowControl && timeToWait < 0.0f)
         {
-            enemyCanAct = false;
+            flowControl = false;
 
             int randomPlayer = Random.Range(0, playerUnits.Length);
             while (playerUnits[randomPlayer].GetComponent<CombatUnitStats>().CheckUnitState() == UnitState.Dead)
@@ -186,22 +191,19 @@ public class BattleManager : MonoBehaviour
 
     private void RunPlayerTurn()
     {
-        battleMenu.GetComponent<BattleMenu>().SetTargetButtons(enemyUnits);
-        if (battleMenu.GetComponent<BattleMenu>().currentMenuState == BattleMenuState.PlayerSkillsMenu)
+        if (flowControl)
         {
-            battleMenu.GetComponent<BattleMenu>().SetBattleMenuState(BattleMenuState.PlayerSkillsMenu);
-        } else if (battleMenu.GetComponent<BattleMenu>().currentMenuState == BattleMenuState.PlayerAttackMenu)
-        {
-            battleMenu.GetComponent<BattleMenu>().SetBattleMenuState(BattleMenuState.PlayerAttackMenu);
+            battleMenu.GetComponent<BattleMenu>().SetBattleMenuState(BattleMenuState.PlayerStartMenu);
+            flowControl = false;
         } else
         {
+            battleMenu.GetComponent<BattleMenu>().SetTargetButtons(enemyUnits);
             battleMenu.GetComponent<BattleMenu>().SetPlayerStatsDisplay(playerUnits);
-            battleMenu.GetComponent<BattleMenu>().SetBattleMenuState(BattleMenuState.PlayerStartMenu);
+            battleMenu.GetComponent<BattleMenu>().SetPlayerName(combatOrder[currentActor].GetComponent<CombatUnitStats>().unitName);
         }
-        battleMenu.GetComponent<BattleMenu>().SetPlayerName(combatOrder[currentActor].GetComponent<CombatUnitStats>().unitName);
     }
 
-    private void MakingVictoryEnd()
+    private void MakingBattleEnd()
     {
         if (timeToWait > 0.0f)
         {
@@ -220,6 +222,20 @@ public class BattleManager : MonoBehaviour
                         BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "monasteryMap";
                         break;
                 }
+                BattleManager.instance.GetComponent<ChangeScenes>().PrepareFadeChange();
+            }
+        }
+    }
+
+    private void MakingBattleDefeat()
+    {
+        if (timeToWait > 0.0f)
+        {
+            timeToWait -= Time.deltaTime;
+
+            if (timeToWait <= 0.0f)
+            {
+                BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "loanScene";
                 BattleManager.instance.GetComponent<ChangeScenes>().PrepareFadeChange();
             }
         }
@@ -300,7 +316,13 @@ public class BattleManager : MonoBehaviour
         }
 
         battleState = newState;
-        enemyCanAct = true;
+        flowControl = true;
+    }
+
+    public void SetEscapeBattle()
+    {
+        timeToWait = 3.0f;
+        SetBattleState(BattleState.BattleEscape);
     }
 
     public void GetAttackResult(string attackName, AttackResult result, int attackEffect, int targetIdentifier)
