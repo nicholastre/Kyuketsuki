@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/shopteste.unity
-    guid: 94a46c60cab0c3e4e90210b53dea0777
-  - enabled: 1
     path: Assets/Scenes/Main Menu Scenes/storyIntro.unity
     guid: c27dc4e000086654e8d0fc7e5771818d
   - enabled: 1
@@ -17,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps/testemapa.unity
     guid: dc38c22fcba6e1f4c813a51d172477c0
-  - enabled: 1
-    path: Assets/Scenes/teste.unity
-    guid: f2d3d132a9fcfbd478010f833704cdcc
   - enabled: 1
     path: Assets/Scenes/Maps/overworldMap.unity
     guid: 4ed0261e48bfc8a4daf9cf054626985e
@@ -32,9 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps/monasteryMap.unity
     guid: 21fc8d6ef3f6d2646b7ae44da34cf424
-  - enabled: 1
-    path: Assets/Scenes/Battle Scenes/Cleanto-Battle/BattleScene.unity
-    guid: 223dc279fd6d8b44590cf8887d4fe164
   - enabled: 1
     path: Assets/Scenes/City Places/missionScene.unity
     guid: 0b1f1aa514ba3a34990ed4008ad0eab6
@@ -68,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu Scenes/creditsMenu.unity
     guid: d66be6b8f6311f2439ad81d4cf62fece
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestBattle0.unity
+    guid: c1da65319e357194f991f523b665d4f0
   m_configObjects: {}

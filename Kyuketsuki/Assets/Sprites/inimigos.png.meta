@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5ec74356722c69d4fa83e60d768d50ab
+guid: 33b50f1cd935dcb4797b1cf61672be74
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -24,9 +24,6 @@ TextureImporter:
       213: -2986108078917721683
     second: inimigos_6
   - first:
-      213: -8544529065540369722
-    second: inimigos_7
-  - first:
       213: 8838805912488702312
     second: inimigos_8
   - first:
@@ -41,6 +38,9 @@ TextureImporter:
   - first:
       213: -7475179144282918132
     second: inimigos_12
+  - first:
+      213: 1209826923092217907
+    second: inimigos_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,7 +85,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 320
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -107,7 +107,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,7 +119,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -133,10 +145,10 @@ TextureImporter:
       name: inimigos_0
       rect:
         serializedVersion: 2
-        x: 118
-        y: 319
-        width: 85
-        height: 121
+        x: 0
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +166,10 @@ TextureImporter:
       name: inimigos_1
       rect:
         serializedVersion: 2
-        x: 438
-        y: 319
-        width: 85
-        height: 121
+        x: 320
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +187,10 @@ TextureImporter:
       name: inimigos_2
       rect:
         serializedVersion: 2
-        x: 758
-        y: 319
-        width: 85
-        height: 137
+        x: 640
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +208,10 @@ TextureImporter:
       name: inimigos_3
       rect:
         serializedVersion: 2
-        x: 968
-        y: 319
-        width: 303
-        height: 202
+        x: 960
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +229,10 @@ TextureImporter:
       name: inimigos_4
       rect:
         serializedVersion: 2
-        x: 1288
-        y: 319
-        width: 303
-        height: 202
+        x: 1280
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +250,10 @@ TextureImporter:
       name: inimigos_5
       rect:
         serializedVersion: 2
-        x: 1609
-        y: 319
-        width: 304
-        height: 202
+        x: 1600
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,10 +271,10 @@ TextureImporter:
       name: inimigos_6
       rect:
         serializedVersion: 2
-        x: 1936
-        y: 1
-        width: 608
-        height: 480
+        x: 1920
+        y: 0
+        width: 640
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,34 +289,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inimigos_7
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 0
-        width: 233
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c24773f51cbb6980800000000000000
-      internalID: -8544529065540369722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: inimigos_8
       rect:
         serializedVersion: 2
-        x: 363
+        x: 0
         y: 0
-        width: 233
-        height: 250
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,10 +313,10 @@ TextureImporter:
       name: inimigos_9
       rect:
         serializedVersion: 2
-        x: 683
+        x: 320
         y: 0
-        width: 261
-        height: 261
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,10 +334,10 @@ TextureImporter:
       name: inimigos_10
       rect:
         serializedVersion: 2
-        x: 986
+        x: 640
         y: 0
-        width: 268
-        height: 266
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,10 +355,10 @@ TextureImporter:
       name: inimigos_11
       rect:
         serializedVersion: 2
-        x: 1306
+        x: 960
         y: 0
-        width: 268
-        height: 266
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,10 +376,10 @@ TextureImporter:
       name: inimigos_12
       rect:
         serializedVersion: 2
-        x: 1626
+        x: 1280
         y: 0
-        width: 268
-        height: 266
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,6 +389,27 @@ TextureImporter:
       bones: []
       spriteID: c03bb986c24d24890800000000000000
       internalID: -7475179144282918132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_13
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3309d963d2b2ac010800000000000000
+      internalID: 1209826923092217907
       vertices: []
       indices: 
       edges: []

@@ -18,7 +18,6 @@ public class BattleTransition : AreaExit
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
-        base.OnTriggerEnter2D(other);
 
         if (other.tag == "Player")
         {
@@ -37,8 +36,21 @@ public class BattleTransition : AreaExit
                     break;
             }
 
+            string battleSceneName = "";
+            switch (currentMap)
+            {
+                case AreaMaps.ForestArea:
+                    int battleId = Random.Range(0, 1);
+                    battleSceneName = "ForestBattle" + battleId.ToString();
+                    break;
+            }
+
+            areaToLoad = battleSceneName;
+
             PlayerController.instance.areaTransitionName = "";
             GameManager.instance.EnteredBattle(other.gameObject.transform.position, currentMap, gameObject.transform.parent.name);
+
+            base.OnTriggerEnter2D(other);
         }
     }
 }

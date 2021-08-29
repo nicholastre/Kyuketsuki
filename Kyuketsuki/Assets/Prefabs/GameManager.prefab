@@ -40,27 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4535763948990650598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ed1529524c9cf458422d36890c722f, type: 3}
+  m_Script: {fileID: 11500000, guid: 26b78e6a58314ad44b0ba9ff4b214e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: hanzo
-  playerLevel: 1
-  currentEXP: 0
-  expToNextLevel: 
-  maxLevel: 20
-  baseEXP: 100
-  currentHP: 125
-  maxHP: 125
-  currentMP: 15
-  maxMP: 15
-  strength: 3
-  defence: 8
-  agility: 5
-  wpnPwr: 0
-  armrPwr: 0
-  equippedWpn: 
-  equippedArmr: 
-  charIamge: {fileID: 1546122702872047951, guid: ebab3f63e9d7a2d48afefd6f2de9cc79, type: 3}
+  characterName: hanzo
 --- !u!1 &4535763949550412369
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,27 +84,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4535763949550412369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ed1529524c9cf458422d36890c722f, type: 3}
+  m_Script: {fileID: 11500000, guid: 26b78e6a58314ad44b0ba9ff4b214e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: maki
-  playerLevel: 1
-  currentEXP: 0
-  expToNextLevel: 
-  maxLevel: 20
-  baseEXP: 100
-  currentHP: 100
-  maxHP: 100
-  currentMP: 25
-  maxMP: 25
-  strength: 8
-  defence: 5
-  agility: 3
-  wpnPwr: 0
-  armrPwr: 0
-  equippedWpn: 
-  equippedArmr: 
-  charIamge: {fileID: 7709784719092707630, guid: ebab3f63e9d7a2d48afefd6f2de9cc79, type: 3}
+  characterName: maki
 --- !u!1 &4535763949929879628
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,27 +128,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4535763949929879628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ed1529524c9cf458422d36890c722f, type: 3}
+  m_Script: {fileID: 11500000, guid: 26b78e6a58314ad44b0ba9ff4b214e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: sumino
-  playerLevel: 1
-  currentEXP: 0
-  expToNextLevel: 
-  maxLevel: 20
-  baseEXP: 100
-  currentHP: 75
-  maxHP: 75
-  currentMP: 20
-  maxMP: 20
-  strength: 5
-  defence: 3
-  agility: 8
-  wpnPwr: 0
-  armrPwr: 0
-  equippedWpn: 
-  equippedArmr: 
-  charIamge: {fileID: -7506843205370739377, guid: ebab3f63e9d7a2d48afefd6f2de9cc79, type: 3}
+  characterName: sumino
 --- !u!1 &4535763950110080232
 GameObject:
   m_ObjectHideFlags: 0

@@ -3405,7 +3405,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -274, y: 70}
+  m_AnchoredPosition: {x: -274, y: 127.000015}
   m_SizeDelta: {x: 198.5958, y: 45.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7871221832889872414
@@ -3520,7 +3520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7092767330287506502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3803,7 +3803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1546122702872047951, guid: ebab3f63e9d7a2d48afefd6f2de9cc79, type: 3}
+  m_Sprite: {fileID: 1546122702872047951, guid: 6ab6225e412437b4993e82445eac34e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5102,7 +5102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7506843205370739377, guid: ebab3f63e9d7a2d48afefd6f2de9cc79, type: 3}
+  m_Sprite: {fileID: -7506843205370739377, guid: 6ab6225e412437b4993e82445eac34e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6760,7 +6760,6 @@ GameObject:
   - component: {fileID: 3876647930162891468}
   - component: {fileID: 1861642914}
   - component: {fileID: 3902403662236184324}
-  - component: {fileID: 622015984828064823}
   m_Layer: 5
   m_Name: UI Canvas
   m_TagString: Untagged
@@ -6892,25 +6891,6 @@ MonoBehaviour:
   fadeSpeed: 2
   shouldFadeToBlack: 0
   shouldFadeFromBlack: 0
---- !u!114 &622015984828064823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3876647930162891469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31eaf0fe39cffcd488b12dde2d1c220d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xpText: {fileID: 5866761769094723707}
-  itemText: {fileID: 5866761769584785589}
-  rewardScreen: {fileID: 3369119564890459371}
-  rewardItems: []
-  xpEarned: 0
-  markQuestComplete: 0
-  questToMark: 
 --- !u!1 &3952610148272356861
 GameObject:
   m_ObjectHideFlags: 0
@@ -10013,7 +9993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7709784719092707630, guid: ebab3f63e9d7a2d48afefd6f2de9cc79, type: 3}
+  m_Sprite: {fileID: 7709784719092707630, guid: 6ab6225e412437b4993e82445eac34e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11967,7 +11947,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -274.00003, y: 130}
+  m_AnchoredPosition: {x: -274.00003, y: 187}
   m_SizeDelta: {x: 198.5958, y: 45.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &715149420439670176
@@ -15461,33 +15441,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7839fd66d4261b4c8881b319f51fe4b, type: 3}
---- !u!1 &3369119564890459371 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2556658826133087038, guid: d7839fd66d4261b4c8881b319f51fe4b, type: 3}
-  m_PrefabInstance: {fileID: 989269973821747157}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5866761769094723707 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6687981176673621934, guid: d7839fd66d4261b4c8881b319f51fe4b, type: 3}
-  m_PrefabInstance: {fileID: 989269973821747157}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5866761769584785589 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6687981177165027168, guid: d7839fd66d4261b4c8881b319f51fe4b, type: 3}
-  m_PrefabInstance: {fileID: 989269973821747157}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &5866761769275023094 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6687981176870678819, guid: d7839fd66d4261b4c8881b319f51fe4b, type: 3}

@@ -36,7 +36,7 @@ public class agiotaMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameManager.instance.averageLevel == GameManager.instance.playerStats[0].maxLevel)
+        if (GameManager.instance.averageLevel == GameManager.instance.playerStats[0].statsInstance.maxLevel)
         {
             menuState = AgiotaMenuState.MaxLevelState;
             loanPrompt.GetComponent<Text>().text = "olá, meus caros...aconteceu alguma coisa?";
