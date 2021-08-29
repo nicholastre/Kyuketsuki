@@ -35,6 +35,8 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         instance = this;
+
+        GetStatsFromManager();
         flowControl = true;
 
         combatOrder = new GameObject[playerUnits.Length + enemyUnits.Length];
@@ -72,6 +74,58 @@ public class BattleManager : MonoBehaviour
                 break;
         }
         
+    }
+
+    private void GetStatsFromManager()
+    {
+        for (int i = 0; i < playerUnits.Length; i++)
+        {
+            playerUnits[i].GetComponent<PlayerBase>().unitName = GameManager.instance.
+                playerStats[i].statsInstance.charName;
+
+            playerUnits[i].GetComponent<PlayerBase>().currentHitPoints = GameManager.instance.
+                playerStats[i].statsInstance.currentHP;
+            playerUnits[i].GetComponent<PlayerBase>().maxHitPoints = GameManager.instance.
+                playerStats[i].statsInstance.maxHP;
+            playerUnits[i].GetComponent<PlayerBase>().currentPowerPoints = GameManager.instance.
+                playerStats[i].statsInstance.currentMP;
+            playerUnits[i].GetComponent<PlayerBase>().maxPowerPoints = GameManager.instance.
+                playerStats[i].statsInstance.maxMP;
+
+            playerUnits[i].GetComponent<PlayerBase>().attack = GameManager.instance.
+                playerStats[i].statsInstance.strength;
+            playerUnits[i].GetComponent<PlayerBase>().defense = GameManager.instance.
+                playerStats[i].statsInstance.defence;
+            playerUnits[i].GetComponent<PlayerBase>().agility = GameManager.instance.
+                playerStats[i].statsInstance.agility;
+
+            playerUnits[i].GetComponent<PlayerBase>().UpdateUnitState();
+        }
+    }
+
+    private void GiveStatsToManager()
+    {
+        for (int i = 0; i < playerUnits.Length; i++)
+        {
+            GameManager.instance.playerStats[i].statsInstance.charName = playerUnits[i].
+                GetComponent<PlayerBase>().unitName;
+
+            GameManager.instance.playerStats[i].statsInstance.currentHP = playerUnits[i].
+                GetComponent<PlayerBase>().currentHitPoints;
+            GameManager.instance.playerStats[i].statsInstance.maxHP = playerUnits[i].
+                GetComponent<PlayerBase>().maxHitPoints;
+            GameManager.instance.playerStats[i].statsInstance.currentMP = playerUnits[i].
+                GetComponent<PlayerBase>().currentPowerPoints;
+            GameManager.instance.playerStats[i].statsInstance.maxMP = playerUnits[i].
+                GetComponent<PlayerBase>().maxPowerPoints;
+
+            GameManager.instance.playerStats[i].statsInstance.strength = playerUnits[i].
+                GetComponent<PlayerBase>().attack;
+            GameManager.instance.playerStats[i].statsInstance.defence = playerUnits[i].
+                GetComponent<PlayerBase>().defense;
+            GameManager.instance.playerStats[i].statsInstance.agility = playerUnits[i].
+                GetComponent<PlayerBase>().agility;
+        }
     }
 
     private void SetCombatOrder()
@@ -211,6 +265,7 @@ public class BattleManager : MonoBehaviour
 
             if (timeToWait <= 0.0f)
             {
+                GiveStatsToManager();
                 switch (GameManager.instance.currentArea) {
                     case AreaMaps.ForestArea:
                         BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "forestMap";
@@ -235,6 +290,8 @@ public class BattleManager : MonoBehaviour
 
             if (timeToWait <= 0.0f)
             {
+                GameManager.instance.groupWasDefeated = true;
+                PlayerController.instance.areaTransitionName = "cityToLoan";
                 BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "loanScene";
                 BattleManager.instance.GetComponent<ChangeScenes>().PrepareFadeChange();
             }
@@ -284,6 +341,7 @@ public class BattleManager : MonoBehaviour
         if (deadPlayerCounter == playerUnits.Length)
         {
             ResetActionFeedback();
+            timeToWait = 3.0f;
             SetBattleState(BattleState.BattleDefeat);
         }
         else if (deadEnemyCounter == enemyUnits.Length)
@@ -292,6 +350,19 @@ public class BattleManager : MonoBehaviour
             timeToWait = 3.0f;
             int expGain = Mathf.RoundToInt(Random.Range(averageExpGain * 0.85f, averageExpGain * 1.15f));
             int bitsGain = Mathf.RoundToInt(Random.Range(averageBitsGain * 0.85f, averageBitsGain * 1.15f));
+
+            for (int i = 0; i < playerUnits.Length; i++)
+            {
+                if (playerUnits[i].GetComponent<CombatUnitStats>().currentState == UnitState.Dead)
+                {
+                    GameManager.instance.GiveExpToChar(i, Mathf.RoundToInt(expGain / 2));
+                } else
+                {
+                    GameManager.instance.GiveExpToChar(i, expGain);
+                }
+            }
+            GameManager.instance.changeMoney(bitsGain);
+            
             battleMenu.GetComponent<BattleMenu>().SetBattleRewards(expGain, bitsGain);
             SetBattleState(BattleState.BattleVictory);
         } else
@@ -321,7 +392,7 @@ public class BattleManager : MonoBehaviour
 
     public void SetEscapeBattle()
     {
-        timeToWait = 3.0f;
+        timeToWait = 2.0f;
         SetBattleState(BattleState.BattleEscape);
     }
 

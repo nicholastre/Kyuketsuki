@@ -36,6 +36,7 @@ public class BattleMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -247,7 +248,7 @@ public class BattleMenu : MonoBehaviour
         {
             activeSkill = -1;
             SetBattleMenuState(BattleMenuState.PlayerSkillsMenu);
-        } else if (currentMenuState == BattleMenuState.EscapeMenu)
+        } else if (currentMenuState == BattleMenuState.ConfirmEscape)
         {
             SetBattleMenuState(BattleMenuState.PlayerStartMenu);
         }

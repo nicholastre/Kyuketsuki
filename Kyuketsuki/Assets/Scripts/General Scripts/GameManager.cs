@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
     public AreaMaps currentArea;
     public string enemyEncountered = "";
     public Vector3 playerPosition;
+    public bool groupWasDefeated = false;
 
 	// Use this for initialization
 	void Start () {
@@ -58,10 +59,7 @@ public class GameManager : MonoBehaviour {
             PlayerController.instance.canMove = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TempAddExp();
-        } else if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             int sumHalfwayExp = 0;
 
@@ -96,11 +94,13 @@ public class GameManager : MonoBehaviour {
             groupDebt += 20000;
         } else if (Input.GetKeyDown(KeyCode.O))
         {
-            for (int i = 0; i < playerStats.Length; i++)
+            for (int i = 1; i < playerStats.Length; i++)
             {
-                playerStats[i].changeHitPoints(-10);
-                playerStats[i].changeMagicPoints(-10);
+                playerStats[i].statsInstance.currentHP = 0;
+                playerStats[i].statsInstance.currentMP = 0;
             }
+
+            playerStats[0].statsInstance.currentHP = 1;
         } else if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("Dinheiro: " + groupMoney);
@@ -137,6 +137,14 @@ public class GameManager : MonoBehaviour {
         }
 
         return changedLevels;
+    }
+
+    public void RestoreCharacters()
+    {
+        for (int i = 0; i < playerStats.Length; i++)
+        {
+            playerStats[i].restoreCharacter();
+        }
     }
 
     // Cria o objeto que contem as informacoes salvas e passa os dados para ele
@@ -220,11 +228,9 @@ public class GameManager : MonoBehaviour {
         return current;
     }
 
-    private void TempAddExp()
+    public void GiveExpToChar(int charIdentifier, int expValue)
     {
-        playerStats[0].AddExp(50);
-        playerStats[1].AddExp(50);
-        playerStats[2].AddExp(50);
+        playerStats[charIdentifier].AddExp(expValue);
     }
 
     // Utiliza o objeto de save para guardar em um local de dados persistentes da maquina

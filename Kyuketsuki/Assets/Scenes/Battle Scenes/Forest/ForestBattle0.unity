@@ -1708,8 +1708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f15152c3a5753644b18fad866667057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  averageExpGain: 0
-  averageBitsGain: 0
+  averageExpGain: 100
+  averageBitsGain: 15
   battleMenu: {fileID: 953548328}
   playerUnits:
   - {fileID: 1788758023}

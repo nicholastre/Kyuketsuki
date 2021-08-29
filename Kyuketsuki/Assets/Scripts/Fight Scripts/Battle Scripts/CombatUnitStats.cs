@@ -12,9 +12,11 @@ public enum UnitState
 public class CombatUnitStats : MonoBehaviour
 {
     public string unitName;
+
     public Text hitPointsText;
     public int currentHitPoints;
     public int maxHitPoints;
+
     public Text powerPointsText;
     public int currentPowerPoints;
     public int maxPowerPoints;
