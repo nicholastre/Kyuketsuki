@@ -99,10 +99,10 @@ MonoBehaviour:
   isWeapon: 0
   isArmour: 0
   itemName: "Po\xE7\xE3o de Vida 1"
-  description: Cura 10 pontos de vida
-  value: 10
+  description: Cura 25 pontos de vida
+  value: 30
   itemSprite: {fileID: -449731239419873770, guid: 0c67425a832470d45a0c80027e52e1dc, type: 3}
-  amountToChange: 10
+  amountToChange: 25
   affectHP: 1
   affectMP: 0
   affectStr: 0

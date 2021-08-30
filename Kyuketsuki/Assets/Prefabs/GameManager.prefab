@@ -142,7 +142,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4535763950110080234}
   - component: {fileID: 4535763950110080235}
-  - component: {fileID: 1860403657}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -211,28 +210,12 @@ MonoBehaviour:
   - {fileID: 2178588128518083996, guid: 45d9d9cf442f8a648aef262c3ee533a0, type: 3}
   - {fileID: 2176165568138265065, guid: 92e80bf92610f5f41adebaa912e45a97, type: 3}
   - {fileID: 8513907778056683447, guid: 790082181a45e414899d5056a1d59a7e, type: 3}
+  - {fileID: 6283972448608128766, guid: 6c909f408f6ec7b4cbef96b85cd1bb38, type: 3}
+  - {fileID: 5686871367238842936, guid: d013dae8aacabe5478345c06b0f59016, type: 3}
   dialogActive: 0
   fadingBetweenAreas: 0
   battleActive: 0
   currentArea: 0
   enemyEncountered: 
   playerPosition: {x: 0, y: 0, z: 0}
---- !u!114 &1860403657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4535763950110080232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ffbcdfdbbd428448bd90165e6ccbfe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questMarkerNames:
-  - 
-  - teste2
-  - mate o demonio
-  - quest teste
-  - teste5
-  questMarkersComplete: 
+  groupWasDefeated: 0
