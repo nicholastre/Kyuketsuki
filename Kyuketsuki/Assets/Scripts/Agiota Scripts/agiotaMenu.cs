@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 enum AgiotaMenuState
 {
+    DefeatedState,
     StartingState,
     LendingState,
     PayingState,
@@ -24,6 +25,7 @@ enum EndingType
 
 public class agiotaMenu : MonoBehaviour
 {
+    public Text debtTracker;
     public Component loanPrompt;
     public Component moneyInput;
     public Component firstButton;
@@ -31,27 +33,40 @@ public class agiotaMenu : MonoBehaviour
     public Component thirdButton;
     public Component challengeButton;
 
+    private float defeatedTime = 3.0f;
     private AgiotaMenuState menuState;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (GameManager.instance.averageLevel == GameManager.instance.playerStats[0].maxLevel)
+        if (GameManager.instance.averageLevel == GameManager.instance.playerStats[0].statsInstance.maxLevel)
         {
             menuState = AgiotaMenuState.MaxLevelState;
-            loanPrompt.GetComponent<Text>().text = "olá, meus caros...aconteceu alguma coisa?";
+            loanPrompt.GetComponent<Text>().text = "olá, meus caros...aconteceu alguma coisa? vocês parecem mais... incomodados do que o habitual";
+        } else if (GameManager.instance.groupWasDefeated) 
+        {
+            GameManager.instance.groupWasDefeated = false;
+            menuState = AgiotaMenuState.DefeatedState;
+            loanPrompt.GetComponent<Text>().text = "não se preocupem, estão seguros agora... com um leve aumento de 1000 bits na dívida, é claro";
         } else
         {
             menuState = AgiotaMenuState.StartingState;
-            loanPrompt.GetComponent<Text>().text = "o que vocês desejam, meus caros clientes?";
+            loanPrompt.GetComponent<Text>().text = "ah em que posso ajudar meus clientes preferidos? precisam de mais bits?";
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        debtTracker.text = "Dívida: " + GameManager.instance.groupDebt.ToString() +
+            "\n" + "Limite: " + GameManager.instance.maxDebt.ToString();
+
         switch (menuState)
         {
+            case AgiotaMenuState.DefeatedState:
+                RunDefeatedArrival();
+
+                break;
             case AgiotaMenuState.StartingState:
                 moneyInput.gameObject.SetActive(false);
                 moneyInput.GetComponent<InputField>().interactable = false;
@@ -63,6 +78,8 @@ public class agiotaMenu : MonoBehaviour
                 secondButton.GetComponent<Button>().interactable = true;
                 secondButton.GetComponentInChildren<Text>().text = "Pagar";
 
+                thirdButton.gameObject.SetActive(true);
+                thirdButton.GetComponent<Button>().interactable = true;
                 thirdButton.GetComponentInChildren<Text>().text = "Sair";
 
                 break;
@@ -169,18 +186,49 @@ public class agiotaMenu : MonoBehaviour
         }
     }
 
+    private void RunDefeatedArrival()
+    {
+        if (defeatedTime > 0.0f)
+        {
+            defeatedTime -= Time.deltaTime;
+
+            if (defeatedTime <= 0.0f)
+            {
+                menuState = AgiotaMenuState.StartingState;
+                GameManager.instance.RestoreCharacters();
+                GameManager.instance.changeDebt(1000);
+                loanPrompt.GetComponent<Text>().text = "em que posso ajudar meus clientes preferidos? precisam de mais bits?";
+            }
+        }
+
+        moneyInput.gameObject.SetActive(false);
+        moneyInput.GetComponent<InputField>().interactable = false;
+
+        firstButton.gameObject.SetActive(false);
+        firstButton.GetComponent<Button>().interactable = false;
+
+        secondButton.gameObject.SetActive(false);
+        secondButton.GetComponent<Button>().interactable = false;
+
+        challengeButton.gameObject.SetActive(false);
+        challengeButton.GetComponent<Button>().interactable = false;
+
+        thirdButton.gameObject.SetActive(false);
+        thirdButton.GetComponent<Button>().interactable = false;
+    }
+
     public void clickFirstButton()
     {
         if (menuState == AgiotaMenuState.StartingState || menuState == AgiotaMenuState.ReturnState)
         {
             resetButton(firstButton);
             menuState = AgiotaMenuState.LendingState;
-            loanPrompt.GetComponent<Text>().text = "perfeito...quanto vocês precisam?";
+            loanPrompt.GetComponent<Text>().text = "perfeito...quanto vocês precisam? não se acanhem, podem falar abertamente";
         } else if (menuState == AgiotaMenuState.MaxLevelState)
         {
             resetButton(challengeButton);
             menuState = AgiotaMenuState.ChallengeState;
-            loanPrompt.GetComponent<Text>().text = "hahaha...essa ousadia vai custar muito, muito caro...";
+            loanPrompt.GetComponent<Text>().text = "depois de tudo que fiz por vocês, essa é minha retribuição... ha ha ha... ousadia como essa... custa muito caro";
         } else if (menuState == AgiotaMenuState.ChallengeState)
         {
             resetButton(firstButton);
@@ -207,7 +255,7 @@ public class agiotaMenu : MonoBehaviour
         {
             case AgiotaMenuState.StartingState:
                 menuState = AgiotaMenuState.PayingState;
-                loanPrompt.GetComponent<Text>().text = "excelente...quanto vocês querem pagar?";
+                loanPrompt.GetComponent<Text>().text = "excelente...quanto vocês querem pagar? sem pressa, podem me pagar quando quiserem...";
                 break;
             case AgiotaMenuState.LendingState:
                 int lendMoney = int.Parse(moneyInput.GetComponent<InputField>().text);
@@ -222,7 +270,7 @@ public class agiotaMenu : MonoBehaviour
 
                     if (checkDebt() == EndingType.DebtOverLimit)
                     {
-                        loanPrompt.GetComponent<Text>().text = "com uma dívida tão grande... vocês realmente falharam";
+                        loanPrompt.GetComponent<Text>().text = "com uma dívida tão grande... receio não haver outra opção para pagamento agora, meus caros... ha ha ha ha ha ha...";
                         menuState = AgiotaMenuState.DebtLimitState;
                     } else
                     {
@@ -246,7 +294,7 @@ public class agiotaMenu : MonoBehaviour
 
                     if (checkDebt() == EndingType.DebtPaid)
                     {
-                        loanPrompt.GetComponent<Text>().text = "impressionante... acredito que suas dívidas foram quitadas";
+                        loanPrompt.GetComponent<Text>().text = "impressionante... acredito que suas dívidas foram... devidamente quitadas";
                         menuState = AgiotaMenuState.PaidDebtState;
                     }
                     else
@@ -258,7 +306,7 @@ public class agiotaMenu : MonoBehaviour
                 break;
             case AgiotaMenuState.ReturnState:
                 menuState = AgiotaMenuState.PayingState;
-                loanPrompt.GetComponent<Text>().text = "excelente...quanto vocês querem pagar?";
+                loanPrompt.GetComponent<Text>().text = "excelente...quanto vocês querem pagar? sem pressa, podem me pagar quando quiserem...";
                 break;
         }
     }
@@ -273,11 +321,11 @@ public class agiotaMenu : MonoBehaviour
                 break;
             case AgiotaMenuState.LendingState:
                 menuState = AgiotaMenuState.StartingState;
-                loanPrompt.GetComponent<Text>().text = "o que vocês desejam, meus caros?";
+                loanPrompt.GetComponent<Text>().text = "ah em que posso ajudar meus clientes preferidos? precisam de mais bits?";
                 break;
             case AgiotaMenuState.PayingState:
                 menuState = AgiotaMenuState.StartingState;
-                loanPrompt.GetComponent<Text>().text = "o que vocês desejam, meus caros?";
+                loanPrompt.GetComponent<Text>().text = "ah em que posso ajudar meus clientes preferidos? precisam de mais bits?";
                 break;
             case AgiotaMenuState.ReturnState:
                 GetComponent<ChangeScenes>().PrepareFadeChange();

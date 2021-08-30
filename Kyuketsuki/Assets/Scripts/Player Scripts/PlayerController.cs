@@ -35,10 +35,13 @@ public class PlayerController : MonoBehaviour {
         }
 
         DontDestroyOnLoad(gameObject);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+        // Garante que os atributos carregados nao sejam sobrescritos pela inicializacao
+        GameManager.instance.LoadGame();
+    }
+
+    // Update is called once per frame
+    void Update () {
         //Movimentação
         if (canMove)
         {

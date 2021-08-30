@@ -46,17 +46,17 @@ public class restingEvents : MonoBehaviour
 
             if (changedLevels[0] == true)
             {
-                restingDescription.text = storedCharacters[0].charName + " avançou para o nível " + storedCharacters[0].playerLevel + "!";
+                restingDescription.text = storedCharacters[0].statsInstance.charName + " avançou para o nível " + storedCharacters[0].statsInstance.playerLevel + "!";
                 changedLevels[0] = false;
             }
             else if (changedLevels[1] == true)
             {
-                restingDescription.text = storedCharacters[1].charName + " avançou para o nível " + storedCharacters[1].playerLevel + "!";
+                restingDescription.text = storedCharacters[1].statsInstance.charName + " avançou para o nível " + storedCharacters[1].statsInstance.playerLevel + "!";
                 changedLevels[1] = false;
             }
             else if (changedLevels[2] == true)
             {
-                restingDescription.text = storedCharacters[2].charName + " avançou para o nível " + storedCharacters[2].playerLevel + "!";
+                restingDescription.text = storedCharacters[2].statsInstance.charName + " avançou para o nível " + storedCharacters[2].statsInstance.playerLevel + "!";
                 changedLevels[2] = false;
             }
 
@@ -70,11 +70,11 @@ public class restingEvents : MonoBehaviour
         {
             CharStats[] storedCharacters = GameManager.instance.playerStats;
 
-            if (GameManager.instance.averageLevel == storedCharacters[0].maxLevel)
+            if (GameManager.instance.averageLevel == storedCharacters[0].statsInstance.maxLevel)
             {
                 restingDescription.text = "Com o poder que temos agora...tem outra solução pro Agiota.";
             }
-            else if (GameManager.instance.averageLevel > storedCharacters[0].maxLevel / 2)
+            else if (GameManager.instance.averageLevel > storedCharacters[0].statsInstance.maxLevel / 2)
             {
                 restingDescription.text = "Estamos bem fortes agora...um pouco mais e...quem sabe?";
             }

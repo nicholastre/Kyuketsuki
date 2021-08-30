@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2021-08-28_00-32-28" tag="">
+  <assembly name="Tests">
+    <class name="NewTestScript" coveredlines="0" coverablelines="8" totallines="28" coveredbranches="0" totalbranches="0" />
+  </assembly>
+</coverage>

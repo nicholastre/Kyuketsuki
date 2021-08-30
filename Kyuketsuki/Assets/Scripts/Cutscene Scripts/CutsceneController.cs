@@ -8,12 +8,13 @@ enum CutsceneScenes
     FirstScene,
     SecondScene,
     ThirdScene,
-    FourthScene
+    FourthScene,
+    FifthScene,
+    DoneScene
 }
 
 public class CutsceneController : MonoBehaviour
 {
-    public Component cutsceneText;
     public Component confirmButton;
     public Component[] cutsceneImages;
 
@@ -29,26 +30,17 @@ public class CutsceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (currentScene)
+        if (currentScene == CutsceneScenes.FifthScene)
         {
-            case CutsceneScenes.FirstScene:
-                cutsceneText.GetComponent<Text>().text = "agora que estamos todos aqui, primeiro: não importa o motivo da dívida de cada um, ok?";
-                break;
-            case CutsceneScenes.SecondScene:
-                cutsceneText.GetComponent<Text>().text = "o que importa é que o povo paga muito bem para matarem monstros e nossos poderes servem bem para isso";
-                break;
-            case CutsceneScenes.ThirdScene:
-                cutsceneText.GetComponent<Text>().text = "então é pegar umas missões ali, matar os bichos, pegar a grana e pagar o agiota. facinho e todo mundo sai quite";
-                break;
-            case CutsceneScenes.FourthScene:
-                cutsceneText.GetComponent<Text>().text = "só lembrem de não aumentar a dívida... com poderes maiores que os nossos, vai que ele resolve cobrar de outro jeito";
-                break;
+            GetComponentInChildren<ChangeScenes>().PrepareFadeChange(1f);
+            gameObject.transform.Find("MenuBackground").gameObject.SetActive(false);
+            currentScene = CutsceneScenes.DoneScene;
         }
     }
 
-    IEnumerator FadeSetImage(Image img)
+    IEnumerator FadeSetImage(Image img, float speed = 1)
     {
-        for (float i = 1; i >= 0; i -= Time.deltaTime)
+        for (float i = 1; i >= 0; i -= (speed * Time.deltaTime))
         {
             img.color = new Color(img.color.r, img.color.g, img.color.b, i);
             yield return null;
@@ -64,6 +56,9 @@ public class CutsceneController : MonoBehaviour
                 break;
             case CutsceneScenes.ThirdScene:
                 currentScene = CutsceneScenes.FourthScene;
+                break;
+            case CutsceneScenes.FourthScene:
+                currentScene = CutsceneScenes.FifthScene;
                 break;
         }
     }
@@ -84,7 +79,7 @@ public class CutsceneController : MonoBehaviour
                 StartCoroutine(FadeSetImage(cutsceneImages[2].GetComponent<Image>()));
                 break;
             case CutsceneScenes.FourthScene:
-                GetComponentInChildren<ChangeScenes>().PrepareFadeChange(1f);
+                StartCoroutine(FadeSetImage(cutsceneImages[3].GetComponent<Image>(), 10));
                 break;
         }
     }
