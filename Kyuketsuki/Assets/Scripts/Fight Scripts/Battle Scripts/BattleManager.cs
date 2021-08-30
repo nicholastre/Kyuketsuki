@@ -305,6 +305,32 @@ public class BattleManager : MonoBehaviour
         combatOrder[currentActor].GetComponent<CombatUnitStats>().AttackTarget(targetIdentifier, targetDefense, targetAgility);
     }
 
+    public void PlayerUseItem(int targetIdentifier, int itemSlot)
+    {
+        Item usedItem = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[itemSlot]);
+        GameManager.instance.RemoveItem(usedItem.itemName);
+
+        playerUnits[targetIdentifier].transform.Find("DamageIndicator").
+            gameObject.GetComponent<Text>().color = new Color(0.04f, 0.67f, 0.8f, 1);
+        playerUnits[targetIdentifier].transform.Find("DamageIndicator").
+            gameObject.GetComponent<Text>().text = usedItem.amountToChange.ToString();
+
+        if (usedItem.affectHP)
+        {
+            playerUnits[targetIdentifier].GetComponent<CombatUnitStats>().ChangeHitPoints(usedItem.amountToChange);
+        } else if (usedItem.affectMP)
+        {
+            playerUnits[targetIdentifier].GetComponent<CombatUnitStats>().ChangePowerPoints(usedItem.amountToChange);
+        }
+
+        string attackText = combatOrder[currentActor].GetComponent<CombatUnitStats>().unitName 
+            + " usou " + usedItem.itemName + " em " 
+            + playerUnits[targetIdentifier].GetComponent<CombatUnitStats>().unitName + "!";
+        battleMenu.GetComponent<BattleMenu>().SetTurnDescription(attackText);
+        playerUnits[targetIdentifier].transform.Find("DamageIndicator").gameObject.SetActive(true);
+        SetBattleState(BattleState.TurnTransition);
+    }
+
     private void ResetActionFeedback()
     {
         for (int i = 0; i < combatOrder.Length; i++)

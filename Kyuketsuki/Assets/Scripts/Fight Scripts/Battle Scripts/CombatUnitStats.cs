@@ -52,10 +52,9 @@ public class CombatUnitStats : MonoBehaviour
     {
         currentHitPoints += modifier;
 
-        if (currentHitPoints <= 0)
-        {
-            currentHitPoints = 0;
-        }
+        currentHitPoints = Mathf.Clamp(currentHitPoints, 0, maxHitPoints);
+
+        UpdateUnitState();
 
         hitPointsText.text = "HP: " + currentHitPoints + " / " + maxHitPoints;
     }
@@ -75,10 +74,7 @@ public class CombatUnitStats : MonoBehaviour
     {
         currentPowerPoints += modifier;
 
-        if (currentPowerPoints <= 0)
-        {
-            currentPowerPoints = 0;
-        }
+        currentPowerPoints = Mathf.Clamp(currentPowerPoints, 0, maxPowerPoints);
 
         powerPointsText.text = "MP: " + currentPowerPoints + " / " + maxPowerPoints;
     }

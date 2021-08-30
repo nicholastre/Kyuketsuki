@@ -454,7 +454,7 @@ public class BattleMenu : MonoBehaviour
 
     public void ClickItemUserButton(int buttonIdentifier)
     {
-
+        BattleManager.instance.PlayerUseItem(buttonIdentifier, activeItem);
     }
 
     public void ClickTargetButton(int buttonIdentifier)
