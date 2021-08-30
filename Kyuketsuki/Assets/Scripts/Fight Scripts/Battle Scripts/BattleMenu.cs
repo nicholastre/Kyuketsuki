@@ -129,7 +129,7 @@ public class BattleMenu : MonoBehaviour
                  playerSkills[activeSkill].baseDamage + "\n" + "Poder Usado " + playerSkills[activeSkill].powerCost;
             gameObject.transform.Find("ChooseSkillScreen").Find("ChosenAttack").gameObject.SetActive(true);
 
-            if (playerSkills[activeSkill].powerCost < playerStats[currentPlayer].currentPowerPoints)
+            if (playerSkills[activeSkill].powerCost <= playerStats[currentPlayer].currentPowerPoints)
             {
                 gameObject.transform.Find("ChooseSkillScreen").Find("ConfirmButton").
                     Find("Text").gameObject.GetComponent<Text>().text = "Confirmar ataque";
