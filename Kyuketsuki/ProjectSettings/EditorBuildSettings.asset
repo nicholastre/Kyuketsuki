@@ -60,6 +60,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu Scenes/creditsMenu.unity
     guid: d66be6b8f6311f2439ad81d4cf62fece
   - enabled: 1
-    path: Assets/Scenes/Battle Scenes/Forest/ForestBattle0.unity
-    guid: c1da65319e357194f991f523b665d4f0
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB0.unity
+    guid: a89bf669973274a46ab723dab489ff2c
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB1.unity
+    guid: ea9d07388c3d8f14e8507c87d260e87f
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB2.unity
+    guid: c7c97cc6766269542ab5cd8df403bc1a
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB3.unity
+    guid: e7015d0ba3077444fa8371aa5315d523
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB4.unity
+    guid: 92c2c7a0bf1a9a14bbef6a738ad8ee3c
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB5.unity
+    guid: 9c4c051a8d01e52439b45e4fcba7015a
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB6.unity
+    guid: c1627294b9a66194b8695a91d43b5f04
   m_configObjects: {}

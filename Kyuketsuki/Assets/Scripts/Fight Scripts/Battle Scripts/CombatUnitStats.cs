@@ -85,7 +85,7 @@ public class CombatUnitStats : MonoBehaviour
 
     public void AttackTarget(int targetIdentifier, int targetDefense, int targetAgility)
     {
-        unitSkills[chosenSkillIdentifier].UseSkill(attack, targetDefense, targetAgility);
+        unitSkills[chosenSkillIdentifier].UseSkill(attack, agility, targetDefense, targetAgility);
         ChangePowerPoints(-1 * unitSkills[chosenSkillIdentifier].powerCost);
 
         BattleManager.instance.GetAttackResult(unitSkills[chosenSkillIdentifier].skillName,

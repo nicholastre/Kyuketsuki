@@ -32,13 +32,14 @@ public class SkillBase : MonoBehaviour
         
     }
 
-    public void UseSkill(int userAttack, int targetDefense, int targetAgility)
+    public void UseSkill(int userAttack, int userAgility, int targetDefense, int targetAgility)
     {
-        int baseEffect = baseDamage;
-        int effectModifier = userAttack - targetDefense;
-        int initialEffect = Mathf.Max(baseEffect + effectModifier, 1);
+        float effectModifier = (100.0f + baseDamage) / 100.0f;
+        int baseEffect = userAttack + (userAttack - targetDefense);
+        int initialEffect = Mathf.Max(Mathf.RoundToInt(baseEffect * effectModifier), 1);
 
-        float finalHitChance = Mathf.Max(baseHitChance - targetAgility, 5.0f);
+        int chanceModifier = userAgility - targetAgility;
+        float finalHitChance = Mathf.Clamp(baseHitChance + chanceModifier, 5.0f, 99.99f);
         if (Random.Range(0.0f, 100.0f) > finalHitChance)
         {
             usedSkillResult = AttackResult.Miss;

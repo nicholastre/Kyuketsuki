@@ -164,9 +164,9 @@ public class CharStatsBase
             case "sumino":
                 playerLevel = 1;
                 currentEXP = 0;
-                maxHP = 80;
+                maxHP = 55;
                 currentHP = maxHP;
-                maxMP = 20;
+                maxMP = 35;
                 currentMP = maxMP;
                 strength = 5;
                 defence = 3;
@@ -175,9 +175,9 @@ public class CharStatsBase
             case "maki":
                 playerLevel = 1;
                 currentEXP = 0;
-                maxHP = 90;
+                maxHP = 70;
                 currentHP = maxHP;
-                maxMP = 25;
+                maxMP = 40;
                 currentMP = maxMP;
                 strength = 8;
                 defence = 5;
@@ -186,7 +186,7 @@ public class CharStatsBase
             case "hanzo":
                 playerLevel = 1;
                 currentEXP = 0;
-                maxHP = 100;
+                maxHP = 95;
                 currentHP = maxHP;
                 maxMP = 15;
                 currentMP = maxMP;
