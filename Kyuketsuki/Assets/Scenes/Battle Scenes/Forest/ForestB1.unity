@@ -627,6 +627,15 @@ MonoBehaviour:
   - {fileID: 939438554}
   - {fileID: 910217126}
   - {fileID: 785676367}
+  itemButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemName: {fileID: 0}
+  itemDescription: {fileID: 0}
   currentActorName: {fileID: 1743937133}
   startingDescription: "S\xE3o tr\xEAs zumbis!"
 --- !u!114 &282276842

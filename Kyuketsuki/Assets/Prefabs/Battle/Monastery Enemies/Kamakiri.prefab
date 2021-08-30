@@ -362,8 +362,8 @@ MonoBehaviour:
   defense: 22
   agility: 39
   unitSkills:
-  - {fileID: 1533453342994108226, guid: 6c58ff4743f6b1545b26af44c43a0390, type: 3}
-  - {fileID: 1600006334454752507, guid: cc9897ff802a79542ab41eb59bdfcf04, type: 3}
-  - {fileID: 7376731830693435786, guid: cce7e3495e75f764f906e55c095d0b58, type: 3}
+  - {fileID: 6609407104831557976, guid: fecbbeeaba89c6a4282f9e7d1720612a, type: 3}
+  - {fileID: 4686337351322468407, guid: 61f74e9490fd7b24b8cc0b3950aff857, type: 3}
+  - {fileID: 4102999485140517676, guid: 09fbd7c0582454340a4d7f46c3387fc7, type: 3}
   chosenSkillIdentifier: 0
   currentState: 0

@@ -6758,7 +6758,6 @@ GameObject:
   - component: {fileID: 3876647930162891470}
   - component: {fileID: 3876647930162891471}
   - component: {fileID: 3876647930162891468}
-  - component: {fileID: 1861642914}
   - component: {fileID: 3902403662236184324}
   m_Layer: 5
   m_Name: UI Canvas
@@ -6851,29 +6850,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1861642914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3876647930162891469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f3fac24ceb62d4098058c9f958db6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogText: {fileID: 4793225811785444649}
-  nameText: {fileID: 297115312}
-  dialogBox: {fileID: 6494910836244054092}
-  nameBox: {fileID: 1313434026}
-  dialogLines:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  currentLine: 0
 --- !u!114 &3902403662236184324
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public enum BattleMenuState
     BattleStartAlert,
     PlayerStartMenu,
     PlayerSkillsMenu,
+    PlayerItemMenu,
+    ItemUseMenu,
     PlayerAttackMenu,
     TurnResult,
     ConfirmEscape,
@@ -22,6 +24,10 @@ public class BattleMenu : MonoBehaviour
     public Text turnDescription;
     public GameObject[] skillButtons;
     public GameObject[] targetButtons;
+    public GameObject[] userButtons;
+    public ItemButton[] itemButtons;
+    public Text itemName;
+    public Text itemDescription;
     public Text currentActorName;
     public string startingDescription;
 
@@ -32,6 +38,7 @@ public class BattleMenu : MonoBehaviour
     private int currentPlayer;
     private int activeSkill = -1;
     private SkillBase[] playerSkills = new SkillBase[3];
+    private int activeItem = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +66,12 @@ public class BattleMenu : MonoBehaviour
             case BattleMenuState.TurnResult:
                 ShowTurnResult();
                 break;
+            case BattleMenuState.PlayerItemMenu:
+                ChoosingItem();
+                break;
+            case BattleMenuState.ItemUseMenu:
+                UsingItem();
+                break;
             case BattleMenuState.ConfirmEscape:
                 ConfirmingPlayerEscape();
                 break;
@@ -81,6 +94,8 @@ public class BattleMenu : MonoBehaviour
         gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(true);
         gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmAttackScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ChooseItemScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmItemScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmEscapeScreen").gameObject.SetActive(false);
     }
 
@@ -90,6 +105,8 @@ public class BattleMenu : MonoBehaviour
         gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(false);
         gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmAttackScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ChooseItemScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmItemScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmEscapeScreen").gameObject.SetActive(false);
     }
 
@@ -99,6 +116,8 @@ public class BattleMenu : MonoBehaviour
         gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(false);
         gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(true);
         gameObject.transform.Find("ConfirmAttackScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ChooseItemScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmItemScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmEscapeScreen").gameObject.SetActive(false);
 
         if (activeSkill != -1)
@@ -137,6 +156,8 @@ public class BattleMenu : MonoBehaviour
         gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(false);
         gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmAttackScreen").gameObject.SetActive(true);
+        gameObject.transform.Find("ChooseItemScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmItemScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmEscapeScreen").gameObject.SetActive(false);
 
         gameObject.transform.Find("ConfirmAttackScreen").Find("ChosenAttack").Find("AttackName").
@@ -155,7 +176,52 @@ public class BattleMenu : MonoBehaviour
         gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(true);
         gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmAttackScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ChooseItemScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmItemScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmEscapeScreen").gameObject.SetActive(false);
+    }
+
+    private void ChoosingItem()
+    {
+        gameObject.transform.Find("StartPlayerScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(false);
+        gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmAttackScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ChooseItemScreen").gameObject.SetActive(true);
+        gameObject.transform.Find("ConfirmItemScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmEscapeScreen").gameObject.SetActive(false);
+        ShowItems();
+
+        if (activeItem != -1)
+        {
+            gameObject.transform.Find("ChooseItemScreen").Find("ChosenItem").gameObject.SetActive(true);
+        } else
+        {
+            gameObject.transform.Find("ChooseItemScreen").Find("ChosenItem").gameObject.SetActive(false);
+        }
+    }
+
+    private void UsingItem()
+    {
+        gameObject.transform.Find("StartPlayerScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(false);
+        gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmAttackScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ChooseItemScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmItemScreen").gameObject.SetActive(true);
+        gameObject.transform.Find("ConfirmEscapeScreen").gameObject.SetActive(false);
+
+        if (activeItem != -1)
+        {
+            gameObject.transform.Find("ConfirmItemScreen").
+                Find("ChosenItem").Find("ItemName").GetComponent<Text>().text = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[activeItem]).itemName;
+            gameObject.transform.Find("ConfirmItemScreen").
+                Find("ChosenItem").Find("ItemDesc").GetComponent<Text>().text = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[activeItem]).description;
+        }
+        else
+        {
+            gameObject.transform.Find("ConfirmItemScreen").Find("ChosenItem").gameObject.SetActive(false);
+        }
     }
 
     private void ConfirmingPlayerEscape()
@@ -164,6 +230,8 @@ public class BattleMenu : MonoBehaviour
         gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(false);
         gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmAttackScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ChooseItemScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmItemScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmEscapeScreen").gameObject.SetActive(true);
     }
 
@@ -174,6 +242,8 @@ public class BattleMenu : MonoBehaviour
         gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(true);
         gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmAttackScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ChooseItemScreen").gameObject.SetActive(false);
+        gameObject.transform.Find("ConfirmItemScreen").gameObject.SetActive(false);
         gameObject.transform.Find("ConfirmEscapeScreen").gameObject.SetActive(false);
     }
 
@@ -217,6 +287,34 @@ public class BattleMenu : MonoBehaviour
         SetSkillButtons();
     }
 
+    public void ClickSkillButton(int skillIdentifier)
+    {
+        activeSkill = skillIdentifier;
+    }
+
+    public void ClickConfirmSkillButton()
+    {
+        SetBattleMenuState(BattleMenuState.PlayerAttackMenu);
+    }
+
+    public void ClickInventoryButton()
+    {
+        SetBattleMenuState(BattleMenuState.PlayerItemMenu);
+    }
+
+    public void SelectItem(int buttonValue)
+    {
+        activeItem = buttonValue;
+        itemName.text = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[activeItem]).itemName;
+        itemDescription.text = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[activeItem]).description;
+    }
+
+    public void ClickConfirmItemButton()
+    {
+        SetUserButtons(playerStats);
+        SetBattleMenuState(BattleMenuState.ItemUseMenu);
+    }
+
     public void ClickEscapeButton()
     {
         SetBattleMenuState(BattleMenuState.ConfirmEscape);
@@ -226,16 +324,6 @@ public class BattleMenu : MonoBehaviour
     {
         SetBattleMenuState(BattleMenuState.EscapeMenu);
         BattleManager.instance.SetEscapeBattle();
-    }
-
-    public void ClickSkillButton(int skillIdentifier)
-    {
-        activeSkill = skillIdentifier;
-    }
-
-    public void ClickConfirmSkillButton()
-    {
-        SetBattleMenuState(BattleMenuState.PlayerAttackMenu);
     }
 
     public void ClickCancelButton()
@@ -248,6 +336,14 @@ public class BattleMenu : MonoBehaviour
         {
             activeSkill = -1;
             SetBattleMenuState(BattleMenuState.PlayerSkillsMenu);
+        } else if (currentMenuState == BattleMenuState.PlayerItemMenu)
+        {
+            activeItem = -1;
+            SetBattleMenuState(BattleMenuState.PlayerStartMenu);
+        } else if (currentMenuState == BattleMenuState.ItemUseMenu) 
+        {
+            activeItem = -1;
+            SetBattleMenuState(BattleMenuState.PlayerItemMenu);
         } else if (currentMenuState == BattleMenuState.ConfirmEscape)
         {
             SetBattleMenuState(BattleMenuState.PlayerStartMenu);
@@ -257,6 +353,63 @@ public class BattleMenu : MonoBehaviour
     public void SetBattleMenuState(BattleMenuState newState)
     {
         currentMenuState = newState;
+    }
+
+    private void ShowItems()
+    {
+        GameManager.instance.SortItems();
+
+        for (int i = 0; i < itemButtons.Length; i++)
+        {
+            itemButtons[i].buttonValue = i;
+
+            if (GameManager.instance.itemsHeld[i] != "")
+            {
+                itemButtons[i].GetComponent<Image>().enabled = true;
+                itemButtons[i].buttonImage.gameObject.SetActive(true);
+                itemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[i]).itemSprite;
+                itemButtons[i].amountText.gameObject.SetActive(true);
+                itemButtons[i].amountText.text = GameManager.instance.numberOfItems[i].ToString();
+            }
+            else
+            {
+                itemButtons[i].GetComponent<Image>().enabled = false;
+                itemButtons[i].buttonImage.gameObject.SetActive(false);
+                itemButtons[i].amountText.gameObject.SetActive(false);
+                itemButtons[i].amountText.text = "";
+            }
+        }
+    }
+
+    public void SetUserButtons(CombatUnitStats[] playerUnits)
+    {
+        for (int j = 0; j < userButtons.Length; j++)
+        {
+            userButtons[j].SetActive(false);
+        }
+
+        int activeButtonCounter = 0;
+        for (int i = 0; i < playerUnits.Length; i++)
+        {
+            GameObject buttonText = userButtons[activeButtonCounter].transform.Find("Text").gameObject;
+
+            string displayText = "";
+            if (GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[activeItem]).affectHP)
+            {
+                displayText = playerUnits[i].unitName + " - vida: " + playerUnits[i].currentHitPoints +
+                " / " + playerUnits[i].maxHitPoints;
+            } else if (GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[activeItem]).affectMP)
+            {
+                displayText = playerUnits[i].unitName + " - poder: " + playerUnits[i].currentPowerPoints +
+                " / " + playerUnits[i].maxPowerPoints;
+            }
+
+            buttonText.GetComponent<Text>().text = displayText;
+            buttonTargets[activeButtonCounter] = i;
+            userButtons[activeButtonCounter].SetActive(true);
+
+            activeButtonCounter += 1;
+        }
     }
 
     public void SetPlayerName(string name)
@@ -297,6 +450,11 @@ public class BattleMenu : MonoBehaviour
                 activeButtonCounter += 1;
             }
         }
+    }
+
+    public void ClickItemUserButton(int buttonIdentifier)
+    {
+
     }
 
     public void ClickTargetButton(int buttonIdentifier)

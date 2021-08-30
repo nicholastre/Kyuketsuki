@@ -37,7 +37,7 @@ public class BattleTransition : AreaExit
             }
 
             string battleSceneName = "";
-            int battleId = Random.Range(0, 7);
+            int battleId = Random.Range(0, 1);
             switch (currentMap)
             {
                 case AreaMaps.ForestArea:
