@@ -1149,7 +1149,19 @@ MonoBehaviour:
   m_Value: 80
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1132668298}
+        m_TargetAssemblyTypeName: OptionsSliderController, GameScripts
+        m_MethodName: UpdateMasterSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &729646363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,7 +1287,19 @@ MonoBehaviour:
   m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1132668298}
+        m_TargetAssemblyTypeName: OptionsSliderController, GameScripts
+        m_MethodName: UpdateMusicSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &811419021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,7 +1640,19 @@ MonoBehaviour:
   m_Value: 40
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1132668298}
+        m_TargetAssemblyTypeName: OptionsSliderController, GameScripts
+        m_MethodName: UpdateSFXSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &923529483
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,6 +2048,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8355aa3af3ab6d4fb63ba40ef93a91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterSlider: {fileID: 725586532}
+  musicSlider: {fileID: 750724150}
+  sfxSlider: {fileID: 920106166}
 --- !u!1 &1219597829
 GameObject:
   m_ObjectHideFlags: 0

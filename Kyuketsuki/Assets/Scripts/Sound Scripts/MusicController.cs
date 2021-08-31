@@ -26,8 +26,8 @@ public class MusicController : MonoBehaviour
     public AudioMixerGroup sfxMixer;
     public AudioClip[] availableMusic;
 
-    private float minVolume = -30.0f;
-    private float maxVolume = 0.0f;
+    private float minVolume = -60.0f;
+    private float maxVolume = 10.0f;
 
     // Start is called before the first frame update
     void Start()
