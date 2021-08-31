@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleMenuState
 {
@@ -43,7 +44,7 @@ public class BattleMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetTurnDescription(startingDescription);
     }
 
     // Update is called once per frame
@@ -89,7 +90,6 @@ public class BattleMenu : MonoBehaviour
 
     private void StartingBattle()
     {
-        SetTurnDescription(startingDescription);
         gameObject.transform.Find("StartPlayerScreen").gameObject.SetActive(false);
         gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(true);
         gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);
@@ -249,13 +249,27 @@ public class BattleMenu : MonoBehaviour
 
     private void ShowVictoryMenu()
     {
-        SetTurnDescription("Monstros eliminados! O grupo ganha " + gainedExp.ToString() +
+        if (SceneManager.GetActiveScene().name == "finalBattle")
+        {
+            SetTurnDescription("Com um último grito aterrador, o Agiota se desfaz " +
+                "no ar e desaparece");
+        }
+        else
+        {
+            SetTurnDescription("Monstros eliminados! O grupo ganha " + gainedExp.ToString() +
             " pontos de experiência e " + gainedBits.ToString() + " Bits.");
+        }
     }
 
     private void ShowDefeatMenu()
     {
-        SetTurnDescription("O grupo foi derrotado...");
+        if (SceneManager.GetActiveScene().name == "finalBattle")
+        {
+            SetTurnDescription("E o Agiota derrota o grupo...");
+        } else
+        {
+            SetTurnDescription("O grupo foi derrotado...");
+        }
     }
 
     public void SetPlayerStatsDisplay(GameObject[] players)
@@ -478,5 +492,17 @@ public class BattleMenu : MonoBehaviour
     {
         gainedExp = exp;
         gainedBits = bits;
+    }
+
+    public void PlaySFX(bool isCancel)
+    {
+        if (isCancel)
+        {
+            MusicController.instance.PlaySFX(GameSFX.CancelSound);
+        }
+        else
+        {
+            MusicController.instance.PlaySFX(GameSFX.ConfirmSound);
+        }
     }
 }

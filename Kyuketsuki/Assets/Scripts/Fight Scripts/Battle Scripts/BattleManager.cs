@@ -163,6 +163,11 @@ public class BattleManager : MonoBehaviour
                 }
             }
         }
+
+        if (combatOrder[0].GetComponent<EnemyBase>() != null)
+        {
+            timeToWait = 2.0f;
+        }
     }
 
     private void ProgressCombatOrder()
@@ -274,18 +279,26 @@ public class BattleManager : MonoBehaviour
 
             if (timeToWait <= 0.0f)
             {
-                GiveStatsToManager();
-                switch (GameManager.instance.currentArea) {
-                    case AreaMaps.ForestArea:
-                        BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "forestMap";
-                        break;
-                    case AreaMaps.MineArea:
-                        BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "mineMap";
-                        break;
-                    case AreaMaps.MonasteryArea:
-                        BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "monasteryMap";
-                        break;
+                if (SceneManager.GetActiveScene().name == "finalBattle")
+                {
+                    BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "trueEndScene";
+                } else
+                {
+                    GiveStatsToManager();
+                    switch (GameManager.instance.currentArea)
+                    {
+                        case AreaMaps.ForestArea:
+                            BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "forestMap";
+                            break;
+                        case AreaMaps.MineArea:
+                            BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "mineMap";
+                            break;
+                        case AreaMaps.MonasteryArea:
+                            BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "monasteryMap";
+                            break;
+                    }
                 }
+
                 BattleManager.instance.GetComponent<ChangeScenes>().PrepareFadeChange();
             }
         }
@@ -299,9 +312,16 @@ public class BattleManager : MonoBehaviour
 
             if (timeToWait <= 0.0f)
             {
-                GameManager.instance.groupWasDefeated = true;
-                PlayerController.instance.areaTransitionName = "cityToLoan";
-                BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "loanScene";
+
+                if (SceneManager.GetActiveScene().name == "finalBattle")
+                {
+                    BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "badEndScene";
+                } else
+                {
+                    GameManager.instance.groupWasDefeated = true;
+                    PlayerController.instance.areaTransitionName = "cityToLoan";
+                    BattleManager.instance.GetComponent<ChangeScenes>().areaToLoad = "loanScene";
+                }
                 BattleManager.instance.GetComponent<ChangeScenes>().PrepareFadeChange();
             }
         }

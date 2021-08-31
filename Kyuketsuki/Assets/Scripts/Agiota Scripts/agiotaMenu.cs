@@ -357,4 +357,16 @@ public class agiotaMenu : MonoBehaviour
 
         return EndingType.NoEnding;
     }
+
+    public void PlaySFX(bool isCancel)
+    {
+        if (isCancel)
+        {
+            MusicController.instance.PlaySFX(GameSFX.CancelSound);
+        }
+        else
+        {
+            MusicController.instance.PlaySFX(GameSFX.ConfirmSound);
+        }
+    }
 }
