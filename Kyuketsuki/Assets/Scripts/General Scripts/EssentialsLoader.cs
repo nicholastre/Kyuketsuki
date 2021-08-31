@@ -10,8 +10,7 @@ public class EssentialsLoader : MonoBehaviour {
     public GameObject player;
     public GameObject UIScreen;
     public GameObject gameMan;
-    public GameObject audioMan;
-    public GameObject battleMan;
+    public GameObject musicMan;
 
 	// Use this for initialization
 	void Start () {
@@ -31,16 +30,10 @@ public class EssentialsLoader : MonoBehaviour {
             GameManager.instance = Instantiate(gameMan).GetComponent<GameManager>();
         }
 
-       /* if(AudioManager.instance == null)
+       if (MusicController.instance == null)
         {
-            AudioManager.instance = Instantiate(audioMan).GetComponent<AudioManager>();
+            MusicController.instance = Instantiate(musicMan).GetComponent<MusicController>();
         }
-
-        if(BattleManager.instance == null)
-        {
-            BattleManager.instance = Instantiate(battleMan).GetComponent<BattleManager>();
-        }
-        */
 	}
 	
 	// Update is called once per frame

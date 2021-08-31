@@ -372,6 +372,7 @@ MonoBehaviour:
   areaToLoad: mainMenu
   waitToLoad: 1
   shouldFadeFromBlack: 0
+  shouldDestroyPlayer: 0
 --- !u!1 &299472789
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,8 +648,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: "sem perspectiva de pagamento, o agiota consumiu as almas do grupo... e
-    assim a d\xEDvida foi paga"
+  m_Text: "com o fracasso do grupo, suas almas foram consumidas pelo agiota... e
+    assim pagando a d\xEDvida"
 --- !u!222 &1606406481
 CanvasRenderer:
   m_ObjectHideFlags: 0

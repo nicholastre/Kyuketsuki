@@ -89,7 +89,7 @@ public class BattleMenu : MonoBehaviour
 
     private void StartingBattle()
     {
-        SetTurnDescription("Monstros encontrados! " + startingDescription);
+        SetTurnDescription(startingDescription);
         gameObject.transform.Find("StartPlayerScreen").gameObject.SetActive(false);
         gameObject.transform.Find("CurrentTurnDescription").gameObject.SetActive(true);
         gameObject.transform.Find("ChooseSkillScreen").gameObject.SetActive(false);

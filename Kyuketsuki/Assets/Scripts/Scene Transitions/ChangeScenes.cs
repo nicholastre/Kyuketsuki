@@ -30,6 +30,11 @@ public class ChangeScenes : MonoBehaviour
             GameMenu.instance.EmergencyDisableMenu();
             Destroy(PlayerController.instance.gameObject);
         }
+
+        if (SceneManager.GetActiveScene().name == "mainMenu")
+        {
+            MusicController.instance.PlaySong(GameSongs.MainTheme);
+        }
     }
 
     // Update is called once per frame

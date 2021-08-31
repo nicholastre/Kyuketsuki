@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndingController : MonoBehaviour
 {
@@ -9,6 +9,15 @@ public class EndingController : MonoBehaviour
     void Start()
     {
         UIFade.instance.FadeFromBlack(0.5f);
+
+        if (SceneManager.GetActiveScene().name == "badEndScene")
+        {
+            MusicController.instance.PlaySong(GameSongs.GameOverTheme);
+        } else if (SceneManager.GetActiveScene().name == "trueEndScene" || 
+            SceneManager.GetActiveScene().name == "goodEndScene")
+        {
+            MusicController.instance.PlaySong(GameSongs.EndingTheme);
+        }
     }
 
     // Update is called once per frame

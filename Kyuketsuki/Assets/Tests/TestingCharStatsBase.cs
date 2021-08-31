@@ -77,7 +77,7 @@ public class TestingCharStatsBase
 
         instance.changeHitPoints(changeToHP);
 
-        Assert.AreEqual(maxHP, instance.maxHP);
+        Assert.AreEqual(maxHP, instance.currentHP);
     }
 
     [Test]

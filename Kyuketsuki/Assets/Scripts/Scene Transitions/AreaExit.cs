@@ -30,6 +30,20 @@ public class AreaExit : MonoBehaviour
             UIFade.instance.FadeFromBlack(0.5f);
         }
 
+        if (SceneManager.GetActiveScene().name == "overworldMap" || 
+            SceneManager.GetActiveScene().name == "testemapa")
+        {
+            MusicController.instance.PlaySong(GameSongs.CityOverWorldTheme);
+        } else if (SceneManager.GetActiveScene().name == "forestMap")
+        {
+            MusicController.instance.PlaySong(GameSongs.ForestTheme);
+        } else if (SceneManager.GetActiveScene().name == "mineMap")
+        {
+            MusicController.instance.PlaySong(GameSongs.MineTheme);
+        } else if (SceneManager.GetActiveScene().name == "monasteryMap")
+        {
+            MusicController.instance.PlaySong(GameSongs.ChurchTheme);
+        }
     }
 
     // Update is called once per frame
