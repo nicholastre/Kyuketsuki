@@ -41,7 +41,7 @@ public class MusicController : MonoBehaviour
             masterVolume = PlayerPrefs.GetInt("MasterVolume");
         } else
         {
-            masterVolume = 80;
+            masterVolume = 95;
             PlayerPrefs.SetInt("MasterVolume", masterVolume);
         }
 
@@ -51,18 +51,18 @@ public class MusicController : MonoBehaviour
         }
         else
         {
-            musicVolume = 60;
+            musicVolume = 80;
             PlayerPrefs.SetInt("MusicVolume", musicVolume);
         }
 
         if (PlayerPrefs.HasKey("SFXVolume"))
         {
             sfxVolume = PlayerPrefs.GetInt("SFXVolume");
-            PlayerPrefs.SetInt("SFXVolume", sfxVolume);
         }
         else
         {
-            sfxVolume = 40;
+            sfxVolume = 80;
+            PlayerPrefs.SetInt("SFXVolume", sfxVolume);
         }
 
         UpdateMixerVolumes(masterVolume, musicVolume, sfxVolume);
