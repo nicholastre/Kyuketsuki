@@ -430,8 +430,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: "com o agiota destru\xEDdo e plenos poderes, o grupo continuou fazendo
-    miss\xF5es... agora para ajudar a cidade"
+  m_Text: "com o agiota destru\xEDdo e plenos poderes, o grupo continuou matando
+    monstros... agora para ajudar a cidade"
 --- !u!222 &963471240
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -570,6 +570,7 @@ MonoBehaviour:
   areaToLoad: mainMenu
   waitToLoad: 1
   shouldFadeFromBlack: 0
+  shouldDestroyPlayer: 0
 --- !u!114 &1595750656
 MonoBehaviour:
   m_ObjectHideFlags: 0

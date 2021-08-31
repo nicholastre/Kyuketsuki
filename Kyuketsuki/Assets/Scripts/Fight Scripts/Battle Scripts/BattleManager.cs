@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 enum BattleState
 {
@@ -45,6 +46,14 @@ public class BattleManager : MonoBehaviour
 
         battleState = BattleState.BattleStart;
         battleMenu.GetComponent<BattleMenu>().SetBattleMenuState(BattleMenuState.BattleStartAlert);
+
+        if (SceneManager.GetActiveScene().name == "finalBattle")
+        {
+            MusicController.instance.PlaySong(GameSongs.BossTheme);
+        } else
+        {
+            MusicController.instance.PlaySong(GameSongs.BattleTheme);
+        }
     }
 
     // Update is called once per frame

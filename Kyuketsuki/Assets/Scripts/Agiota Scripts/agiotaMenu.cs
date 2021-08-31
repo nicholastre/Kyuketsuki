@@ -45,6 +45,7 @@ public class agiotaMenu : MonoBehaviour
             loanPrompt.GetComponent<Text>().text = "olá, meus caros...aconteceu alguma coisa? vocês parecem mais... incomodados do que o habitual";
         } else if (GameManager.instance.groupWasDefeated) 
         {
+            MusicController.instance.PlaySong(GameSongs.CityOverWorldTheme);
             GameManager.instance.groupWasDefeated = false;
             menuState = AgiotaMenuState.DefeatedState;
             loanPrompt.GetComponent<Text>().text = "não se preocupem, estão seguros agora... com um leve aumento de 1000 bits na dívida, é claro";

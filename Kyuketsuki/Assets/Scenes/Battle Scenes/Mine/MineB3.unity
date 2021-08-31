@@ -199,7 +199,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1666456325896214, guid: 8b4299149e6ec0b46b9f03a87e343d64, type: 3}
       propertyPath: startingDescription
-      value: "S\xE3o dois zumbis e um gaki!"
+      value: "Monstros encontrados! S\xE3o dois zumbis e um gaki!"
       objectReference: {fileID: 0}
     - target: {fileID: 1666456325896215, guid: 8b4299149e6ec0b46b9f03a87e343d64, type: 3}
       propertyPath: m_Pivot.x

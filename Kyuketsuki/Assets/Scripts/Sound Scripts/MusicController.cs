@@ -26,6 +26,7 @@ public class MusicController : MonoBehaviour
     public AudioMixerGroup sfxMixer;
     public AudioClip[] availableMusic;
 
+    private int currentMusic = 0;
     private float minVolume = -60.0f;
     private float maxVolume = 10.0f;
 
@@ -67,6 +68,7 @@ public class MusicController : MonoBehaviour
         UpdateMixerVolumes(masterVolume, musicVolume, sfxVolume);
         musicSource.clip = availableMusic[(int)GameSongs.MainTheme];
         musicSource.Play();
+        currentMusic = 0;
 
         DontDestroyOnLoad(gameObject);
     }
@@ -90,9 +92,13 @@ public class MusicController : MonoBehaviour
 
     public void PlaySong(GameSongs song)
     {
-        musicSource.Stop();
-        musicSource.clip = availableMusic[(int)song];
-        musicSource.Play();
+        if ((int)song != currentMusic)
+        {
+            musicSource.Stop();
+            musicSource.clip = availableMusic[(int)song];
+            musicSource.Play();
+            currentMusic = (int)song;
+        }
     }
 
     private float MapToVolume(float sliderVolume)
