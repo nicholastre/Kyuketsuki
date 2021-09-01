@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour {
             PlayerController.instance.canMove = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        /*if (Input.GetKeyDown(KeyCode.Q))
         {
             int sumHalfwayExp = 0;
 
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour {
             }
 
             playerStats[0].statsInstance.currentHP = 1;
-        }
+        }*/
     }
 
     public bool[] RestCharacters()
