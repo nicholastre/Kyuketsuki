@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 
 public class TestingCharStatsBase
 {
-    // A Test behaves as an ordinary method
+
     [Test]
     public void TestInstanceNotNull()
     {

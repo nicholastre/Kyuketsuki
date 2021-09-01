@@ -80,4 +80,16 @@ public class CityShop : MonoBehaviour
         buyButton.gameObject.SetActive(false);
         feedbackText.gameObject.SetActive(true);
     }
+
+    public void PlaySFX(bool isCancel)
+    {
+        if (isCancel)
+        {
+            MusicController.instance.PlaySFX(GameSFX.CancelSound);
+        }
+        else
+        {
+            MusicController.instance.PlaySFX(GameSFX.ConfirmSound);
+        }
+    }
 }

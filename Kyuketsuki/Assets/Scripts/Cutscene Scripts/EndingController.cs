@@ -12,6 +12,7 @@ public class EndingController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "badEndScene")
         {
+            MusicController.instance.musicSource.loop = false;
             MusicController.instance.PlaySong(GameSongs.GameOverTheme);
         } else if (SceneManager.GetActiveScene().name == "trueEndScene" || 
             SceneManager.GetActiveScene().name == "goodEndScene")
@@ -23,7 +24,11 @@ public class EndingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
+    public void SwitchLoop()
+    {
+        MusicController.instance.musicSource.Stop();
+        MusicController.instance.musicSource.loop = true;
+    }
 }

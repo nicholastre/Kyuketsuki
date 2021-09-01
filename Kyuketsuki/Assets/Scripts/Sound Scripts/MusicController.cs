@@ -16,15 +16,24 @@ public enum GameSongs
     EndingTheme = 8
 }
 
+public enum GameSFX
+{
+    ConfirmSound = 0,
+    CancelSound = 1,
+    InventorySound = 2
+}
+
 public class MusicController : MonoBehaviour
 {
     public static MusicController instance;
 
     public AudioSource musicSource;
+    public AudioSource sfxSource;
     public AudioMixerGroup masterMixer;
     public AudioMixerGroup musicMixer;
     public AudioMixerGroup sfxMixer;
     public AudioClip[] availableMusic;
+    public AudioClip[] availableSFX;
 
     private int currentMusic = 0;
     private float minVolume = -60.0f;
@@ -76,7 +85,7 @@ public class MusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void UpdateMixerVolumes(int masterVolume, int musicVolume, int sfxVolume)
@@ -99,6 +108,12 @@ public class MusicController : MonoBehaviour
             musicSource.Play();
             currentMusic = (int)song;
         }
+    }
+
+    public void PlaySFX(GameSFX effect)
+    {
+        sfxSource.clip = availableSFX[(int)effect];
+        sfxSource.Play();
     }
 
     private float MapToVolume(float sliderVolume)

@@ -250,4 +250,15 @@ public class GameMenu : MonoBehaviour
     {
         currentState = MenuState.Disabled;
     }
+
+    public void PlaySFX(bool isCancel)
+    {
+        if (isCancel)
+        {
+            MusicController.instance.PlaySFX(GameSFX.CancelSound);
+        } else
+        {
+            MusicController.instance.PlaySFX(GameSFX.ConfirmSound);
+        }
+    }
 }

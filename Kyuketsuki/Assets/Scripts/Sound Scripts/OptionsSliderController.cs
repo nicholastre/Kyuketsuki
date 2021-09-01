@@ -16,13 +16,17 @@ public class OptionsSliderController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        masterSlider.value = PlayerPrefs.GetInt("MasterVolume");
-        musicSlider.value = PlayerPrefs.GetInt("MusicVolume");
-        sfxSlider.value = PlayerPrefs.GetInt("SFXVolume");
+        int tempMaster = PlayerPrefs.GetInt("MasterVolume");
+        int tempMusic = PlayerPrefs.GetInt("MusicVolume");
+        int tempSFX = PlayerPrefs.GetInt("SFXVolume");
 
-        masterValue = (int)masterSlider.value;
-        musicValue = (int)musicSlider.value;
-        sfxValue = (int)sfxSlider.value;
+        masterValue = tempMaster;
+        musicValue = tempMusic;
+        sfxValue = tempSFX;
+
+        masterSlider.value = masterValue;
+        musicSlider.value = musicValue;
+        sfxSlider.value = sfxValue;
     }
 
     // Update is called once per frame

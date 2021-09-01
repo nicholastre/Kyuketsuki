@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour {
             PlayerController.instance.canMove = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        /*if (Input.GetKeyDown(KeyCode.Q))
         {
             int sumHalfwayExp = 0;
 
@@ -101,19 +101,7 @@ public class GameManager : MonoBehaviour {
             }
 
             playerStats[0].statsInstance.currentHP = 1;
-        } else if (Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Log("Dinheiro: " + groupMoney);
-            Debug.Log("Divida: " + groupDebt);
-            Debug.Log("Inventario a seguir");
-            for (int i = 0; i < numberOfItems.Length; i++)
-            {
-                Debug.Log(itemsHeld[i] + ": " + numberOfItems[i]);
-            }
-            playerStats[0].PrintStats();
-            playerStats[1].PrintStats();
-            playerStats[2].PrintStats();
-        }
+        }*/
     }
 
     public bool[] RestCharacters()

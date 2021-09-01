@@ -35,10 +35,4 @@ public class EnemyBase : CombatUnitStats
         }
         chosenSkillIdentifier = skill;
     }
-
-    public int MapToInt(float value)
-    {
-        int newValue = (int)Mathf.Lerp(0, 3, Mathf.InverseLerp(0, 100, value));
-        return newValue == 3 ? 3 - 1 : newValue;
-    }
 }

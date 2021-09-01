@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: pisotear
-  baseDamage: 10
-  critChance: 5
-  baseHitChance: 90
-  powerCost: 0
+  baseDamage: 15
+  critChance: 10
+  baseHitChance: 100
+  powerCost: 5

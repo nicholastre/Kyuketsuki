@@ -353,17 +353,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: agiota
   hitPointsText: {fileID: 2134593884768137417}
-  currentHitPoints: 3000
-  maxHitPoints: 3000
+  currentHitPoints: 1500
+  maxHitPoints: 1500
   powerPointsText: {fileID: 2134593886200092128}
   currentPowerPoints: 9000
   maxPowerPoints: 9000
-  attack: 90
-  defense: 70
-  agility: 60
+  attack: 80
+  defense: 50
+  agility: 40
   unitSkills:
-  - {fileID: 4460946028254558330, guid: 9d0a554103aa1d44abd81af8933aa273, type: 3}
-  - {fileID: 1800439887389704545, guid: 8200fe2aea0483e4fae3f06b52fd6c8a, type: 3}
-  - {fileID: 2488497951750421836, guid: b9a3e451491b2464db476f5f379bb398, type: 3}
+  - {fileID: 5502702496621639055, guid: dcd4dd000b4163740b72fc2159a0c766, type: 3}
+  - {fileID: 7847758215265910311, guid: d8458768723cba342a462dd5c7ecac46, type: 3}
+  - {fileID: 3975459055569707428, guid: 27b0ba8af2925f9429784271855c2fbb, type: 3}
   chosenSkillIdentifier: 0
   currentState: 0
