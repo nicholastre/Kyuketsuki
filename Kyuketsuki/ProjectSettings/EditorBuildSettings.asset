@@ -6,6 +6,120 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Main Menu Scenes/storyIntro.unity
+    guid: c27dc4e000086654e8d0fc7e5771818d
+  - enabled: 1
+    path: Assets/Scenes/Main Menu Scenes/mainMenu.unity
+    guid: ac23f0a7a38f0d346bb591dc0f7a438d
+  - enabled: 1
+    path: Assets/Scenes/Maps/testemapa.unity
+    guid: dc38c22fcba6e1f4c813a51d172477c0
+  - enabled: 1
+    path: Assets/Scenes/Maps/overworldMap.unity
+    guid: 4ed0261e48bfc8a4daf9cf054626985e
+  - enabled: 1
+    path: Assets/Scenes/Maps/forestMap.unity
+    guid: 5dacf6d18c69e7442b4b64abaa556f9d
+  - enabled: 1
+    path: Assets/Scenes/Maps/mineMap.unity
+    guid: b0070776eec068647b498320b87ac735
+  - enabled: 1
+    path: Assets/Scenes/Maps/monasteryMap.unity
+    guid: 21fc8d6ef3f6d2646b7ae44da34cf424
+  - enabled: 0
+    path: Assets/Scenes/City Places/missionScene.unity
+    guid: 0b1f1aa514ba3a34990ed4008ad0eab6
+  - enabled: 1
+    path: Assets/Scenes/City Places/shopScene.unity
+    guid: 79bd1b73c7dd8e0498c3825b54665932
+  - enabled: 1
+    path: Assets/Scenes/City Places/loanScene.unity
+    guid: 277ca8ddce081d9498821708b6353483
+  - enabled: 1
+    path: Assets/Scenes/City Places/hotelScene.unity
+    guid: e7e5e7c379c059744a0a5b7e3cebffde
+  - enabled: 1
+    path: Assets/Scenes/City Places/restScene.unity
+    guid: 993abe96cbd081c469c387826244db39
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/finalBattle.unity
+    guid: 9bd5cf64127fd3f4e9be0da67d4a75fb
+  - enabled: 1
+    path: Assets/Scenes/Game Over Scenes/badEndScene.unity
+    guid: 29c53adcf0961fd4b87861bdaa0c2f7d
+  - enabled: 1
+    path: Assets/Scenes/Game Over Scenes/goodEndScene.unity
+    guid: 14cfe09549636604994d1e80bfde4d37
+  - enabled: 1
+    path: Assets/Scenes/Game Over Scenes/trueEndScene.unity
+    guid: 5d3a282a1f1bc394d87ea5da847904b0
+  - enabled: 1
+    path: Assets/Scenes/Main Menu Scenes/optionsMenu.unity
+    guid: 958f4269951fdd14482b8b716e76fff2
+  - enabled: 1
+    path: Assets/Scenes/Main Menu Scenes/creditsMenu.unity
+    guid: d66be6b8f6311f2439ad81d4cf62fece
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB0.unity
+    guid: a89bf669973274a46ab723dab489ff2c
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB1.unity
+    guid: ea9d07388c3d8f14e8507c87d260e87f
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB2.unity
+    guid: c7c97cc6766269542ab5cd8df403bc1a
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB3.unity
+    guid: e7015d0ba3077444fa8371aa5315d523
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB4.unity
+    guid: 92c2c7a0bf1a9a14bbef6a738ad8ee3c
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB5.unity
+    guid: 9c4c051a8d01e52439b45e4fcba7015a
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Forest/ForestB6.unity
+    guid: c1627294b9a66194b8695a91d43b5f04
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Mine/MineB0.unity
+    guid: 2a71ecfe17ba3014fb5a2dd3212588d8
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Mine/MineB1.unity
+    guid: ad3682d2db328574f812eec0bf81b92e
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Mine/MineB2.unity
+    guid: e411aff0e21016b448b9fcbe0afd309a
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Mine/MineB3.unity
+    guid: 2119a1530e51d4445b60897614ac1afa
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Mine/MineB4.unity
+    guid: 194d9e242e668644b8000e3444faffe4
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Mine/MineB5.unity
+    guid: 4b02edd358ecd5840b9fe3b3a3801451
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Mine/MineB6.unity
+    guid: 9efe7506028d40640a76863152ad5a7a
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Monastery/MonasteryB0.unity
+    guid: f2f901cb7aa5218479e64150de2421a0
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Monastery/MonasteryB1.unity
+    guid: 763022bdb8ddcc24ea3b7bd46df2daf7
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Monastery/MonasteryB2.unity
+    guid: f1dc3774be174944088af711f416e678
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Monastery/MonasteryB3.unity
+    guid: 5d4bca0656b96f942888786bf2392d63
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Monastery/MonasteryB4.unity
+    guid: af0dc51100c54574aabd790e7a446a3c
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Monastery/MonasteryB5.unity
+    guid: 5f272a5d3d2d22542b3c0995679aefec
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/Monastery/MonasteryB6.unity
+    guid: 537a158070a88d74da5d924d5631d09a
   m_configObjects: {}

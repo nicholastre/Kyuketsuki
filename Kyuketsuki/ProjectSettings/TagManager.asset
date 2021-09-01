@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Hero2
+  - Enemy
+  - Hero
+  - Enemy2
+  - Enemy3
+  - Dead
+  - Hero3
+  - DeadEnemy
+  - DeadHero
   layers:
   - Default
   - TransparentFX
@@ -40,4 +49,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 921506633
+    locked: 0
+  - name: Player
+    uniqueID: 2582266863
+    locked: 0
+  - name: Battle BG
+    uniqueID: 2094551111
+    locked: 0
+  - name: Batle Chars
+    uniqueID: 962553475
     locked: 0

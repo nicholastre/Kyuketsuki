@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>30/08/2021 - 23:58:40</Generatedon>
+    <Parser>MultiReportParser (3x OpenCoverParser)</Parser>
+    <Assemblies>2</Assemblies>
+    <Classes>39</Classes>
+    <Files>39</Files>
+    <Coveredlines>4</Coveredlines>
+    <Uncoveredlines>2467</Uncoveredlines>
+    <Coverablelines>2471</Coverablelines>
+    <Totallines>4225</Totallines>
+    <Linecoverage>0.1</Linecoverage>
+    <Coveredbranches>0</Coveredbranches>
+    <Totalbranches>0</Totalbranches>
+  </Summary>
+  <Coverage>
+    <Assembly name="GameScripts" classes="36" coverage="0" coveredlines="0" coverablelines="2375" totallines="4066" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="agiotaMenu" coverage="0" coveredlines="0" coverablelines="234" totallines="359" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="AreaEntrance" coverage="0" coveredlines="0" coverablelines="12" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="AreaExit" coverage="0" coveredlines="0" coverablelines="33" totallines="64" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BattleManager" coverage="0" coveredlines="0" coverablelines="317" totallines="460" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BattleMenu" coverage="0" coveredlines="0" coverablelines="322" totallines="482" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BattleTransition" coverage="0" coveredlines="0" coverablelines="31" totallines="62" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="CameraController" coverage="0" coveredlines="0" coverablelines="13" totallines="48" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="ChangeScenes" coverage="0" coveredlines="0" coverablelines="33" totallines="63" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="CharStats" coverage="0" coveredlines="0" coverablelines="27" totallines="56" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="CharStatsBase" coverage="0" coveredlines="0" coverablelines="118" totallines="199" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="CityShop" coverage="0" coveredlines="0" coverablelines="49" totallines="83" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="CombatUnitStats" coverage="0" coveredlines="0" coverablelines="37" totallines="96" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="CutsceneController" coverage="0" coveredlines="0" coverablelines="45" totallines="93" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="DeleteGame" coverage="0" coveredlines="0" coverablelines="30" totallines="66" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="DialogActivator" coverage="0" coveredlines="0" coverablelines="22" totallines="47" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="DialogManager" coverage="0" coveredlines="0" coverablelines="62" totallines="109" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="EndingController" coverage="0" coveredlines="0" coverablelines="5" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="EnemyBase" coverage="0" coveredlines="0" coverablelines="26" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="EssentialsLoader" coverage="0" coveredlines="0" coverablelines="21" totallines="43" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="GameManager" coverage="0" coveredlines="0" coverablelines="292" totallines="426" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="GameMenu" coverage="0" coveredlines="0" coverablelines="148" totallines="253" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="hotelEntrance" coverage="0" coveredlines="0" coverablelines="25" totallines="55" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Item" coverage="0" coveredlines="0" coverablelines="41" totallines="84" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="ItemButton" coverage="0" coveredlines="0" coverablelines="13" totallines="34" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="MusicController" coverage="0" coveredlines="0" coverablelines="51" totallines="103" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="OptionsSliderController" coverage="0" coveredlines="0" coverablelines="4" totallines="18" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="PlayerBase" coverage="0" coveredlines="0" coverablelines="15" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="PlayerController" coverage="0" coveredlines="0" coverablelines="33" totallines="82" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="PlayerLoader" coverage="0" coveredlines="0" coverablelines="8" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="QuestManager" coverage="0" coveredlines="0" coverablelines="46" totallines="78" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="QuestMarker" coverage="0" coveredlines="0" coverablelines="37" totallines="65" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="QuestObjectActivator" coverage="0" coveredlines="0" coverablelines="15" totallines="40" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="restingEvents" coverage="0" coveredlines="0" coverablelines="71" totallines="110" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="SkillBase" coverage="0" coveredlines="0" coverablelines="32" totallines="73" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="UIFade" coverage="0" coveredlines="0" coverablelines="34" totallines="64" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="WanderingMob" coverage="0" coveredlines="0" coverablelines="73" totallines="106" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    </Assembly>
+    <Assembly name="Tests" classes="3" coverage="4.1" coveredlines="4" coverablelines="96" totallines="159" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="NewTestScript" coverage="0" coveredlines="0" coverablelines="8" totallines="0" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="TDDCharStats" coverage="100" coveredlines="4" coverablelines="4" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="TestingCharStatsBase" coverage="0" coveredlines="0" coverablelines="84" totallines="142" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>
